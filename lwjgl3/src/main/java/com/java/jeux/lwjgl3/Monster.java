@@ -1,9 +1,9 @@
 package com.java.jeux.lwjgl3;
 
-public class Monster extends Ennemies {
+public class Monster extends Enemies {
 
     public Monster(AIType aiType, String name, int health, int damage, int lives) {
-        super(aiType, name, health, damage, lives); // Appel du constructeur parent
+        super(aiType, name, health, damage, lives);
     }
 
     @Override

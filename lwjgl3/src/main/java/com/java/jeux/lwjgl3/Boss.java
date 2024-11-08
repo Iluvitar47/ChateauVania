@@ -1,20 +1,46 @@
 package com.java.jeux.lwjgl3;
 
-public class Boss extends Ennemies {
-    private float fly;
-    private String specialMove;
+enum SpecialMove {
+    FIREBALL,
+    LIGHTNING_STRIKE
+}
 
-    public Boss(AIType aiType, String name, int health, int damage, int lives, float fly, String specialMove) {
+public class Boss extends Enemies {
+    private float fly;
+    private SpecialMove specialMove;
+
+    public Boss(AIType aiType, String name, int health, int damage, int lives, float fly, SpecialMove initialMove) {
         super(aiType, name, health, damage, lives);
         this.fly = fly;
-        this.specialMove = specialMove;
+        this.specialMove = initialMove;
     }
 
     @Override
     public void behaviourAI() {
         if (aiType == AIType.BOSS) {
             System.out.println(getName() + " utilise son pouvoir spécial : " + specialMove);
-            // Logique spécifique pour le pouvoir spécial ou comportement du boss
+            useSpecialMove();
+        }
+    }
+
+    // Méthode pour utiliser le sort spécial
+    public void useSpecialMove() {
+        switch (specialMove) {
+            case FIREBALL:
+                System.out.println(getName() + " lance une boule de feu !");
+                break;
+            case LIGHTNING_STRIKE:
+                System.out.println(getName() + " frappe avec un éclair !");
+                break;
+        }
+    }
+
+    // Méthode pour alterner entre les sorts spéciaux
+    public void toggleSpecialMove() {
+        if (specialMove == SpecialMove.FIREBALL) {
+            specialMove = SpecialMove.LIGHTNING_STRIKE;
+        } else {
+            specialMove = SpecialMove.FIREBALL;
         }
     }
 
@@ -28,7 +54,6 @@ public class Boss extends Ennemies {
         System.out.println("Mouvement spécial: " + specialMove);
     }
 
-    // Getters et Setters
     public float getFly() {
         return fly;
     }
@@ -37,11 +62,11 @@ public class Boss extends Ennemies {
         this.fly = fly;
     }
 
-    public String getSpecialMove() {
+    public SpecialMove getSpecialMove() {
         return specialMove;
     }
 
-    public void setSpecialMove(String specialMove) {
+    public void setSpecialMove(SpecialMove specialMove) {
         this.specialMove = specialMove;
     }
 }

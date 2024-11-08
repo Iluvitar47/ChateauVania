@@ -2,14 +2,14 @@ package com.java.jeux.lwjgl3;
 
 import java.util.List;
 
-public class Customization {
+public class GameControls {
     private List<String> controls;
     private float brightness;
     private int width;
     private int height;
     private float saturation;
 
-    public Customization(List<String> controls, float brightness, int width, int height, float saturation) {
+    public GameControls(List<String> controls, float brightness, int width, int height, float saturation) {
         this.controls = controls;
         this.brightness = brightness;
         this.width = width;

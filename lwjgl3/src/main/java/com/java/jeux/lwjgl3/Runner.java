@@ -1,6 +1,6 @@
 package com.java.jeux.lwjgl3;
 
-public class Runner extends Ennemies {
+public class Runner extends Enemies {
 
     public Runner(AIType aiType, String name, int health, int damage, int lives) {
         super(aiType, name, health, damage, lives);

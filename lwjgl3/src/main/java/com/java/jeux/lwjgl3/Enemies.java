@@ -1,6 +1,6 @@
 package com.java.jeux.lwjgl3;
 
-public abstract class Ennemies extends Character {
+public abstract class Enemies extends Character {
     protected AIType aiType;
 
     public enum AIType {
@@ -9,7 +9,7 @@ public abstract class Ennemies extends Character {
         BOSS
     }
 
-    public Ennemies(AIType aiType, String name, int health, int damage, int lives) {
+    public Enemies(AIType aiType, String name, int health, int damage, int lives) {
         super(name, health, damage, lives);
         this.aiType = aiType;
     }

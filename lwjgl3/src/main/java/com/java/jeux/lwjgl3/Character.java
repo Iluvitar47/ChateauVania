@@ -7,6 +7,7 @@ public abstract class Character {
     protected int lives;
     protected float gravity;
     protected String move;
+    protected boolean invincible;
 
     public Character(String name, int health, int damage, int lives) {
         this.name = name;
@@ -15,13 +16,18 @@ public abstract class Character {
         this.lives = lives;
         this.gravity = 9.8f;
         this.move = "none";
+        this.invincible = false;
     }
 
     // Méthode pour prendre des dégâts
     public void takeDamage(int damageAmount) {
-        health -= damageAmount;
-        if (health <= 0) {
-            die();
+        if (!invincible) {  // Si le personnage n'est pas invincible
+            health -= damageAmount;
+            if (health <= 0) {
+                die();
+            }
+        } else {
+            System.out.println(name + " est invincible et ne prend pas de dégâts !");
         }
     }
 
@@ -50,10 +56,35 @@ public abstract class Character {
     // Applique la gravité au personnage (modification de la position, etc.)
     public void applyGravity() {
         System.out.println(name + " subit la gravité et tombe.");
-        // Vous pouvez ajouter ici des effets physiques liés à la gravité
     }
 
-    // Getters et Setters
+    // Méthode pour augmenter la santé du personnage
+    public void increaseHealth(int amount) {
+        this.health += amount;
+        System.out.println(name + " a maintenant " + health + " de santé.");
+    }
+
+    // Méthode pour augmenter les dégâts du personnage
+    public void increaseDamage(int amount) {
+        this.damage += amount;
+        System.out.println(name + " a maintenant " + damage + " de dégâts.");
+    }
+
+    // Méthode pour définir l'état d'invincibilité du personnage
+    public void setInvincible(boolean invincible) {
+        this.invincible = invincible;
+        if (invincible) {
+            System.out.println(name + " est maintenant invincible.");
+        } else {
+            System.out.println(name + " n'est plus invincible.");
+        }
+    }
+
+    // Récupérer l'état d'invincibilité
+    public boolean isInvincible() {
+        return invincible;
+    }
+
     public String getName() {
         return name;
     }

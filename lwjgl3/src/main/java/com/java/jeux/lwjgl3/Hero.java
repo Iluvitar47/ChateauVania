@@ -5,7 +5,6 @@ public class Hero extends Character {
     private int defaultHealth;
     private int defaultLives;
 
-
     public Hero(String name, int health, int damage, int lives, String specialAttack, int defaultHealth, int defaultLives) {
         super(name, health, damage, lives);
         this.specialAttack = specialAttack;
@@ -47,8 +46,8 @@ public class Hero extends Character {
     }
 
     // Méthode pour collecter un objet (abstractItems)
-    public void collectItem(AbstractItems item) {
-        System.out.println(name + " a collecté un objet : " + item.getName());
+    public void collectItem(Items item) {
+        System.out.println(name + " a collecté un objet : " + item.getEffect());
     }
 
     // Getters et Setters
