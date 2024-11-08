@@ -29,7 +29,6 @@ public abstract class Enemies extends Character {
         // Ajouter la logique d'attaque ici
     }
 
-    // Getters et Setters
     public AIType getAiType() {
         return aiType;
     }

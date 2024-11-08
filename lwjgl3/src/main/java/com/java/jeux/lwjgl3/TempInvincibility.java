@@ -4,7 +4,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class TempInvincibility extends Items {
-    private int duration;
+    private final int duration;
 
     public TempInvincibility(Sprite sprite, String effect, int x, int y, int duration) {
         super(sprite, effect, x, y);

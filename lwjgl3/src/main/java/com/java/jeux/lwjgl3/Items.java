@@ -51,8 +51,8 @@ public abstract class Items {
     // Classe interne Sprite
     public static class Sprite {
         private String imagePath;
-        private int width;
-        private int height;
+        private final int width;
+        private final int height;
 
         public Sprite(String imagePath, int width, int height) {
             this.imagePath = imagePath;

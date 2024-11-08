@@ -4,7 +4,6 @@ import java.awt.Point;
 import java.util.List;
 
 public abstract class Maps {
-    // Attributs
     protected int width;
     protected int height;
     protected String backgroundImagePath;
@@ -19,7 +18,6 @@ public abstract class Maps {
     protected String musicPath;
     protected List<Checkpoint> checkPoints;
 
-    // Constructeur
     public Maps(int width, int height, String backgroundImagePath) {
         this.width = width;
         this.height = height;
@@ -91,7 +89,6 @@ public abstract class Maps {
         // Logique de chargement du checkpoint ici
     }
 
-    // Getters et setters
     public int getWidth() {
         return width;
     }
@@ -190,5 +187,87 @@ public abstract class Maps {
 
     public void setCheckPoints(List<Checkpoint> checkPoints) {
         this.checkPoints = checkPoints;
+    }
+
+    //  Classe Platform
+    public static class Platform {
+        private final int x, y;
+        private final int width, height;
+
+        public Platform(int x, int y, int width, int height) {
+            this.x = x;
+            this.y = y;
+            this.width = width;
+            this.height = height;
+        }
+
+        public int getX() { return x; }
+        public int getY() { return y; }
+        public int getWidth() { return width; }
+        public int getHeight() { return height; }
+    }
+
+    //  Classe Enemy
+    public static class Enemy {
+        private final int health;
+        private final int damage;
+
+        public Enemy(int health, int damage) {
+            this.health = health;
+            this.damage = damage;
+        }
+
+        public int getHealth() { return health; }
+        public int getDamage() { return damage; }
+    }
+
+    //  Classe Obstacle
+    public static class Obstacle {
+        private final int x, y;
+        private final int width, height;
+
+        public Obstacle(int x, int y, int width, int height) {
+            this.x = x;
+            this.y = y;
+            this.width = width;
+            this.height = height;
+        }
+
+        public int getX() { return x; }
+        public int getY() { return y; }
+        public int getWidth() { return width; }
+        public int getHeight() { return height; }
+    }
+
+    //  Classe Tile
+    public static class Tile {
+        private final int x, y;
+        private final String type;
+
+        public Tile(int x, int y, String type) {
+            this.x = x;
+            this.y = y;
+            this.type = type;
+        }
+
+        public int getX() { return x; }
+        public int getY() { return y; }
+        public String getType() { return type; }
+    }
+
+    //  Classe Checkpoint
+    public static class Checkpoint {
+        private final int x, y;
+        private final String name;
+
+        public Checkpoint(int x, int y, String name) {
+            this.x = x;
+            this.y = y;
+            this.name = name;
+        }
+
+        public int getX() { return x; }
+        public int getY() { return y; }
+        public String getName() { return name; }
     }
 }
