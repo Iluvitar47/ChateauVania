@@ -1,10 +1,10 @@
 package com.java.jeux.lwjgl3;
 
 import com.java.jeux.lwjgl3.GameTest.GameTest;
+import com.java.jeux.lwjgl3.RoomTest.RoomTest;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
 
-/** Launches the desktop (LWJGL3) application. */
 public class Lwjgl3Launcher {
     public static void main(String[] args) {
         if (StartupHelper.startNewJvmIfRequired()) return;
@@ -13,7 +13,7 @@ public class Lwjgl3Launcher {
     }
 
     private static Lwjgl3Application createApplication() {
-        return new Lwjgl3Application(new GameTest(), getDefaultConfiguration());
+        return new Lwjgl3Application(new RoomTest(), getDefaultConfiguration());
     }
 
     private static Lwjgl3ApplicationConfiguration getDefaultConfiguration() {
