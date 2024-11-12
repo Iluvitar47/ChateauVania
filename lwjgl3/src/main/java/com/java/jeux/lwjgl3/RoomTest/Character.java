@@ -60,13 +60,4 @@ public abstract class Character {
         return isDead;
     }
 
-    public Rectangle getGravityHitbox() {
-        if (gravityHitbox == null) {
-            gravityHitbox = new Rectangle();
-        }
-        gravityHitbox.setPosition(position.x + (isFacingRight() ? hitboxOffsetX : -hitboxOffsetX), position.y);
-        gravityHitbox.setSize(getWidth(), getHeight());
-        return gravityHitbox;
-    }
-
 }
