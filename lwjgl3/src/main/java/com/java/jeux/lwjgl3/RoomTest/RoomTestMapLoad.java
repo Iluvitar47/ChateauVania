@@ -81,7 +81,7 @@ public class RoomTestMapLoad {
                 }
             }
         } else {
-            Gdx.app.log("MapTest", "Le calque 'Sol' est introuvable.");
+            Gdx.app.log("MapTest", "platform layer not found");
         }
         return groundObjects;
     }
