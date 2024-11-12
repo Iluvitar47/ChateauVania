@@ -1,0 +1,8 @@
+Very first version whit basical functionnalities :
+- Gravity
+- Map loading
+- Player movement
+- Player automatical hitbox detection
+- Ennmy
+- Player attack
+- Ennmy can die and respawn
