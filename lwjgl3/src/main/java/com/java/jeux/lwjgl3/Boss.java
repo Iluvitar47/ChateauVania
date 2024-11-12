@@ -70,3 +70,4 @@ public class Boss extends Enemies {
         this.specialMove = specialMove;
     }
 }
+
