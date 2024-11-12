@@ -1,8 +1,5 @@
 package com.java.jeux.lwjgl3.RoomTest;
-
-import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
@@ -72,32 +69,4 @@ public abstract class Character {
         return gravityHitbox;
     }
 
-    public void calculateFrameDimensions(TextureRegion frame, Pixmap pixmap) {
-        int minX = frame.getRegionWidth();
-        int minY = frame.getRegionHeight();
-        int maxX = 0;
-        int maxY = 0;
-
-        for (int x = 0; x < frame.getRegionWidth(); x++) {
-            for (int y = 0; y < frame.getRegionHeight(); y++) {
-                int pixel = pixmap.getPixel(frame.getRegionX() + x, frame.getRegionY() + y);
-                if ((pixel & 0x000000ff) != 0) {
-                    minX = Math.min(minX, x);
-                    maxX = Math.max(maxX, x);
-                    minY = Math.min(minY, y);
-                    maxY = Math.max(maxY, y);
-                }
-            }
-        }
-
-        if (minX < maxX && minY < maxY) {
-            spriteWidth = maxX - minX;
-            spriteHeight = maxY - minY;
-            hitboxOffsetX = (maxX + minX) / 2.0f;
-        } else {
-            spriteWidth = frame.getRegionWidth();
-            spriteHeight = frame.getRegionHeight();
-            hitboxOffsetX = frame.getRegionWidth() / 2.0f;
-        }
-    }
 }
