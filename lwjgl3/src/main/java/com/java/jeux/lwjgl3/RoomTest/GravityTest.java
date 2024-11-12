@@ -15,24 +15,14 @@ public class GravityTest {
     public void applyGravity(Character character, float deltaTime) {
         Vector2 position = character.getPosition();
         Vector2 velocity = character.getVelocity();
-        Rectangle gravityHitbox = character.getGravityHitbox();
-
-
+        Rectangle gravityHitbox = character.getBounds();
         gravityHitbox.setPosition(position.x, position.y);
-
-
         if (!character.isOnGround()) {
             velocity.y += gravity * deltaTime;
         }
-
-
         position.y += velocity.y * deltaTime;
         character.setOnGround(false);
-
-
         gravityHitbox.setPosition(position.x, position.y);
-
-
         for (Rectangle ground : groundObjects) {
             if (gravityHitbox.overlaps(ground)) {
                 position.y = ground.y + ground.height;
@@ -41,16 +31,11 @@ public class GravityTest {
                 break;
             }
         }
-
-
         if (position.y < 0) {
             position.y = 0;
             velocity.y = 0;
             character.setOnGround(true);
         }
-
-
         character.setPosition(position);
     }
-
 }
