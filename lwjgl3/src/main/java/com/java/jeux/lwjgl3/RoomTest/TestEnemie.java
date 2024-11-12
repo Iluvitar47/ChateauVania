@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.utils.Array;
 
@@ -22,6 +23,7 @@ public class TestEnemie extends Character {
     private final float repopTime = 5f;
     private final float preRepopTime = 2f;
     private SpriteResourceManager spriteManager;
+    private Pixmap currentPixmap;
 
     public TestEnemie(float startX, float startY) {
         super(startX, startY);
@@ -34,12 +36,30 @@ public class TestEnemie extends Character {
         Map<String, Integer> animations = new HashMap<>();
         animations.put("Idle", 7);
         animations.put("Dead", 3);
+
+
         spriteManager.loadSprites(directory, animations, "single");
         Array<TextureRegion> idleFrames = spriteManager.getAnimation(directory, "Idle");
         Array<TextureRegion> deadFrames = spriteManager.getAnimation(directory, "Dead");
+
         idleAnimation = new Animation<>(0.1f, idleFrames);
         deadAnimation = new Animation<>(0.2f, deadFrames);
+
+
         deathSound = Gdx.audio.newSound(Gdx.files.internal("assets/deathSound.mp3"));
+
+
+        currentPixmap = preparePixmap();
+        float[] dimensions = spriteManager.calculateFrameDimensions(idleAnimation.getKeyFrame(0), currentPixmap);
+        spriteWidth = dimensions[0];
+        spriteHeight = dimensions[1];
+        hitboxOffsetX = dimensions[2];
+    }
+
+    private Pixmap preparePixmap() {
+        TextureRegion firstFrame = idleAnimation.getKeyFrame(0);
+        firstFrame.getTexture().getTextureData().prepare();
+        return firstFrame.getTexture().getTextureData().consumePixmap();
     }
 
     @Override
@@ -107,6 +127,9 @@ public class TestEnemie extends Character {
     public void dispose() {
         spriteManager.dispose();
         deathSound.dispose();
+        if (currentPixmap != null) {
+            currentPixmap.dispose();
+        }
     }
 
     @Override
