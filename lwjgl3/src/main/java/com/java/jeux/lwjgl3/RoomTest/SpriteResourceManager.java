@@ -1,8 +1,10 @@
 package com.java.jeux.lwjgl3.RoomTest;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.utils.Array;
 
 import java.io.File;
@@ -86,6 +88,45 @@ public class SpriteResourceManager {
             return animations.getOrDefault(animationType, new Array<>());
         }
         return new Array<>();
+    }
+
+    /**
+     * Calcule les dimensions de la frame pour déterminer la taille et l'offset de la hitbox.
+     * @param frame La frame de l'animation.
+     * @param pixmap Le pixmap de la texture.
+     * @return Un tableau contenant la largeur, la hauteur et l'offset en X.
+     */
+    public float[] calculateFrameDimensions(TextureRegion frame, Pixmap pixmap) {
+        int minX = frame.getRegionWidth();
+        int minY = frame.getRegionHeight();
+        int maxX = 0;
+        int maxY = 0;
+
+        for (int x = 0; x < frame.getRegionWidth(); x++) {
+            for (int y = 0; y < frame.getRegionHeight(); y++) {
+                int pixel = pixmap.getPixel(frame.getRegionX() + x, frame.getRegionY() + y);
+                if ((pixel & 0x000000ff) != 0) {
+                    minX = Math.min(minX, x);
+                    maxX = Math.max(maxX, x);
+                    minY = Math.min(minY, y);
+                    maxY = Math.max(maxY, y);
+                }
+            }
+        }
+
+        float width, height, offsetX;
+
+        if (minX < maxX && minY < maxY) {
+            width = maxX - minX;
+            height = maxY - minY;
+            offsetX = (maxX + minX) / 2.0f;
+        } else {
+            width = frame.getRegionWidth();
+            height = frame.getRegionHeight();
+            offsetX = frame.getRegionWidth() / 2.0f;
+        }
+
+        return new float[]{width, height, offsetX};
     }
 
     public void dispose() {
