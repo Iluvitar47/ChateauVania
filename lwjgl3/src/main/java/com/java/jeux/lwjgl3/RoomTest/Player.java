@@ -28,28 +28,20 @@ public class Player extends Character {
     @Override
     public void create() {
         batch = new SpriteBatch();
-
-        // Charger les animations depuis le dossier de ressources
         String directory = "assets/Characters/Gorgon_1";
         Map<String, Integer> animations = new HashMap<>();
         animations.put("Idle", 7);
         animations.put("Walk", 13);
         animations.put("Attack", 10);
-
-        // Charger les animations en utilisant la méthode de découpe
         spriteManager.loadSprites(directory, animations, "single");
-
-        // Initialiser les animations
         idleAnimation = new Animation<>(0.1f, spriteManager.getAnimation(directory, "Idle"));
         walkAnimation = new Animation<>(0.1f, spriteManager.getAnimation(directory, "Walk"));
         attackAnimation = new Animation<>(0.1f, spriteManager.getAnimation(directory, "Attack"));
-
         currentAnimation = idleAnimation;
     }
 
     public void render(SpriteBatch batch) {
         TextureRegion currentFrame = currentAnimation.getKeyFrame(elapsedTime, true);
-
         if (facingRight) {
             batch.draw(currentFrame, position.x, position.y, currentFrame.getRegionWidth(), currentFrame.getRegionHeight());
         } else {
@@ -59,9 +51,7 @@ public class Player extends Character {
 
     public void update(float deltaTime) {
         elapsedTime += deltaTime;
-
         Animation<TextureRegion> newAnimation = currentAnimation;
-
         if (isAttacking) {
             attackElapsedTime += deltaTime;
             if (attackAnimation.isAnimationFinished(attackElapsedTime)) {
@@ -75,11 +65,9 @@ public class Player extends Character {
         } else {
             newAnimation = idleAnimation;
         }
-
         if (newAnimation != currentAnimation) {
             currentAnimation = newAnimation;
         }
-
         handleMovement(deltaTime);
     }
 

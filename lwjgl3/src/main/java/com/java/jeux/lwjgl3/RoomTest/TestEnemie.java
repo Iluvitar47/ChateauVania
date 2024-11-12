@@ -30,21 +30,15 @@ public class TestEnemie extends Character {
 
     @Override
     public void create() {
-        // Charger les animations depuis le dossier de ressources
-        String directory = "assets/Characters/Gorgon_1"; // Modifier le chemin si nécessaire
+        String directory = "assets/Characters/Gorgon_1";
         Map<String, Integer> animations = new HashMap<>();
-        animations.put("Idle", 7); // 7 frames pour l'animation "Idle"
-        animations.put("Dead", 3); // 3 frames pour l'animation "Dead"
-
-        // Utiliser la méthode de découpe pour charger les animations
+        animations.put("Idle", 7);
+        animations.put("Dead", 3);
         spriteManager.loadSprites(directory, animations, "single");
-
-        // Initialiser les animations
         Array<TextureRegion> idleFrames = spriteManager.getAnimation(directory, "Idle");
         Array<TextureRegion> deadFrames = spriteManager.getAnimation(directory, "Dead");
         idleAnimation = new Animation<>(0.1f, idleFrames);
         deadAnimation = new Animation<>(0.2f, deadFrames);
-
         deathSound = Gdx.audio.newSound(Gdx.files.internal("assets/deathSound.mp3"));
     }
 
@@ -111,12 +105,12 @@ public class TestEnemie extends Character {
 
     @Override
     public void dispose() {
-        spriteManager.dispose(); // Assure-toi de libérer les ressources du gestionnaire
+        spriteManager.dispose();
         deathSound.dispose();
     }
 
     @Override
     public boolean isFacingRight() {
-        return true; // Peut être ajusté selon les besoins
+        return true;
     }
 }
