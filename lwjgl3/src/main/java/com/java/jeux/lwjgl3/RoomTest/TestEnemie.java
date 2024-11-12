@@ -116,12 +116,7 @@ public class TestEnemie extends Character {
         elapsedTime = 0;
     }
 
-    @Override
-    public Rectangle getBounds() {
-        TextureRegion currentFrame = isDying ? deadAnimation.getKeyFrame(elapsedTime, false)
-            : idleAnimation.getKeyFrame(elapsedTime, true);
-        return new Rectangle(position.x, position.y, currentFrame.getRegionWidth(), currentFrame.getRegionHeight());
-    }
+
 
     @Override
     public void dispose() {
