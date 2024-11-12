@@ -31,8 +31,6 @@ public class RoomTestMapLoad {
         camera.setToOrtho(false, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         camera.position.set(camera.viewportWidth / 2, camera.viewportHeight / 2, 0);
         camera.update();
-
-        // Initialisation du ShapeRenderer
         shapeRenderer = new ShapeRenderer();
     }
 
@@ -40,16 +38,12 @@ public class RoomTestMapLoad {
         camera.update();
         mapRenderer.setView(camera);
         mapRenderer.render();
-
-        // Dessine les rectangles du calque "Sol" en rouge pour le débogage
         shapeRenderer.setProjectionMatrix(camera.combined);
         shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
         shapeRenderer.setColor(Color.RED);
-
         for (Rectangle rect : getGroundObjects()) {
             shapeRenderer.rect(rect.x, rect.y, rect.width, rect.height);
         }
-
         shapeRenderer.end();
     }
 
@@ -60,7 +54,7 @@ public class RoomTestMapLoad {
     public void dispose() {
         map.dispose();
         mapRenderer.dispose();
-        shapeRenderer.dispose(); // Libère les ressources du ShapeRenderer
+        shapeRenderer.dispose();
     }
 
     public int getMapWidth() {
