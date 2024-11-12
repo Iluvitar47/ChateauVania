@@ -56,6 +56,20 @@ public class RoomTest extends ApplicationAdapter {
 
         shapeRenderer.setProjectionMatrix(camera.combined);
 
+        // Dessiner les hitboxes des objets
+        shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
+        shapeRenderer.setColor(Color.GREEN);
+        Rectangle playerBounds = player.getBounds();
+        shapeRenderer.rect(playerBounds.x, playerBounds.y, playerBounds.width, playerBounds.height);
+
+        shapeRenderer.setColor(Color.BLUE);
+        Rectangle enemyBounds = enemy.getBounds();
+        if (!enemy.isDead()) {
+            shapeRenderer.rect(enemyBounds.x, enemyBounds.y, enemyBounds.width, enemyBounds.height);
+        }
+        shapeRenderer.end();
+
+        // Dessiner les hitboxes du sol (existant)
         shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
         shapeRenderer.setColor(Color.RED);
         for (Rectangle ground : roomTestMapLoad.getGroundObjects()) {
@@ -71,8 +85,8 @@ public class RoomTest extends ApplicationAdapter {
 
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
-        player.render(batch );
-        enemy.render(batch );
+        player.render(batch);
+        enemy.render(batch);
         batch.end();
     }
 
