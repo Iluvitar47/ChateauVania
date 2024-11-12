@@ -5,6 +5,7 @@ buildscript {
   }
   dependencies {
     classpath "io.github.fourlastor:construo:1.4.2"
+
     if(enableGraalNative == 'true') {
       classpath "org.graalvm.buildtools.native:org.graalvm.buildtools.native.gradle.plugin:0.9.28"
     }
@@ -12,7 +13,13 @@ buildscript {
 }
 plugins {
   id "application"
+  id 'jacoco'
 }
+
+jacoco {
+    toolVersion = "0.8.7"
+}
+
 apply plugin: 'io.github.fourlastor.construo'
 
 
@@ -31,6 +38,8 @@ if (JavaVersion.current().isJava9Compatible()) {
 dependencies {
   implementation "com.badlogicgames.gdx:gdx-backend-lwjgl3:$gdxVersion"
   implementation "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
+  testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+  testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
   implementation project(':core')
 
   if(enableGraalNative == 'true') {
@@ -130,4 +139,20 @@ startScripts.classpath = project.tasks.jar.outputs.files
 
 if(enableGraalNative == 'true') {
   apply from: file("nativeimage.gradle")
+}
+
+test {
+  reports {
+    html.required.set(true)
+    junitXml.required.set(true)
+  }
+  useJUnitPlatform()
+  finalizedBy jacocoTestReport
+}
+
+jacocoTestReport {
+    reports {
+        xml.required = true
+        html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
+    }
 }
