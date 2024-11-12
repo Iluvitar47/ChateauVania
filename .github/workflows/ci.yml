@@ -28,6 +28,9 @@ jobs:
       - name: Run tests
         run: ./run_tests.sh
 
+      - - name: List files in Jacoco reports directory
+        run: ls -R build/reports/jacoco/test/
+
       - name: Upload Jacoco report
         uses: actions/upload-artifact@v3
         with:
