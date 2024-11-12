@@ -7,6 +7,8 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.math.Vector2;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 
 public class RoomTest extends ApplicationAdapter {
     private SpriteBatch batch;
@@ -15,16 +17,20 @@ public class RoomTest extends ApplicationAdapter {
     private RoomTestMapLoad roomTestMapLoad;
     private ShapeRenderer shapeRenderer;
     private GravityTest gravityTest;
+    private CameraController cameraController;
+    private OrthographicCamera camera;
 
     @Override
     public void create() {
-
         roomTestMapLoad = new RoomTestMapLoad();
         roomTestMapLoad.create();
 
+        camera = roomTestMapLoad.getCamera();
+        cameraController = new CameraController(camera, roomTestMapLoad.getMapWidth(), roomTestMapLoad.getMapHeight());
+        cameraController.setZoom(0.5f);
+
         batch = new SpriteBatch();
         shapeRenderer = new ShapeRenderer();
-
 
         player = new Player(200, 36);
         player.create();
@@ -41,15 +47,14 @@ public class RoomTest extends ApplicationAdapter {
         gravityTest.applyGravity(player, deltaTime);
         gravityTest.applyGravity(enemy, deltaTime);
 
+        cameraController.update(new Vector2(player.getX(), player.getY()), Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
-
         roomTestMapLoad.render();
 
-
-        shapeRenderer.setProjectionMatrix(roomTestMapLoad.getCamera().combined);
-
+        shapeRenderer.setProjectionMatrix(camera.combined);
 
         shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
         shapeRenderer.setColor(Color.RED);
@@ -58,14 +63,11 @@ public class RoomTest extends ApplicationAdapter {
         }
         shapeRenderer.end();
 
-
         shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
         shapeRenderer.setColor(Color.YELLOW);
         Rectangle gravityHitbox = player.getGravityHitbox();
         shapeRenderer.rect(gravityHitbox.x, gravityHitbox.y, gravityHitbox.width, gravityHitbox.height);
         shapeRenderer.end();
-
-
 
         player.update(deltaTime);
         enemy.update(deltaTime);
@@ -73,17 +75,16 @@ public class RoomTest extends ApplicationAdapter {
             checkCollision();
         }
 
-
+        batch.setProjectionMatrix(camera.combined);
         batch.begin();
         player.render(batch);
         enemy.render(batch);
         batch.end();
     }
 
-        private void checkCollision() {
+    private void checkCollision() {
         Rectangle playerBounds = player.getBounds();
         Rectangle enemyBounds = enemy.getBounds();
-
 
         if (player.isAttacking() && playerBounds.overlaps(enemyBounds)) {
             enemy.die();

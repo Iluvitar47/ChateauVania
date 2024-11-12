@@ -154,4 +154,12 @@ public class Player extends Character {
         walkPixmap.dispose();
         attackPixmap.dispose();
     }
+
+    public float getX() {
+        return this.position.x;
+    }
+
+    public float getY() {
+        return this.position.y;
+    }
 }
