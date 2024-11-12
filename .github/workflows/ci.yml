@@ -28,8 +28,7 @@ jobs:
         run: ./run_tests.sh
 
       - name: Upload Jacoco report
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: jacoco-report
           path: build/reports/jacoco/test/html
-          
