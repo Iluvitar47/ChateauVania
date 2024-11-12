@@ -26,7 +26,7 @@ repositories {
 }
 
 jacoco {
-    toolVersion = "0.8.8"
+    toolVersion = "0.8.7"
 }
 
 apply plugin: 'io.github.fourlastor.construo'
@@ -160,8 +160,9 @@ test {
 }
 
 jacocoTestReport {
+    dependsOn test
     reports {
-        xml.required = true
-        html.outputLocation = layout.buildDirectory.dir('jacocoHtml')
+        xml.required.set(true)
+        html.required.set(true)
     }
 }
