@@ -63,12 +63,6 @@ public class RoomTest extends ApplicationAdapter {
         }
         shapeRenderer.end();
 
-        shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
-        shapeRenderer.setColor(Color.YELLOW);
-        Rectangle gravityHitbox = player.getGravityHitbox();
-        shapeRenderer.rect(gravityHitbox.x, gravityHitbox.y, gravityHitbox.width, gravityHitbox.height);
-        shapeRenderer.end();
-
         player.update(deltaTime);
         enemy.update(deltaTime);
         if (!enemy.isDead()) {
@@ -77,8 +71,8 @@ public class RoomTest extends ApplicationAdapter {
 
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
-        player.render(batch);
-        enemy.render(batch);
+        player.render(batch );
+        enemy.render(batch );
         batch.end();
     }
 
