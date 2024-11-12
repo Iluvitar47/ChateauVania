@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.Pixmap;
+import com.badlogic.gdx.math.Rectangle;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -146,6 +147,23 @@ public class Player extends Character {
         if (currentPixmap != null) {
             currentPixmap.dispose();
         }
+    }
+
+    @Override
+    public Rectangle getBounds() {
+        if (facingRight && !isAttacking) {
+            return new Rectangle(position.x + hitboxOffsetX / 2 + 18, position.y, getWidth() - 28, getHeight() + 6);
+        }
+        if (!facingRight && !isAttacking) {
+            return new Rectangle(position.x + hitboxOffsetX / 2 + 24, position.y, getWidth() - 28, getHeight() + 6);
+        }
+        if (isAttacking && facingRight) {
+            return new Rectangle(position.x + hitboxOffsetX / 2 + 24, position.y, getWidth(), getHeight() + 6);
+        }
+        if (isAttacking && !facingRight) {
+            return new Rectangle(position.x + hitboxOffsetX / 2 + 24, position.y, getWidth(), getHeight() + 20);
+        }
+        return null;
     }
 
     public float getX() {
