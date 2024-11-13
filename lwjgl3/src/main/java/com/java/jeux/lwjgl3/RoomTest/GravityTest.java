@@ -16,7 +16,6 @@ public class GravityTest {
         Vector2 position = character.getPosition();
         Vector2 velocity = character.getVelocity();
 
-        // Utiliser directement getHitBox() sans réajuster manuellement la position
         Rectangle characterBounds = character.getHitBox();
 
         if (!character.isOnGround()) {
@@ -26,12 +25,12 @@ public class GravityTest {
         position.y += velocity.y * deltaTime;
         character.setOnGround(false);
 
-        // Mettre à jour la position de la hitbox après le déplacement
-        characterBounds = character.getHitBox(); // Récupérer la hitbox mise à jour
+
+        characterBounds = character.getHitBox();
 
         for (Rectangle ground : groundObjects) {
             if (characterBounds.overlaps(ground)) {
-                // Ajuster la position pour que le personnage se pose correctement sur le sol
+
                 position.y = ground.y + ground.height;
                 velocity.y = 0;
                 character.setOnGround(true);
