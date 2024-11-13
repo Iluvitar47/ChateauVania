@@ -150,24 +150,24 @@ public class Player extends Character {
     }
 
     @Override
-    public Rectangle getBounds() {
+    public Rectangle getHitBox() {
         if (facingRight && !isAttacking) {
-            return new Rectangle(position.x + hitboxOffsetX / 2 + 18, position.y, getWidth() - 28, getHeight() + 6);
+            return new Rectangle(position.x + hitboxOffsetX / 2 + 18, position.y, spriteWidth - 28, spriteHeight);
         }
         if (!facingRight && !isAttacking) {
-            return new Rectangle(position.x + hitboxOffsetX / 2 + 24, position.y, getWidth() - 28, getHeight() + 6);
+            return new Rectangle(position.x + hitboxOffsetX / 2 + 24, position.y, spriteWidth -28, spriteHeight);
         }
         if (isAttacking && facingRight) {
-            return new Rectangle(position.x + hitboxOffsetX / 2 + 24, position.y, getWidth(), getHeight() + 6);
+            return new Rectangle(position.x + hitboxOffsetX / 2 + 24, position.y, spriteWidth, spriteHeight);
         }
         if (isAttacking && !facingRight) {
-            return new Rectangle(position.x + hitboxOffsetX / 2 + 24, position.y, getWidth(), getHeight() + 20);
+            return new Rectangle(position.x + hitboxOffsetX / 2 + 24, position.y, spriteWidth, spriteHeight);
         }
         return null;
     }
 
     public float getX() {
-        return this.position.x;
+        return this.position.x + hitboxOffsetX / 2;
     }
 
     public float getY() {

@@ -56,20 +56,18 @@ public class RoomTest extends ApplicationAdapter {
 
         shapeRenderer.setProjectionMatrix(camera.combined);
 
-        // Dessiner les hitboxes des objets
         shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
         shapeRenderer.setColor(Color.GREEN);
-        Rectangle playerBounds = player.getBounds();
+        Rectangle playerBounds = player.getHitBox();
         shapeRenderer.rect(playerBounds.x, playerBounds.y, playerBounds.width, playerBounds.height);
 
         shapeRenderer.setColor(Color.BLUE);
-        Rectangle enemyBounds = enemy.getBounds();
+        Rectangle enemyBounds = enemy.getHitBox();
         if (!enemy.isDead()) {
             shapeRenderer.rect(enemyBounds.x, enemyBounds.y, enemyBounds.width, enemyBounds.height);
         }
         shapeRenderer.end();
 
-        // Dessiner les hitboxes du sol (existant)
         shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
         shapeRenderer.setColor(Color.RED);
         for (Rectangle ground : roomTestMapLoad.getGroundObjects()) {
@@ -91,8 +89,8 @@ public class RoomTest extends ApplicationAdapter {
     }
 
     private void checkCollision() {
-        Rectangle playerBounds = player.getBounds();
-        Rectangle enemyBounds = enemy.getBounds();
+        Rectangle playerBounds = player.getHitBox();
+        Rectangle enemyBounds = enemy.getHitBox();
 
         if (player.isAttacking() && playerBounds.overlaps(enemyBounds)) {
             enemy.die();

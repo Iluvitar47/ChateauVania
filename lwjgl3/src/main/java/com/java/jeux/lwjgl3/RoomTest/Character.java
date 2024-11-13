@@ -9,7 +9,6 @@ public abstract class Character {
     protected boolean onGround = false;
     protected float elapsedTime = 0f;
     public boolean isDead = false;
-    private Rectangle gravityHitbox;
     protected float hitboxOffsetX = 0;
     protected float spriteWidth;
     protected float spriteHeight;
@@ -24,9 +23,7 @@ public abstract class Character {
     public abstract void dispose();
     public abstract boolean isFacingRight();
 
-    public Rectangle getBounds() {
-        return new Rectangle(position.x, position.y, getWidth(), getHeight());
-    }
+    public abstract Rectangle getHitBox();
 
     public float getWidth() {
         return spriteWidth;

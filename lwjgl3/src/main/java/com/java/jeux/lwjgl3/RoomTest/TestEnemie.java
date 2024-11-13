@@ -116,7 +116,10 @@ public class TestEnemie extends Character {
         elapsedTime = 0;
     }
 
-
+    @Override
+    public Rectangle getHitBox() {
+        return new Rectangle(position.x + hitboxOffsetX, position.y, spriteWidth, spriteHeight);
+    }
 
     @Override
     public void dispose() {
