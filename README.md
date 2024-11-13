@@ -1,3 +1,7 @@
+![Coverage](https://codecov.io/gh/MatGuignet/nom_du_projet/branch/dev/graph/badge.svg?token=bc4c5112-e943-4277-a815-0cea3f404cd5)
+
+
+
 # ProjetJava
 
 A [libGDX](https://libgdx.com/) project generated with [gdx-liftoff](https://github.com/libgdx/gdx-liftoff).

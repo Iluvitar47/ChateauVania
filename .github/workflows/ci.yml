@@ -55,5 +55,5 @@ jobs:
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
         with:
-          files: ./build/reports/jacoco/test/jacocoTestReport.xml
+          files: ./build/reports/jacoco/test/html
           token: bc4c5112-e943-4277-a815-0cea3f404cd5
