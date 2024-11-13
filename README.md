@@ -1,4 +1,5 @@
-![Coverage](https://codecov.io/gh/MatGuignet/nom_du_projet/branch/dev/graph/badge.svg?token=bc4c5112-e943-4277-a815-0cea3f404cd5)
+Retrouvez l'intégralité du contenu des tests dans le dossier suivant en ouvrant dans le navigateur le fichier suivant:
+lwjgl3/build/reports/jacoco/test/html/index.html
 
 
 
