@@ -22,6 +22,7 @@ public class RoomTestLevel extends ApplicationAdapter {
     private CameraController cameraController;
     private OrthographicCamera camera;
     private MapsBordersManager mapsBordersManager;
+    private Jump Jump;
 
     @Override
     public void create() {
@@ -101,6 +102,7 @@ public class RoomTestLevel extends ApplicationAdapter {
         player.render(batch);
         enemy.render(batch);
         batch.end();
+
     }
 
     private void checkCollision() {

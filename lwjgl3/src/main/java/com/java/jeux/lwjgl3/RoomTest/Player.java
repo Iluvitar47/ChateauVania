@@ -21,6 +21,7 @@ public class Player extends Character {
     public boolean facingRight = true, isWalking = false, isAttacking = false;
     private SpriteResourceManager spriteManager;
     private Pixmap currentPixmap;
+    private Jump jump = new Jump(200, 500, 600);
 
     public Player(float startX, float startY) {
         super(startX, startY);
@@ -78,6 +79,7 @@ public class Player extends Character {
     public void update(float deltaTime) {
         elapsedTime += deltaTime;
         Animation<TextureRegion> newAnimation = currentAnimation;
+        jump.updateJump(this, deltaTime);
         if (isAttacking) {
             attackElapsedTime += deltaTime;
             if (attackAnimation.isAnimationFinished(attackElapsedTime)) {
@@ -102,21 +104,27 @@ public class Player extends Character {
     private void handleMovement(float deltaTime) {
         if (!isAttacking) {
             isWalking = false;
-            if (Gdx.input.isKeyPressed(Input.Keys.Q) || Gdx.input.isKeyPressed(Input.Keys.A)) {
-                position.x -= speed * deltaTime;
-                facingRight = false;
-                isWalking = true;
-            }
-            if (Gdx.input.isKeyPressed(Input.Keys.D)) {
-                position.x += speed * deltaTime;
-                facingRight = true;
-                isWalking = true;
+            if (!jump.isDirectionLocked()) {
+
+                if (Gdx.input.isKeyPressed(Input.Keys.Q) || Gdx.input.isKeyPressed(Input.Keys.A)) {
+                    position.x -= speed * deltaTime;
+                    facingRight = false;
+                    isWalking = true;
+                }
+                if (Gdx.input.isKeyPressed(Input.Keys.D)) {
+                    position.x += speed * deltaTime;
+                    facingRight = true;
+                    isWalking = true;
+                }
             }
 
             if (Gdx.input.isKeyJustPressed(Input.Keys.E)) {
                 isAttacking = true;
                 attackElapsedTime = 0;
                 elapsedTime = 0;
+            }
+            if (Gdx.input.isKeyJustPressed(Input.Keys.SPACE)) {
+                jump.startJump(this);
             }
         }
     }

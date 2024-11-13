@@ -6,7 +6,7 @@ import com.badlogic.gdx.math.Vector2;
 public abstract class Character {
     protected Vector2 position;
     protected Vector2 velocity = new Vector2(0, 0);
-    protected boolean onGround = false;
+    protected boolean onGround;
     protected float elapsedTime = 0f;
     public boolean isDead = false;
     protected float hitboxOffsetX = 0;
@@ -55,6 +55,10 @@ public abstract class Character {
 
     public boolean isDead() {
         return isDead;
+    }
+
+    public boolean isFalling() {
+        return velocity.y < 0 && !onGround;
     }
 
 }

@@ -15,28 +15,30 @@ public class GravityTest {
     public void applyGravity(Character character, float deltaTime) {
         Vector2 position = character.getPosition();
         Vector2 velocity = character.getVelocity();
-
         Rectangle characterBounds = character.getHitBox();
+        boolean onGroundDetected = false;
+        float tolerance = 1.0f; // Marge de tolérance pour la détection du sol
 
         if (!character.isOnGround()) {
             velocity.y += gravity * deltaTime;
         }
 
         position.y += velocity.y * deltaTime;
-        character.setOnGround(false);
-
-
-        characterBounds = character.getHitBox();
 
         for (Rectangle ground : groundObjects) {
-            if (characterBounds.overlaps(ground)) {
+            if (characterBounds.overlaps(ground) ||
+                (characterBounds.x + characterBounds.width > ground.x &&
+                    characterBounds.x < ground.x + ground.width &&
+                    Math.abs(characterBounds.y - (ground.y + ground.height)) <= tolerance)) {
 
                 position.y = ground.y + ground.height;
                 velocity.y = 0;
-                character.setOnGround(true);
+                onGroundDetected = true;
                 break;
             }
         }
+
+        character.setOnGround(onGroundDetected);
 
         if (position.y < 0) {
             position.y = 0;
@@ -46,4 +48,7 @@ public class GravityTest {
 
         character.setPosition(position);
     }
+
+
+
 }
