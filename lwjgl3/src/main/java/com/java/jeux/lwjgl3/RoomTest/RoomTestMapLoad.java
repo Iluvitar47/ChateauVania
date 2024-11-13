@@ -7,15 +7,17 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.maps.MapObject;
 import com.badlogic.gdx.maps.MapObjects;
 import com.badlogic.gdx.maps.objects.PolygonMapObject;
-import com.badlogic.gdx.maps.objects.RectangleMapObject;
 import com.badlogic.gdx.maps.tiled.TiledMap;
 import com.badlogic.gdx.maps.tiled.TmxMapLoader;
 import com.badlogic.gdx.maps.tiled.renderers.OrthogonalTiledMapRenderer;
 import com.badlogic.gdx.math.Polygon;
 import com.badlogic.gdx.math.Rectangle;
+import com.badlogic.gdx.utils.Array;
 
 import java.util.ArrayList;
 import java.util.List;
+
+
 
 public class RoomTestMapLoad {
     private TiledMap map;
@@ -84,5 +86,19 @@ public class RoomTestMapLoad {
             Gdx.app.log("MapTest", "platform layer not found");
         }
         return groundObjects;
+    }
+
+    public List<Rectangle> getBorders(String layerName) {
+        List<Rectangle> borderRectangles = new ArrayList<>();
+
+        for (MapObject object : map.getLayers().get(layerName).getObjects()) {
+            if (object instanceof PolygonMapObject) {
+                Polygon polygon = ((PolygonMapObject) object).getPolygon();
+                Rectangle boundingBox = polygon.getBoundingRectangle();
+                borderRectangles.add(boundingBox);
+            }
+        }
+
+        return borderRectangles;
     }
 }

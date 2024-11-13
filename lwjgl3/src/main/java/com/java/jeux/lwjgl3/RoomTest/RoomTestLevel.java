@@ -10,7 +10,9 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 
-public class RoomTest extends ApplicationAdapter {
+import java.util.List;
+
+public class RoomTestLevel extends ApplicationAdapter {
     private SpriteBatch batch;
     private Player player;
     private TestEnemie enemy;
@@ -19,6 +21,7 @@ public class RoomTest extends ApplicationAdapter {
     private GravityTest gravityTest;
     private CameraController cameraController;
     private OrthographicCamera camera;
+    private MapsBordersManager mapsBordersManager;
 
     @Override
     public void create() {
@@ -32,13 +35,20 @@ public class RoomTest extends ApplicationAdapter {
         batch = new SpriteBatch();
         shapeRenderer = new ShapeRenderer();
 
-        player = new Player(200, 36);
+        player = new Player(36, 36);
         player.create();
 
         enemy = new TestEnemie(800, 800);
         enemy.create();
 
         gravityTest = new GravityTest(roomTestMapLoad.getGroundObjects());
+
+
+        List<Rectangle> leftBorders = roomTestMapLoad.getBorders("BorderLeft");
+        List<Rectangle> upBorders = roomTestMapLoad.getBorders("BorderUp");
+        List<Rectangle> rightBorders = roomTestMapLoad.getBorders("BorderRight");
+
+        mapsBordersManager = new MapsBordersManager(leftBorders, upBorders, rightBorders);
     }
 
     @Override
@@ -46,6 +56,10 @@ public class RoomTest extends ApplicationAdapter {
         float deltaTime = Gdx.graphics.getDeltaTime();
         gravityTest.applyGravity(player, deltaTime);
         gravityTest.applyGravity(enemy, deltaTime);
+
+
+        mapsBordersManager.applyBorders(player);
+        mapsBordersManager.applyBorders(enemy);
 
         cameraController.update(new Vector2(player.getX(), player.getY()), Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 
@@ -55,6 +69,7 @@ public class RoomTest extends ApplicationAdapter {
         roomTestMapLoad.render();
 
         shapeRenderer.setProjectionMatrix(camera.combined);
+
 
         shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
         shapeRenderer.setColor(Color.GREEN);

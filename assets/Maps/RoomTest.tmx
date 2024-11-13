@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="100" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="3" nextobjectid="7">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="100" height="34" tilewidth="32" tileheight="32" infinite="0" nextlayerid="8" nextobjectid="16">
  <tileset firstgid="1" name="CastleTile" tilewidth="32" tileheight="38" tilecount="157" columns="0">
   <grid orientation="orthogonal" width="1" height="1"/>
   <tile id="0">
@@ -527,6 +527,21 @@
   </object>
   <object id="6" x="1600" y="1061.82">
    <polygon points="0,0 1600,0 1600,26.1818 0,26.1818"/>
+  </object>
+ </objectgroup>
+ <objectgroup id="5" name="BorderLeft">
+  <object id="13" x="0" y="0">
+   <polygon points="0,0 0,1088 -96,1088 -96,0"/>
+  </object>
+ </objectgroup>
+ <objectgroup id="6" name="BorderUp">
+  <object id="14" x="-96" y="0">
+   <polygon points="0,0 3424,0 3424,-128 0,-128"/>
+  </object>
+ </objectgroup>
+ <objectgroup id="7" name="BorderRight">
+  <object id="15" x="3200" y="0">
+   <polygon points="0,0 128,0 128,1088 0,1088"/>
   </object>
  </objectgroup>
 </map>

@@ -1,7 +1,6 @@
 package com.java.jeux.lwjgl3;
 
-import com.java.jeux.lwjgl3.GameTest.GameTest;
-import com.java.jeux.lwjgl3.RoomTest.RoomTest;
+import com.java.jeux.lwjgl3.RoomTest.RoomTestLevel;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
 
@@ -13,7 +12,7 @@ public class Lwjgl3Launcher {
     }
 
     private static Lwjgl3Application createApplication() {
-        return new Lwjgl3Application(new RoomTest(), getDefaultConfiguration());
+        return new Lwjgl3Application(new RoomTestLevel(), getDefaultConfiguration());
     }
 
     private static Lwjgl3ApplicationConfiguration getDefaultConfiguration() {
