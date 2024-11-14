@@ -23,11 +23,15 @@ public class RoomTestLevel extends ApplicationAdapter {
     private CameraController cameraController;
     private OrthographicCamera camera;
     private MapsBordersManager mapsBordersManager;
+    private SolidObjectsManager solidObjectsManager;
 
     @Override
     public void create() {
         roomTestMapLoad = new RoomTestMapLoad();
         roomTestMapLoad.create();
+
+        List<Rectangle> solidObjects = roomTestMapLoad.getSolidObjects();
+        solidObjectsManager = new SolidObjectsManager(solidObjects);
 
         camera = roomTestMapLoad.getCamera();
         cameraController = new CameraController(camera, roomTestMapLoad.getMapWidth(), roomTestMapLoad.getMapHeight());
@@ -67,10 +71,11 @@ public class RoomTestLevel extends ApplicationAdapter {
     public void render() {
         float deltaTime = Gdx.graphics.getDeltaTime();
 
-
+        solidObjectsManager.applyCollision(player);
         gravityTest.applyGravity(player, deltaTime);
         for (Ennemies enemy : enemies) {
             gravityTest.applyGravity(enemy, deltaTime);
+            solidObjectsManager.applyCollision(enemy);
         }
 
         mapsBordersManager.applyBorders(player);
@@ -86,6 +91,13 @@ public class RoomTestLevel extends ApplicationAdapter {
         roomTestMapLoad.render();
 
         shapeRenderer.setProjectionMatrix(camera.combined);
+
+        shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
+        shapeRenderer.setColor(Color.BLUE);
+        for (Rectangle rect : roomTestMapLoad.getSolidObjects()) {
+            shapeRenderer.rect(rect.x, rect.y, rect.width, rect.height);
+        }
+        shapeRenderer.end();
 
         shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
         shapeRenderer.setColor(Color.GREEN);

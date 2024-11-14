@@ -21,7 +21,7 @@ public class Player extends Character {
     public boolean facingRight = true, isWalking = false, isAttacking = false;
     private SpriteResourceManager spriteManager;
     private Pixmap currentPixmap;
-    private Jump jump = new Jump(200, 500, 600);
+    private Jump jump = new Jump(150, 500, 600);
 
     public Player(float startX, float startY) {
         super(startX, startY);

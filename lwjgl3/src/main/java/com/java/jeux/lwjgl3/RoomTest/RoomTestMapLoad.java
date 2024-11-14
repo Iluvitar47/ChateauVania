@@ -101,4 +101,22 @@ public class RoomTestMapLoad {
 
         return borderRectangles;
     }
+
+    public List<Rectangle> getSolidObjects() {
+        List<Rectangle> solidObjects = new ArrayList<>();
+        if (map.getLayers().get("SolidObjects") != null) {
+            MapObjects objects = map.getLayers().get("SolidObjects").getObjects();
+            for (MapObject object : objects) {
+                if (object instanceof PolygonMapObject) {
+                    Polygon polygon = ((PolygonMapObject) object).getPolygon();
+                    Rectangle boundingRectangle = polygon.getBoundingRectangle();
+                    solidObjects.add(boundingRectangle);
+                }
+            }
+        } else {
+            Gdx.app.log("MapTest", "SolidObjects layer not found");
+        }
+        return solidObjects;
+    }
+
 }
