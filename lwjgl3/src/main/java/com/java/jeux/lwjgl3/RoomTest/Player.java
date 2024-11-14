@@ -34,14 +34,14 @@ public class Player extends Character {
         batch = new SpriteBatch();
 
 
-        String directory = "assets/Characters/Gorgon_1";
+        String directory = "assets/Characters/Hero";
         Map<String, Integer> animations = new HashMap<>();
-        animations.put("Idle", 7);
-        animations.put("Walk", 13);
-        animations.put("Attack", 10);
+        animations.put("Idle", 8);
+        animations.put("Walk", 10);
+        animations.put("Attack", 6);
 
 
-        spriteManager.loadSprites(directory, animations, "single");
+        spriteManager.loadSprites(directory, animations, "folder");
 
 
         idleAnimation = new Animation<>(0.1f, spriteManager.getAnimation(directory, "Idle"));
