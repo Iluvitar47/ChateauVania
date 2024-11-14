@@ -17,11 +17,12 @@ public class Player extends Character {
     private Animation<TextureRegion> currentAnimation;
     private float elapsedTime = 0f, attackElapsedTime = 0f;
     private final float speed = 100f;
-    private final float attackDuration = 0.5f;
     public boolean facingRight = true, isWalking = false, isAttacking = false;
     private SpriteResourceManager spriteManager;
     private Pixmap currentPixmap;
     private Jump jump = new Jump(200, 500, 600);
+
+
 
     public Player(float startX, float startY) {
         super(startX, startY);

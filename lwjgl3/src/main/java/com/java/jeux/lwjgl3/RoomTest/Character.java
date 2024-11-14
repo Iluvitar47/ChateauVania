@@ -56,9 +56,4 @@ public abstract class Character {
     public boolean isDead() {
         return isDead;
     }
-
-    public boolean isFalling() {
-        return velocity.y < 0 && !onGround;
-    }
-
 }

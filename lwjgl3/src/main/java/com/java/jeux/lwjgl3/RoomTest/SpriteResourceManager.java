@@ -14,6 +14,7 @@ import java.util.Map;
 public class SpriteResourceManager {
     private Map<String, Map<String, Array<TextureRegion>>> spriteResources;
 
+    // Constructeur de la classe SpriteResourceManager pour initialiser la "map" des ressources
     public SpriteResourceManager() {
         spriteResources = new HashMap<>();
     }

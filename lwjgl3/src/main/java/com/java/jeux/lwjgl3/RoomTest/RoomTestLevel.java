@@ -22,7 +22,6 @@ public class RoomTestLevel extends ApplicationAdapter {
     private CameraController cameraController;
     private OrthographicCamera camera;
     private MapsBordersManager mapsBordersManager;
-    private Jump Jump;
 
     @Override
     public void create() {
