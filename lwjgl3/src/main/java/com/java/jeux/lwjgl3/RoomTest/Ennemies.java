@@ -13,53 +13,17 @@ import com.badlogic.gdx.utils.Array;
 import java.util.HashMap;
 import java.util.Map;
 
-public class TestEnemie extends Character {
-    private Animation<TextureRegion> idleAnimation;
-    private Animation<TextureRegion> deadAnimation;
-    private Sound deathSound;
-    public boolean isDead = false;
-    private boolean isDying = false;
-    private float deathTimer = 0f;
-    private final float repopTime = 5f;
-    private final float preRepopTime = 2f;
-    private SpriteResourceManager spriteManager;
-    private Pixmap currentPixmap;
+public abstract class Ennemies extends Character {
+    protected Animation<TextureRegion> idleAnimation;
+    protected Animation<TextureRegion> deadAnimation;
+    protected Sound deathSound;
+    protected boolean isDying = false;
+    protected float deathTimer = 0f;
+    protected final float repopTime = 5f;
+    protected final float preRepopTime = 2f;
 
-    public TestEnemie(float startX, float startY) {
+    public Ennemies(float startX, float startY) {
         super(startX, startY);
-        spriteManager = new SpriteResourceManager();
-    }
-
-    @Override
-    public void create() {
-        String directory = "assets/Characters/Gorgon_1";
-        Map<String, Integer> animations = new HashMap<>();
-        animations.put("Idle", 7);
-        animations.put("Dead", 3);
-
-
-        spriteManager.loadSprites(directory, animations, "single");
-        Array<TextureRegion> idleFrames = spriteManager.getAnimation(directory, "Idle");
-        Array<TextureRegion> deadFrames = spriteManager.getAnimation(directory, "Dead");
-
-        idleAnimation = new Animation<>(0.1f, idleFrames);
-        deadAnimation = new Animation<>(0.2f, deadFrames);
-
-
-        deathSound = Gdx.audio.newSound(Gdx.files.internal("assets/deathSound.mp3"));
-
-
-        currentPixmap = preparePixmap();
-        float[] dimensions = spriteManager.calculateFrameDimensions(idleAnimation.getKeyFrame(0), currentPixmap);
-        spriteWidth = dimensions[0];
-        spriteHeight = dimensions[1];
-        hitboxOffsetX = dimensions[2];
-    }
-
-    private Pixmap preparePixmap() {
-        TextureRegion firstFrame = idleAnimation.getKeyFrame(0);
-        firstFrame.getTexture().getTextureData().prepare();
-        return firstFrame.getTexture().getTextureData().consumePixmap();
     }
 
     @Override
@@ -106,7 +70,9 @@ public class TestEnemie extends Character {
         if (!isDying && !isDead) {
             isDying = true;
             elapsedTime = 0;
-            deathSound.play(0.1f);
+            if (deathSound != null) {
+                deathSound.play(0.1f);
+            }
         }
     }
 
@@ -119,19 +85,5 @@ public class TestEnemie extends Character {
     @Override
     public Rectangle getHitBox() {
         return new Rectangle(position.x + hitboxOffsetX, position.y, spriteWidth, spriteHeight);
-    }
-
-    @Override
-    public void dispose() {
-        spriteManager.dispose();
-        deathSound.dispose();
-        if (currentPixmap != null) {
-            currentPixmap.dispose();
-        }
-    }
-
-    @Override
-    public boolean isFacingRight() {
-        return true;
     }
 }

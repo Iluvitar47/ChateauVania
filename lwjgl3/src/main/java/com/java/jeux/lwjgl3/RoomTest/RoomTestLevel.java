@@ -15,7 +15,7 @@ import java.util.List;
 public class RoomTestLevel extends ApplicationAdapter {
     private SpriteBatch batch;
     private Player player;
-    private TestEnemie enemy;
+    private Gorgon_1 enemy;
     private RoomTestMapLoad roomTestMapLoad;
     private ShapeRenderer shapeRenderer;
     private GravityTest gravityTest;
@@ -38,7 +38,7 @@ public class RoomTestLevel extends ApplicationAdapter {
         player = new Player(36, 36);
         player.create();
 
-        enemy = new TestEnemie(800, 800);
+        enemy = new Gorgon_1(800, 800);
         enemy.create();
 
         gravityTest = new GravityTest(roomTestMapLoad.getGroundObjects());
