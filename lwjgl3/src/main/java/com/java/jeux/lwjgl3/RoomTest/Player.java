@@ -7,7 +7,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.math.Rectangle;
-
+import java.util.ArrayList;
+import java.util.List;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -22,8 +23,6 @@ public class Player extends Character {
     private Pixmap currentPixmap;
     private Jump jump = new Jump(200, 500, 600);
 
-
-
     public Player(float startX, float startY) {
         super(startX, startY);
         spriteManager = new SpriteResourceManager();
@@ -33,30 +32,23 @@ public class Player extends Character {
     public void create() {
         batch = new SpriteBatch();
 
-
         String directory = "assets/Characters/Hero";
         Map<String, Integer> animations = new HashMap<>();
         animations.put("Idle", 8);
         animations.put("Walk", 10);
         animations.put("Attack", 6);
 
-
         spriteManager.loadSprites(directory, animations, "folder");
-
-
         idleAnimation = new Animation<>(0.1f, spriteManager.getAnimation(directory, "Idle"));
         walkAnimation = new Animation<>(0.1f, spriteManager.getAnimation(directory, "Walk"));
         attackAnimation = new Animation<>(0.1f, spriteManager.getAnimation(directory, "Attack"));
         currentAnimation = idleAnimation;
-
 
         currentPixmap = preparePixmap();
         float[] dimensions = spriteManager.calculateFrameDimensions(idleAnimation.getKeyFrame(0), currentPixmap);
         spriteWidth = dimensions[0];
         spriteHeight = dimensions[1];
         hitboxOffsetX = dimensions[2];
-
-
     }
 
     private Pixmap preparePixmap() {
@@ -66,9 +58,7 @@ public class Player extends Character {
     }
 
     public void render(SpriteBatch batch) {
-
         TextureRegion currentFrame = currentAnimation.getKeyFrame(elapsedTime, true);
-
         if (facingRight) {
             batch.draw(currentFrame, position.x, position.y, currentFrame.getRegionWidth(), currentFrame.getRegionHeight());
         } else {
@@ -160,17 +150,11 @@ public class Player extends Character {
 
     @Override
     public Rectangle getHitBox() {
-        if (facingRight && !isAttacking) {
-            return new Rectangle(position.x + hitboxOffsetX / 2 + 18, position.y, spriteWidth - 28, spriteHeight);
+        if (facingRight) {
+            return new Rectangle(position.x + hitboxOffsetX / 2 + 15, position.y, spriteWidth-15, spriteHeight+4);
         }
-        if (!facingRight && !isAttacking) {
-            return new Rectangle(position.x + hitboxOffsetX / 2 + 24, position.y, spriteWidth -28, spriteHeight);
-        }
-        if (isAttacking && facingRight) {
-            return new Rectangle(position.x + hitboxOffsetX / 2 + 24, position.y, spriteWidth, spriteHeight);
-        }
-        if (isAttacking && !facingRight) {
-            return new Rectangle(position.x + hitboxOffsetX / 2 + 24, position.y, spriteWidth, spriteHeight);
+        if (!facingRight) {
+            return new Rectangle(position.x + hitboxOffsetX / 2 + 20, position.y, spriteWidth -15, spriteHeight+4);
         }
         return null;
     }
@@ -182,4 +166,36 @@ public class Player extends Character {
     public float getY() {
         return this.position.y;
     }
+
+    public List<Rectangle> getAttackBoxes() {
+        List<Rectangle> attackBoxes = new ArrayList<>();
+        Rectangle hitBox = getHitBox();
+
+        float attackBoxWidth = 35;
+        float attackBoxHeight = hitBox.height+5;
+
+
+        Rectangle leftAttackBox = new Rectangle(
+            hitBox.x - attackBoxWidth,
+            hitBox.y,
+            attackBoxWidth,
+            attackBoxHeight
+        );
+
+
+        Rectangle rightAttackBox = new Rectangle(
+            hitBox.x + hitBox.width,
+            hitBox.y,
+            attackBoxWidth,
+            attackBoxHeight
+        );
+
+
+        attackBoxes.add(leftAttackBox);
+        attackBoxes.add(rightAttackBox);
+
+        return attackBoxes;
+    }
+
+
 }
