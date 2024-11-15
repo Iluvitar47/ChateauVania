@@ -104,7 +104,6 @@ public class RoomTestLevel extends ApplicationAdapter {
         Rectangle playerBounds = player.getHitBox();
         shapeRenderer.rect(playerBounds.x, playerBounds.y, playerBounds.width, playerBounds.height);
 
-
         shapeRenderer.setColor(Color.BLUE);
         for (Ennemies enemy : enemies) {
             Rectangle enemyBounds = enemy.getHitBox();

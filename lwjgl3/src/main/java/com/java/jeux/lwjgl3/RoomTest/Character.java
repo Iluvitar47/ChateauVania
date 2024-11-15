@@ -3,6 +3,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
+import javax.swing.plaf.synth.SynthTextAreaUI;
+
 public abstract class Character {
     protected Vector2 position;
     protected Vector2 velocity = new Vector2(0, 0);
@@ -12,6 +14,7 @@ public abstract class Character {
     protected float hitboxOffsetX = 0;
     protected float spriteWidth;
     protected float spriteHeight;
+    protected boolean isColliding;
 
     public Character(float startX, float startY) {
         this.position = new Vector2(startX, startY);
@@ -56,4 +59,13 @@ public abstract class Character {
     public boolean isDead() {
         return isDead;
     }
+
+    public boolean isColliding() {
+        return isColliding;
+    }
+
+    public void setColliding(boolean colliding) {
+        this.isColliding = colliding;
+    }
+
 }

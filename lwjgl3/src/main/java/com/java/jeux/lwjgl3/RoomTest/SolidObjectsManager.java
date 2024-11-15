@@ -13,53 +13,51 @@ public class SolidObjectsManager {
     }
 
     public void applyCollision(Character character) {
+        boolean collisionDetected = false;
         Rectangle hitBox = character.getHitBox();
         for (Rectangle solid : solidObjects) {
             if (hitBox.overlaps(solid)) {
-
+                collisionDetected = true;
                 resolveCollision(character, solid);
+                break; // Quitte la boucle dès qu'une collision est trouvée
             }
         }
+        character.setColliding(collisionDetected);
     }
+
 
     private void resolveCollision(Character character, Rectangle solid) {
         Rectangle hitBox = character.getHitBox();
+        float spriteHeight = character.getHeight();
+        Vector2 velocity = character.getVelocity();
 
-        // Calcule les distances de chevauchement dans chaque direction
         float leftOverlap = hitBox.x + hitBox.width - solid.x;
         float rightOverlap = solid.x + solid.width - hitBox.x;
         float topOverlap = hitBox.y + hitBox.height - solid.y;
         float bottomOverlap = solid.y + solid.height - hitBox.y;
 
-        // Vérifie quelle distance est la plus petite pour déterminer la direction de la collision
         float minHorizontalOverlap = Math.min(Math.abs(leftOverlap), Math.abs(rightOverlap));
         float minVerticalOverlap = Math.min(Math.abs(topOverlap), Math.abs(bottomOverlap));
 
-        // Priorise l'axe vertical si le personnage est en train de tomber ou de sauter
         if (minVerticalOverlap < minHorizontalOverlap) {
-            if (character.getVelocity().y > 0 && Math.abs(topOverlap) < Math.abs(bottomOverlap)) {
-                // Collision venant du bas (le personnage monte)
-                character.setPosition(new Vector2(character.getPosition().x, solid.y));
-                character.getVelocity().y = 0;
-                System.out.println("Collision from top");
-            } else if (character.getVelocity().y <= 0 && Math.abs(bottomOverlap) < Math.abs(topOverlap)) {
+            if (Math.abs(bottomOverlap) < Math.abs(topOverlap)) {
                 character.setPosition(new Vector2(character.getPosition().x, solid.y + solid.height));
-                character.getVelocity().y = 0;
+                velocity.y = 0;
                 character.setOnGround(true);
-                System.out.println("Collision from bottom");
+            } else {
+                character.setPosition(new Vector2(character.getPosition().x, solid.y - spriteHeight));
+                velocity.y = 0;
             }
         } else {
             if (Math.abs(leftOverlap) < Math.abs(rightOverlap)) {
-                character.setPosition(new Vector2(solid.x -solid.width, character.getPosition().y));
-                character.getVelocity().x = 0;
-                System.out.println("Collision from left");
+                character.setPosition(new Vector2(character.getPosition().x + rightOverlap - character.spriteWidth*2, character.getPosition().y));
+                velocity.x = 0;
+                System.out.println("Collision à gauche");
+
             } else {
-                character.setPosition(new Vector2(solid.x +hitBox.width, character.getPosition().y));
-                character.getVelocity().x = 0;
-                System.out.println("Collision from right");
+                character.setPosition(new Vector2(solid.x-character.spriteWidth/2, character.getPosition().y));
+                velocity.x = 0;
             }
         }
     }
-
-
 }

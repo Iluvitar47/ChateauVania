@@ -33,14 +33,19 @@ public class Jump {
 
     public void updateJump(Character character, float deltaTime) {
         if (isJumping) {
+            if (character.isColliding()) {
+                isJumping = false;
+                currentHeight = 0;
+                directionLocked = false;
+                return;
+            }
+
             currentHeight += jumpSpeed * deltaTime;
             float newY = initialYPosition + currentHeight;
-
 
             Vector2 newPosition = character.getPosition();
             newPosition.y = newY;
             newPosition.x += (character.isFacingRight() ? 1 : -1) * horizontalSpeed * deltaTime;
-
 
             if (currentHeight >= maxJumpHeight) {
                 isJumping = false;
@@ -53,6 +58,7 @@ public class Jump {
         }
     }
 
+
     public boolean isJumping() {
         return isJumping;
     }
@@ -60,5 +66,8 @@ public class Jump {
     public boolean isDirectionLocked() {
         return directionLocked;
     }
+
+
+
 }
 

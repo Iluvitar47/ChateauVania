@@ -513,8 +513,8 @@
 </data>
  </layer>
  <objectgroup id="8" name="SolidObjects">
-  <object id="17" x="640" y="992">
-   <polygon points="0,0 64,0 64,-128 0,-128"/>
+  <object id="17" x="660.333" y="992">
+   <polygon points="0,0 23.333,0 23.333,-128 0,-128"/>
   </object>
  </objectgroup>
  <objectgroup id="2" name="platform">

@@ -21,7 +21,7 @@ public class Player extends Character {
     public boolean facingRight = true, isWalking = false, isAttacking = false;
     private SpriteResourceManager spriteManager;
     private Pixmap currentPixmap;
-    private Jump jump = new Jump(150, 500, 600);
+    private Jump jump = new Jump(150, 250, 300);
 
     public Player(float startX, float startY) {
         super(startX, startY);
@@ -46,8 +46,8 @@ public class Player extends Character {
 
         currentPixmap = preparePixmap();
         float[] dimensions = spriteManager.calculateFrameDimensions(idleAnimation.getKeyFrame(0), currentPixmap);
-        spriteWidth = dimensions[0];
-        spriteHeight = dimensions[1];
+        spriteWidth = dimensions[0] -15;
+        spriteHeight = dimensions[1] +4;
         hitboxOffsetX = dimensions[2];
     }
 
@@ -70,7 +70,7 @@ public class Player extends Character {
     public void update(float deltaTime) {
         elapsedTime += deltaTime;
         Animation<TextureRegion> newAnimation = currentAnimation;
-        jump.updateJump(this, deltaTime);
+        jump.updateJump(this, deltaTime );
         if (isAttacking) {
             attackElapsedTime += deltaTime;
             if (attackAnimation.isAnimationFinished(attackElapsedTime)) {
@@ -151,10 +151,10 @@ public class Player extends Character {
     @Override
     public Rectangle getHitBox() {
         if (facingRight) {
-            return new Rectangle(position.x + hitboxOffsetX / 2 + 15, position.y, spriteWidth-15, spriteHeight+4);
+            return new Rectangle(position.x + hitboxOffsetX / 2 + 15, position.y, spriteWidth, spriteHeight);
         }
         if (!facingRight) {
-            return new Rectangle(position.x + hitboxOffsetX / 2 + 20, position.y, spriteWidth -15, spriteHeight+4);
+            return new Rectangle(position.x + hitboxOffsetX / 2 + 20, position.y, spriteWidth, spriteHeight);
         }
         return null;
     }
