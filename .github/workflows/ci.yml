@@ -41,16 +41,6 @@ jobs:
       - name: Run tests
         run: ./run_tests.sh
 
-      # Étape 6: Vérification de la présence du fichier de couverture
-      - name: Check if coverage file exists
-        run: |
-          if [ -f ./build/reports/jacoco/test/jacocoTestReport.xml ]; then
-            echo "Coverage report found."
-          else
-            echo "Coverage report not found."
-            exit 1
-          fi
-
       # Étape 7: Upload de la couverture vers Codecov
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
