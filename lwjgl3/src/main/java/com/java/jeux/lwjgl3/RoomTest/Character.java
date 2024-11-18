@@ -68,4 +68,10 @@ public abstract class Character {
         this.isColliding = colliding;
     }
 
+    //il y a des écart entre la positions x et y des hitbox et des sprites; il faudrais les return pour pouvoir les utiliser dans les autres classes et les corriger
+
+    public float getWeightBetweenHitBoxAndSprite(){
+        return getHitBox().x - getPosition().x;
+    }
+
 }

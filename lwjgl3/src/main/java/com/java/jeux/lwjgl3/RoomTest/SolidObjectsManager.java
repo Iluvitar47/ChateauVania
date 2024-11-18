@@ -19,7 +19,7 @@ public class SolidObjectsManager {
             if (hitBox.overlaps(solid)) {
                 collisionDetected = true;
                 resolveCollision(character, solid);
-                break; // Quitte la boucle dès qu'une collision est trouvée
+                break;
             }
         }
         character.setColliding(collisionDetected);
@@ -44,19 +44,24 @@ public class SolidObjectsManager {
                 character.setPosition(new Vector2(character.getPosition().x, solid.y + solid.height));
                 velocity.y = 0;
                 character.setOnGround(true);
+                System.out.println("bottom");
+                System.out.println("Character x position:"+(character.getPosition().x+character.getHitBox().width));
             } else {
-                character.setPosition(new Vector2(character.getPosition().x, solid.y - spriteHeight));
+                character.setPosition(new Vector2(character.getPosition().x, solid.y - character.getHitBox().height));
                 velocity.y = 0;
+                    System.out.println("top");
+                System.out.println("Character x position:"+(character.getPosition().x+character.getHitBox().width));
+
             }
         } else {
             if (Math.abs(leftOverlap) < Math.abs(rightOverlap)) {
-                character.setPosition(new Vector2(character.getPosition().x + rightOverlap - character.spriteWidth*2, character.getPosition().y));
+                character.setPosition(new Vector2(solid.x -(character.getHitBox().width+character.getWeightBetweenHitBoxAndSprite()), character.getPosition().y));
                 velocity.x = 0;
-                System.out.println("Collision à gauche");
 
             } else {
-                character.setPosition(new Vector2(solid.x-character.spriteWidth/2, character.getPosition().y));
+                character.setPosition(new Vector2((solid.x+solid.width)-character.getWeightBetweenHitBoxAndSprite(), character.getPosition().y));
                 velocity.x = 0;
+                System.out.println("right");
             }
         }
     }
