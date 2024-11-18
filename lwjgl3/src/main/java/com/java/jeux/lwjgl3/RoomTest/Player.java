@@ -92,20 +92,36 @@ public class Player extends Character {
         handleMovement(deltaTime);
     }
 
+    private String lastDirection = "right";
+
     private void handleMovement(float deltaTime) {
         if (!isAttacking) {
             isWalking = false;
-            if (!jump.isDirectionLocked()) {
 
-                if (Gdx.input.isKeyPressed(Input.Keys.Q) || Gdx.input.isKeyPressed(Input.Keys.A)) {
+            if (!jump.isDirectionLocked()) {
+                boolean pressingLeft = Gdx.input.isKeyPressed(Input.Keys.Q) || Gdx.input.isKeyPressed(Input.Keys.A);
+                boolean pressingRight = Gdx.input.isKeyPressed(Input.Keys.D);
+
+                if (pressingLeft && pressingRight) {
+                    isWalking = false;
+                } else if (pressingLeft) {
                     position.x -= speed * deltaTime;
                     facingRight = false;
+                    lastDirection = "left";
                     isWalking = true;
-                }
-                if (Gdx.input.isKeyPressed(Input.Keys.D)) {
+                } else if (pressingRight) {
                     position.x += speed * deltaTime;
                     facingRight = true;
+                    lastDirection = "right";
                     isWalking = true;
+                }
+
+                if (pressingLeft && pressingRight) {
+                    if (lastDirection.equals("right")) {
+                        facingRight = true;
+                    } else if (lastDirection.equals("left")) {
+                        facingRight = false;
+                    }
                 }
             }
 
@@ -119,6 +135,7 @@ public class Player extends Character {
             }
         }
     }
+
 
     public boolean isAttacking() {
         return isAttacking;
@@ -156,6 +173,7 @@ public class Player extends Character {
         if (!facingRight) {
             return new Rectangle(position.x + hitboxOffsetX / 2 + 20, position.y, spriteWidth, spriteHeight);
         }
+
         return null;
     }
 

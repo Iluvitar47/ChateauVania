@@ -41,28 +41,24 @@ public class SolidObjectsManager {
 
         if (minVerticalOverlap < minHorizontalOverlap) {
             if (Math.abs(bottomOverlap) < Math.abs(topOverlap)) {
-                character.setPosition(new Vector2(character.getPosition().x, solid.y + solid.height));
-                velocity.y = 0;
-                character.setOnGround(true);
-                System.out.println("bottom");
-                System.out.println("Character x position:"+(character.getPosition().x+character.getHitBox().width));
+                if (velocity.y <= 0 || Math.abs(character.getPosition().y - (solid.y + solid.height)) > 1.0f) {
+                    character.setPosition(new Vector2(character.getPosition().x, solid.y + solid.height));
+                    velocity.y = 0;
+                    character.setOnGround(true);
+                }
             } else {
                 character.setPosition(new Vector2(character.getPosition().x, solid.y - character.getHitBox().height));
                 velocity.y = 0;
-                    System.out.println("top");
-                System.out.println("Character x position:"+(character.getPosition().x+character.getHitBox().width));
-
             }
         } else {
             if (Math.abs(leftOverlap) < Math.abs(rightOverlap)) {
-                character.setPosition(new Vector2(solid.x -(character.getHitBox().width+character.getWeightBetweenHitBoxAndSprite()), character.getPosition().y));
+                character.setPosition(new Vector2(solid.x - (character.getHitBox().width + character.getWeightBetweenHitBoxAndSprite()), character.getPosition().y));
                 velocity.x = 0;
-
             } else {
-                character.setPosition(new Vector2((solid.x+solid.width)-character.getWeightBetweenHitBoxAndSprite(), character.getPosition().y));
+                character.setPosition(new Vector2((solid.x + solid.width) - character.getWeightBetweenHitBoxAndSprite(), character.getPosition().y));
                 velocity.x = 0;
-                System.out.println("right");
             }
         }
     }
+
 }

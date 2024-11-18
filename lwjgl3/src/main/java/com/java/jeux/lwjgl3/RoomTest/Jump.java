@@ -33,7 +33,7 @@ public class Jump {
 
     public void updateJump(Character character, float deltaTime) {
         if (isJumping) {
-            if (character.isColliding()) {
+            if (character.isColliding()&& character.getVelocity().y != 0) {
                 isJumping = false;
                 currentHeight = 0;
                 directionLocked = false;
