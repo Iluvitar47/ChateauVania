@@ -213,4 +213,43 @@ public class Player extends Character {
         return attackBoxes;
     }
 
+    public String getName() {
+        return "";
+    }
+
+    public int getHealth() {
+        return 0;
+    }
+
+    public int getDamage() {
+        return 0;
+    }
+
+    public String getSpecialAttack() {
+        return "";
+    }
+
+    public int getLives() {
+        return 3;
+    }
+
+    public int getDefaultHealth() {
+        return 100;
+    }
+
+    public int getDefaultLives() {
+        return 3;
+    }
+
+    public void takeDamage(int i) {
+    }
+
+    public void respawn() {
+    }
+
+    public void useSpecialAttack() {
+    }
+
+    public void attack(Player target) {
+    }
 }

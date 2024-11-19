@@ -6,10 +6,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class SettingsWindow extends JFrame {
-    private JTextField widthField;
-    private JTextField heightField;
-    private JSlider brightnessSlider;
-    private JSlider opacitySlider;
+    private final JTextField widthField;
+    private final JTextField heightField;
+    private final JSlider brightnessSlider;
+    private final JSlider saturationSlider;
     private boolean settingsApplied = false;
 
     public SettingsWindow() {
@@ -29,16 +29,16 @@ public class SettingsWindow extends JFrame {
         brightnessSlider = new JSlider(0, 100, 50);
         add(brightnessSlider);
 
-        add(new JLabel("Opacity:"));
-        opacitySlider = new JSlider(0, 100, 100);
-        add(opacitySlider);
+        add(new JLabel("Saturation:")); // Mise à jour du label
+        saturationSlider = new JSlider(0, 100, 100);
+        add(saturationSlider);
 
         JButton applyButton = new JButton("Apply");
         applyButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 settingsApplied = true;
-                setVisible(false);
+                dispose();
             }
         });
         add(applyButton);
@@ -63,7 +63,7 @@ public class SettingsWindow extends JFrame {
         return brightnessSlider.getValue() / 100.0f;
     }
 
-    public float getOpacityValue() {
-        return opacitySlider.getValue() / 100.0f;
+    public float getSaturationValue() {
+        return saturationSlider.getValue() / 100.0f;
     }
 }
