@@ -14,7 +14,7 @@
  */
 //Note, the above license and copyright applies to this file only.
 
-package com.java.jeux.lwjgl3;
+package com.java.jeux.lwjgl3.Level1;
 
 import java.io.BufferedReader;
 import java.io.File;

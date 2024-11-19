@@ -1,6 +1,6 @@
-package com.java.jeux.lwjgl3;
+package com.java.jeux.lwjgl3.Level1;
 
-public class Hero extends Character {
+public class Hero extends com.java.jeux.lwjgl3.Level1.Character {
     private String specialAttack;
     private int defaultHealth;
     private int defaultLives;

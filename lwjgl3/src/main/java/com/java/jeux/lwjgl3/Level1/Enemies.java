@@ -1,4 +1,4 @@
-package com.java.jeux.lwjgl3;
+package com.java.jeux.lwjgl3.Level1;
 
 public abstract class Enemies extends Character {
     protected AIType aiType;

@@ -1,8 +1,7 @@
-package com.java.jeux.lwjgl3;
+package com.java.jeux.lwjgl3.Level1;
 
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
-import com.java.jeux.lwjgl3.RoomTest.RoomTestLevel;
 
 public class Lwjgl3Launcher {
     public static void main(String[] args) {

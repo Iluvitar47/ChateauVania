@@ -1,4 +1,4 @@
-package com.java.jeux.lwjgl3;
+package com.java.jeux.lwjgl3.Level1;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -12,7 +12,7 @@ public class TempInvincibility extends Items {
     }
 
     // Méthode pour démarrer l'invincibilité pour un personnage
-    public void startInvincibility(Character character) {
+    public void startInvincibility(com.java.jeux.lwjgl3.Level1.Character character) {
         character.setInvincible(true);
         System.out.println("Le personnage est maintenant invincible pour " + duration + " secondes.");
 

@@ -1,17 +1,17 @@
-package com.java.jeux.lwjgl3;
+package com.java.jeux.lwjgl3.Level1;
 
-public class Runner extends Enemies {
+public class Monster extends Enemies {
 
-    public Runner(AIType aiType, String name, int health, int damage, int lives) {
+    public Monster(AIType aiType, String name, int health, int damage, int lives) {
         super(aiType, name, health, damage, lives);
     }
 
     @Override
     public void behaviourAI() {
-        // Comportement spécifique au Runner
-        if (aiType == AIType.RUNNER) {
-            System.out.println(getName() + " fuit le joueur en courant à toute vitesse !");
-            // Logique pour le comportement de fuite
+        // Comportement spécifique au Monster
+        if (aiType == AIType.MONSTER) {
+            System.out.println(getName() + " attaque le joueur avec une force brutale !");
+            // Logique spécifique pour l'attaque du monstre
         }
     }
 

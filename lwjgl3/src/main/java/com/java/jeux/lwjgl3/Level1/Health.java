@@ -1,4 +1,4 @@
-package com.java.jeux.lwjgl3;
+package com.java.jeux.lwjgl3.Level1;
 
 public class Health extends Items {
     private int healthAmount;
