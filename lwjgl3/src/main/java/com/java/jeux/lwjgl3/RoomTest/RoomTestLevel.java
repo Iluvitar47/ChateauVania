@@ -16,18 +16,22 @@ import java.util.List;
 public class RoomTestLevel extends ApplicationAdapter {
     private SpriteBatch batch;
     private Player player;
-    private List<Ennemies> enemies; // Liste pour stocker les ennemis
+    private List<Ennemies> enemies;
     private RoomTestMapLoad roomTestMapLoad;
     private ShapeRenderer shapeRenderer;
     private GravityTest gravityTest;
     private CameraController cameraController;
     private OrthographicCamera camera;
     private MapsBordersManager mapsBordersManager;
+    private SolidObjectsManager solidObjectsManager;
 
     @Override
     public void create() {
         roomTestMapLoad = new RoomTestMapLoad();
         roomTestMapLoad.create();
+
+        List<Rectangle> solidObjects = roomTestMapLoad.getSolidObjects();
+        solidObjectsManager = new SolidObjectsManager(solidObjects);
 
         camera = roomTestMapLoad.getCamera();
         cameraController = new CameraController(camera, roomTestMapLoad.getMapWidth(), roomTestMapLoad.getMapHeight());
@@ -39,7 +43,7 @@ public class RoomTestLevel extends ApplicationAdapter {
         player = new Player(36, 36);
         player.create();
 
-        // Initialisation de la liste des ennemis
+
         enemies = new ArrayList<>();
         Gorgon_1 gorgon_1 = new Gorgon_1(800, 800);
         Gorgon_2 gorgon_2 = new Gorgon_2(900, 800);
@@ -49,7 +53,7 @@ public class RoomTestLevel extends ApplicationAdapter {
         gorgon_2.create();
         gorgon_3.create();
 
-        // Ajout des ennemis à la liste
+
         enemies.add(gorgon_1);
         enemies.add(gorgon_2);
         enemies.add(gorgon_3);
@@ -67,10 +71,11 @@ public class RoomTestLevel extends ApplicationAdapter {
     public void render() {
         float deltaTime = Gdx.graphics.getDeltaTime();
 
-        // Application de la gravité pour le joueur et tous les ennemis
+        solidObjectsManager.applyCollision(player);
         gravityTest.applyGravity(player, deltaTime);
         for (Ennemies enemy : enemies) {
             gravityTest.applyGravity(enemy, deltaTime);
+            solidObjectsManager.applyCollision(enemy);
         }
 
         mapsBordersManager.applyBorders(player);
@@ -88,11 +93,17 @@ public class RoomTestLevel extends ApplicationAdapter {
         shapeRenderer.setProjectionMatrix(camera.combined);
 
         shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
+        shapeRenderer.setColor(Color.BLUE);
+        for (Rectangle rect : roomTestMapLoad.getSolidObjects()) {
+            shapeRenderer.rect(rect.x, rect.y, rect.width, rect.height);
+        }
+        shapeRenderer.end();
+
+        shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
         shapeRenderer.setColor(Color.GREEN);
         Rectangle playerBounds = player.getHitBox();
         shapeRenderer.rect(playerBounds.x, playerBounds.y, playerBounds.width, playerBounds.height);
 
-        // Dessin des hitboxes des ennemis
         shapeRenderer.setColor(Color.BLUE);
         for (Ennemies enemy : enemies) {
             Rectangle enemyBounds = enemy.getHitBox();
@@ -101,6 +112,15 @@ public class RoomTestLevel extends ApplicationAdapter {
             }
         }
         shapeRenderer.end();
+
+        if (player.isAttacking()) {
+            shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
+            shapeRenderer.setColor(Color.YELLOW);
+            for (Rectangle attackBox : player.getAttackBoxes()) {
+                shapeRenderer.rect(attackBox.x, attackBox.y, attackBox.width, attackBox.height);
+            }
+            shapeRenderer.end();
+        }
 
         shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
         shapeRenderer.setColor(Color.RED);
@@ -114,7 +134,7 @@ public class RoomTestLevel extends ApplicationAdapter {
             enemy.update(deltaTime);
         }
 
-        // Vérification des collisions pour tous les ennemis
+
         for (Ennemies enemy : enemies) {
             if (!enemy.isDead()) {
                 checkCollision(enemy);
@@ -131,13 +151,18 @@ public class RoomTestLevel extends ApplicationAdapter {
     }
 
     private void checkCollision(Ennemies enemy) {
-        Rectangle playerBounds = player.getHitBox();
         Rectangle enemyBounds = enemy.getHitBox();
 
-        if (player.isAttacking() && playerBounds.overlaps(enemyBounds)) {
-            enemy.die();
+        if (player.isAttacking()) {
+            for (Rectangle attackBox : player.getAttackBoxes()) {
+                if (attackBox.overlaps(enemyBounds)) {
+                    enemy.die();
+                    break;
+                }
+            }
         }
     }
+
 
     @Override
     public void dispose() {

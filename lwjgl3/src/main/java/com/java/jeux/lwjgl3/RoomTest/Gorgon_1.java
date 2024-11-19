@@ -1,7 +1,9 @@
 package com.java.jeux.lwjgl3.RoomTest;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.Animation;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.utils.Array;
@@ -62,4 +64,5 @@ public class Gorgon_1 extends Ennemies {
             currentPixmap.dispose();
         }
     }
+
 }

@@ -13,7 +13,7 @@ import com.badlogic.gdx.utils.Array;
 import java.util.HashMap;
 import java.util.Map;
 
-public abstract class Ennemies extends Character {
+public abstract class Ennemies extends Character{
     protected Animation<TextureRegion> idleAnimation;
     protected Animation<TextureRegion> deadAnimation;
     protected Sound deathSound;

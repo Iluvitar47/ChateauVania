@@ -22,7 +22,7 @@ public class MapTest {
     private ShapeRenderer shapeRenderer;
 
     public void create() {
-        map = new TmxMapLoader().load("MapTest.tmx");
+        map = new TmxMapLoader().load("Maps/MapTest.tmx");
         mapRenderer = new OrthogonalTiledMapRenderer(map);
 
         camera = new OrthographicCamera();
