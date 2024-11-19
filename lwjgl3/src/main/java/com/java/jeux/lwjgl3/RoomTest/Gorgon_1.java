@@ -1,7 +1,9 @@
 package com.java.jeux.lwjgl3.RoomTest;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.Animation;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.utils.Array;
@@ -61,5 +63,30 @@ public class Gorgon_1 extends Ennemies {
         if (currentPixmap != null) {
             currentPixmap.dispose();
         }
+    }
+
+    @Override
+    public void playDeathAnimation() {
+
+    }
+
+    @Override
+    public void resetAfterDeath() {
+
+    }
+
+    @Override
+    public void playDeathSound(Sound deathSound) {
+        super.playDeathSound(deathSound);
+    }
+
+    @Override
+    public void renderDeadState(SpriteBatch batch, Animation<TextureRegion> idleAnimation, float elapsedTime, float positionX, float positionY, float repopTime, float deathTimer, float preRepopTime) {
+        super.renderDeadState(batch, idleAnimation, elapsedTime, positionX, positionY, repopTime, deathTimer, preRepopTime);
+    }
+
+    @Override
+    public void initializeDeathState(boolean isDying, boolean isDead, float elapsedTime, Sound deathSound) {
+        super.initializeDeathState(isDying, isDead, elapsedTime, deathSound);
     }
 }
