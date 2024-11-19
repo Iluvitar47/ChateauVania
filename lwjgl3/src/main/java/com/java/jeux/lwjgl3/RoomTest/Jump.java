@@ -1,6 +1,5 @@
 package com.java.jeux.lwjgl3.RoomTest;
 
-import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
 public class Jump {

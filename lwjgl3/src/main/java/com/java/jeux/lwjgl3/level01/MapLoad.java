@@ -1,4 +1,4 @@
-package com.java.jeux.lwjgl3.Level1;
+package com.java.jeux.lwjgl3.level01;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -18,14 +18,14 @@ import java.util.List;
 
 
 
-public class Level1Launcher {
+public class MapLoad {
     private TiledMap map;
     private OrthogonalTiledMapRenderer mapRenderer;
     private OrthographicCamera camera;
     private ShapeRenderer shapeRenderer;
 
     public void create() {
-        map = new TmxMapLoader().load("Level1.tmx");
+        map = new TmxMapLoader().load("Maps/Level_1.tmx");
         mapRenderer = new OrthogonalTiledMapRenderer(map);
 
         camera = new OrthographicCamera();
@@ -86,24 +86,22 @@ public class Level1Launcher {
         }
         return groundObjects;
     }
-}
 
-
-
-
-
-
-
-    @Override
-    public void render() {
-        camera.update();
-        renderer.setView(camera);
-        renderer.render();
+    public List<Rectangle> getSolidObjects() {
+        List<Rectangle> solidObjects = new ArrayList<>();
+        if (map.getLayers().get("SolidObjects") != null) {
+            MapObjects objects = map.getLayers().get("SolidObjects").getObjects();
+            for (MapObject object : objects) {
+                if (object instanceof PolygonMapObject) {
+                    Polygon polygon = ((PolygonMapObject) object).getPolygon();
+                    Rectangle boundingRectangle = polygon.getBoundingRectangle();
+                    solidObjects.add(boundingRectangle);
+                }
+            }
+        } else {
+            Gdx.app.log("MapTest", "SolidObjects layer not found");
+        }
+        return solidObjects;
     }
 
-    @Override
-    public void dispose() {
-        map.dispose();
-        renderer.dispose();
-    }
 }

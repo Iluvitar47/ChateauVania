@@ -3,8 +3,6 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
-import javax.swing.plaf.synth.SynthTextAreaUI;
-
 public abstract class Character {
     protected Vector2 position;
     protected Vector2 velocity = new Vector2(0, 0);

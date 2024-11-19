@@ -2,7 +2,7 @@ package com.java.jeux.lwjgl3.RoomTest;
 
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.utils.Array;
+
 import java.util.List;
 
 public class SolidObjectsManager {
