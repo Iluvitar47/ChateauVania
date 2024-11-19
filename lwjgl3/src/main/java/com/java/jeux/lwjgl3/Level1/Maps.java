@@ -1,4 +1,4 @@
-package com.java.jeux.lwjgl3;
+package com.java.jeux.lwjgl3.Level1;
 
 import java.awt.Point;
 import java.util.List;

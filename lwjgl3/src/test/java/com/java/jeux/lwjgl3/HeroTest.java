@@ -2,6 +2,8 @@ package com.java.jeux.lwjgl3;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import com.java.jeux.lwjgl3.Level1.Hero;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -13,7 +15,7 @@ public class HeroTest {
     @BeforeEach
     public void setUp() {
         hero = new Hero("Guerrier", 100, 20, 3, "Coup Fatal", 100, 3);
-        target = new Hero("Cible", 80, 10, 2, "Contre-Attaque", 80, 2);
+        target = new Hero("Méchant", 80, 10, 2, "Contre-Attaque", 80, 2);
     }
 
     @Test
