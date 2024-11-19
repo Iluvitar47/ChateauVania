@@ -13,7 +13,7 @@ public class HeroTest {
     @BeforeEach
     public void setUp() {
         hero = new Hero("Guerrier", 100, 20, 3, "Coup Fatal", 100, 3);
-        target = new Hero("Cible", 80, 10, 2, "Contre-Attaque", 80, 2);
+        target = new Hero("Méchant", 80, 10, 2, "Contre-Attaque", 80, 2);
     }
 
     @Test

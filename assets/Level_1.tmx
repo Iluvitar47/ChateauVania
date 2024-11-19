@@ -1,477 +1,477 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="800" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="6" nextobjectid="66">
+<map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="800" height="20" tilewidth="32" tileheight="32" infinite="0" nextlayerid="7" nextobjectid="100">
  <tileset firstgid="1" name="CastleTile" tilewidth="32" tileheight="38" tilecount="157" columns="0">
   <grid orientation="orthogonal" width="1" height="1"/>
   <tile id="0">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/arch_1.png" width="32" height="32"/>
+   <image source="Tiles/arch_1.png" width="32" height="32"/>
   </tile>
   <tile id="1">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/arch_2.png" width="32" height="19"/>
+   <image source="Tiles/arch_2.png" width="32" height="19"/>
   </tile>
   <tile id="2">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/arch_3.png" width="32" height="32"/>
+   <image source="Tiles/arch_3.png" width="32" height="32"/>
   </tile>
   <tile id="3">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/arch_4.png" width="21" height="32"/>
+   <image source="Tiles/arch_4.png" width="21" height="32"/>
   </tile>
   <tile id="4">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/arch_5.png" width="21" height="32"/>
+   <image source="Tiles/arch_5.png" width="21" height="32"/>
   </tile>
   <tile id="5">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/arch_6.png" width="18" height="32"/>
+   <image source="Tiles/arch_6.png" width="18" height="32"/>
   </tile>
   <tile id="6">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/arch_7.png" width="23" height="32"/>
+   <image source="Tiles/arch_7.png" width="23" height="32"/>
   </tile>
   <tile id="7">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/blank.png" width="32" height="32"/>
+   <image source="Tiles/blank.png" width="32" height="32"/>
   </tile>
   <tile id="8">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/brick_1.png" width="32" height="32"/>
+   <image source="Tiles/brick_1.png" width="32" height="32"/>
   </tile>
   <tile id="9">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/brick_2.png" width="32" height="32"/>
+   <image source="Tiles/brick_2.png" width="32" height="32"/>
   </tile>
   <tile id="10">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/brick_3.png" width="32" height="32"/>
+   <image source="Tiles/brick_3.png" width="32" height="32"/>
   </tile>
   <tile id="11">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/brick_4.png" width="32" height="32"/>
+   <image source="Tiles/brick_4.png" width="32" height="32"/>
   </tile>
   <tile id="12">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/brick_5.png" width="32" height="32"/>
+   <image source="Tiles/brick_5.png" width="32" height="32"/>
   </tile>
   <tile id="13">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/brick_6.png" width="32" height="32"/>
+   <image source="Tiles/brick_6.png" width="32" height="32"/>
   </tile>
   <tile id="14">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/brick_7.png" width="32" height="32"/>
+   <image source="Tiles/brick_7.png" width="32" height="32"/>
   </tile>
   <tile id="15">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/brick_8.png" width="32" height="32"/>
+   <image source="Tiles/brick_8.png" width="32" height="32"/>
   </tile>
   <tile id="16">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/brick_9.png" width="32" height="32"/>
+   <image source="Tiles/brick_9.png" width="32" height="32"/>
   </tile>
   <tile id="17">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/brick_10.png" width="32" height="32"/>
+   <image source="Tiles/brick_10.png" width="32" height="32"/>
   </tile>
   <tile id="18">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/brick_11.png" width="32" height="32"/>
+   <image source="Tiles/brick_11.png" width="32" height="32"/>
   </tile>
   <tile id="19">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/brick_12.png" width="32" height="32"/>
+   <image source="Tiles/brick_12.png" width="32" height="32"/>
   </tile>
   <tile id="20">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/brick_13.png" width="32" height="32"/>
+   <image source="Tiles/brick_13.png" width="32" height="32"/>
   </tile>
   <tile id="21">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/brick_14.png" width="32" height="32"/>
+   <image source="Tiles/brick_14.png" width="32" height="32"/>
   </tile>
   <tile id="22">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/brick_15.png" width="32" height="32"/>
+   <image source="Tiles/brick_15.png" width="32" height="32"/>
   </tile>
   <tile id="23">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/brick_16.png" width="32" height="32"/>
+   <image source="Tiles/brick_16.png" width="32" height="32"/>
   </tile>
   <tile id="24">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/brick_side_left_1.png" width="32" height="32"/>
+   <image source="Tiles/brick_side_left_1.png" width="32" height="32"/>
   </tile>
   <tile id="25">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/brick_side_left_2.png" width="32" height="32"/>
+   <image source="Tiles/brick_side_left_2.png" width="32" height="32"/>
   </tile>
   <tile id="26">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/brick_side_right_1.png" width="32" height="32"/>
+   <image source="Tiles/brick_side_right_1.png" width="32" height="32"/>
   </tile>
   <tile id="27">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/brick_side_right_2.png" width="32" height="32"/>
+   <image source="Tiles/brick_side_right_2.png" width="32" height="32"/>
   </tile>
   <tile id="28">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/ceiling_1.png" width="32" height="32"/>
+   <image source="Tiles/ceiling_1.png" width="32" height="32"/>
   </tile>
   <tile id="29">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/ceiling_2.png" width="32" height="32"/>
+   <image source="Tiles/ceiling_2.png" width="32" height="32"/>
   </tile>
   <tile id="30">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/ceiling_3.png" width="32" height="32"/>
+   <image source="Tiles/ceiling_3.png" width="32" height="32"/>
   </tile>
   <tile id="31">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/ceiling_4.png" width="32" height="32"/>
+   <image source="Tiles/ceiling_4.png" width="32" height="32"/>
   </tile>
   <tile id="32">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/ceiling_corner_left.png" width="32" height="32"/>
+   <image source="Tiles/ceiling_corner_left.png" width="32" height="32"/>
   </tile>
   <tile id="33">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/ceiling_corner_right.png" width="32" height="32"/>
+   <image source="Tiles/ceiling_corner_right.png" width="32" height="32"/>
   </tile>
   <tile id="34">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/ceiling_transparent_1.png" width="32" height="32"/>
+   <image source="Tiles/ceiling_transparent_1.png" width="32" height="32"/>
   </tile>
   <tile id="35">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/ceiling_transparent_2.png" width="32" height="32"/>
+   <image source="Tiles/ceiling_transparent_2.png" width="32" height="32"/>
   </tile>
   <tile id="36">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/column_1.png" width="32" height="32"/>
+   <image source="Tiles/column_1.png" width="32" height="32"/>
   </tile>
   <tile id="37">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/column_2.png" width="32" height="32"/>
+   <image source="Tiles/column_2.png" width="32" height="32"/>
   </tile>
   <tile id="38">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/column_3.png" width="32" height="32"/>
+   <image source="Tiles/column_3.png" width="32" height="32"/>
   </tile>
   <tile id="39">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/column_4.png" width="32" height="32"/>
+   <image source="Tiles/column_4.png" width="32" height="32"/>
   </tile>
   <tile id="40">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/column_5.png" width="32" height="32"/>
+   <image source="Tiles/column_5.png" width="32" height="32"/>
   </tile>
   <tile id="41">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/column_6.png" width="32" height="32"/>
+   <image source="Tiles/column_6.png" width="32" height="32"/>
   </tile>
   <tile id="42">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/column_7.png" width="32" height="32"/>
+   <image source="Tiles/column_7.png" width="32" height="32"/>
   </tile>
   <tile id="43">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/column_8.png" width="32" height="32"/>
+   <image source="Tiles/column_8.png" width="32" height="32"/>
   </tile>
   <tile id="44">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/damaged_brick_1.png" width="32" height="32"/>
+   <image source="Tiles/damaged_brick_1.png" width="32" height="32"/>
   </tile>
   <tile id="45">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/damaged_brick_2.png" width="32" height="32"/>
+   <image source="Tiles/damaged_brick_2.png" width="32" height="32"/>
   </tile>
   <tile id="46">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/damaged_brick_3.png" width="32" height="32"/>
+   <image source="Tiles/damaged_brick_3.png" width="32" height="32"/>
   </tile>
   <tile id="47">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/damaged_brick_4.png" width="32" height="32"/>
+   <image source="Tiles/damaged_brick_4.png" width="32" height="32"/>
   </tile>
   <tile id="48">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/floor_tile_1.png" width="32" height="32"/>
+   <image source="Tiles/floor_tile_1.png" width="32" height="32"/>
   </tile>
   <tile id="49">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/floor_tile_2.png" width="32" height="32"/>
+   <image source="Tiles/floor_tile_2.png" width="32" height="32"/>
   </tile>
   <tile id="50">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/floor_tile_3.png" width="32" height="32"/>
+   <image source="Tiles/floor_tile_3.png" width="32" height="32"/>
   </tile>
   <tile id="51">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/floor_tile_4.png" width="32" height="32"/>
+   <image source="Tiles/floor_tile_4.png" width="32" height="32"/>
   </tile>
   <tile id="52">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/floor_tile_carpet_1.png" width="32" height="32"/>
+   <image source="Tiles/floor_tile_carpet_1.png" width="32" height="32"/>
   </tile>
   <tile id="53">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/floor_tile_carpet_2.png" width="32" height="32"/>
+   <image source="Tiles/floor_tile_carpet_2.png" width="32" height="32"/>
   </tile>
   <tile id="54">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/floor_tile_carpet_3.png" width="32" height="32"/>
+   <image source="Tiles/floor_tile_carpet_3.png" width="32" height="32"/>
   </tile>
   <tile id="55">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/floor_tile_carpet_4.png" width="32" height="32"/>
+   <image source="Tiles/floor_tile_carpet_4.png" width="32" height="32"/>
   </tile>
   <tile id="56">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/floor_tile_carpet_corner_left.png" width="32" height="32"/>
+   <image source="Tiles/floor_tile_carpet_corner_left.png" width="32" height="32"/>
   </tile>
   <tile id="57">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/floor_tile_carpet_corner_right.png" width="32" height="32"/>
+   <image source="Tiles/floor_tile_carpet_corner_right.png" width="32" height="32"/>
   </tile>
   <tile id="58">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/floor_tile_carpet_transition_1.png" width="32" height="32"/>
+   <image source="Tiles/floor_tile_carpet_transition_1.png" width="32" height="32"/>
   </tile>
   <tile id="59">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/floor_tile_carpet_transition_2.png" width="32" height="32"/>
+   <image source="Tiles/floor_tile_carpet_transition_2.png" width="32" height="32"/>
   </tile>
   <tile id="60">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/floor_tile_corner_left.png" width="32" height="32"/>
+   <image source="Tiles/floor_tile_corner_left.png" width="32" height="32"/>
   </tile>
   <tile id="61">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/floor_tile_corner_right.png" width="32" height="32"/>
+   <image source="Tiles/floor_tile_corner_right.png" width="32" height="32"/>
   </tile>
   <tile id="62">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/floor_tile_wood_carpet_transition_1.png" width="32" height="32"/>
+   <image source="Tiles/floor_tile_wood_carpet_transition_1.png" width="32" height="32"/>
   </tile>
   <tile id="63">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/floor_tile_wood_carpet_transition_2.png" width="32" height="32"/>
+   <image source="Tiles/floor_tile_wood_carpet_transition_2.png" width="32" height="32"/>
   </tile>
   <tile id="64">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/floor_tile_wood_transition_1.png" width="32" height="32"/>
+   <image source="Tiles/floor_tile_wood_transition_1.png" width="32" height="32"/>
   </tile>
   <tile id="65">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/floor_tile_wood_transition_2.png" width="32" height="32"/>
+   <image source="Tiles/floor_tile_wood_transition_2.png" width="32" height="32"/>
   </tile>
   <tile id="66">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/floor_wood_1.png" width="32" height="32"/>
+   <image source="Tiles/floor_wood_1.png" width="32" height="32"/>
   </tile>
   <tile id="67">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/floor_wood_2.png" width="32" height="32"/>
+   <image source="Tiles/floor_wood_2.png" width="32" height="32"/>
   </tile>
   <tile id="68">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/floor_wood_3.png" width="32" height="32"/>
+   <image source="Tiles/floor_wood_3.png" width="32" height="32"/>
   </tile>
   <tile id="69">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/floor_wood_4.png" width="32" height="32"/>
+   <image source="Tiles/floor_wood_4.png" width="32" height="32"/>
   </tile>
   <tile id="70">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/floor_wood_carpet_1.png" width="32" height="32"/>
+   <image source="Tiles/floor_wood_carpet_1.png" width="32" height="32"/>
   </tile>
   <tile id="71">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/floor_wood_carpet_2.png" width="32" height="32"/>
+   <image source="Tiles/floor_wood_carpet_2.png" width="32" height="32"/>
   </tile>
   <tile id="72">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/floor_wood_carpet_3.png" width="32" height="32"/>
+   <image source="Tiles/floor_wood_carpet_3.png" width="32" height="32"/>
   </tile>
   <tile id="73">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/floor_wood_carpet_4.png" width="32" height="32"/>
+   <image source="Tiles/floor_wood_carpet_4.png" width="32" height="32"/>
   </tile>
   <tile id="74">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/floor_wood_carpet_corner_left.png" width="32" height="32"/>
+   <image source="Tiles/floor_wood_carpet_corner_left.png" width="32" height="32"/>
   </tile>
   <tile id="75">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/floor_wood_carpet_corner_right.png" width="32" height="32"/>
+   <image source="Tiles/floor_wood_carpet_corner_right.png" width="32" height="32"/>
   </tile>
   <tile id="76">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/floor_wood_carpet_transition_1.png" width="32" height="32"/>
+   <image source="Tiles/floor_wood_carpet_transition_1.png" width="32" height="32"/>
   </tile>
   <tile id="77">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/floor_wood_carpet_transition_2.png" width="32" height="32"/>
+   <image source="Tiles/floor_wood_carpet_transition_2.png" width="32" height="32"/>
   </tile>
   <tile id="78">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/floor_wood_corner_left.png" width="32" height="32"/>
+   <image source="Tiles/floor_wood_corner_left.png" width="32" height="32"/>
   </tile>
   <tile id="79">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/floor_wood_corner_right.png" width="32" height="32"/>
+   <image source="Tiles/floor_wood_corner_right.png" width="32" height="32"/>
   </tile>
   <tile id="80">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/lion_column_1.png" width="32" height="32"/>
+   <image source="Tiles/lion_column_1.png" width="32" height="32"/>
   </tile>
   <tile id="81">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/lion_column_2.png" width="32" height="32"/>
+   <image source="Tiles/lion_column_2.png" width="32" height="32"/>
   </tile>
   <tile id="82">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/lion_column_3.png" width="32" height="32"/>
+   <image source="Tiles/lion_column_3.png" width="32" height="32"/>
   </tile>
   <tile id="83">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/lion_column_4.png" width="32" height="32"/>
+   <image source="Tiles/lion_column_4.png" width="32" height="32"/>
   </tile>
   <tile id="84">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/lion_column_5.png" width="32" height="32"/>
+   <image source="Tiles/lion_column_5.png" width="32" height="32"/>
   </tile>
   <tile id="85">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/lion_column_6.png" width="32" height="32"/>
+   <image source="Tiles/lion_column_6.png" width="32" height="32"/>
   </tile>
   <tile id="86">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/lion_column_7.png" width="32" height="32"/>
+   <image source="Tiles/lion_column_7.png" width="32" height="32"/>
   </tile>
   <tile id="87">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/lion_column_8.png" width="32" height="32"/>
+   <image source="Tiles/lion_column_8.png" width="32" height="32"/>
   </tile>
   <tile id="88">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/lion_column_9.png" width="32" height="32"/>
+   <image source="Tiles/lion_column_9.png" width="32" height="32"/>
   </tile>
   <tile id="89">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/lion_column_10.png" width="32" height="32"/>
+   <image source="Tiles/lion_column_10.png" width="32" height="32"/>
   </tile>
   <tile id="90">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/lion_column_11.png" width="32" height="32"/>
+   <image source="Tiles/lion_column_11.png" width="32" height="32"/>
   </tile>
   <tile id="91">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/lion_column_12.png" width="32" height="32"/>
+   <image source="Tiles/lion_column_12.png" width="32" height="32"/>
   </tile>
   <tile id="92">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/merlons_1.png" width="32" height="13"/>
+   <image source="Tiles/merlons_1.png" width="32" height="13"/>
   </tile>
   <tile id="93">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/merlons_2.png" width="32" height="13"/>
+   <image source="Tiles/merlons_2.png" width="32" height="13"/>
   </tile>
   <tile id="94">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/merlons_3.png" width="32" height="13"/>
+   <image source="Tiles/merlons_3.png" width="32" height="13"/>
   </tile>
   <tile id="95">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/merlons_4.png" width="32" height="13"/>
+   <image source="Tiles/merlons_4.png" width="32" height="13"/>
   </tile>
   <tile id="96">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/merlons_5.png" width="32" height="13"/>
+   <image source="Tiles/merlons_5.png" width="32" height="13"/>
   </tile>
   <tile id="97">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/platform_1.png" width="32" height="16"/>
+   <image source="Tiles/platform_1.png" width="32" height="16"/>
   </tile>
   <tile id="98">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/platform_2.png" width="32" height="16"/>
+   <image source="Tiles/platform_2.png" width="32" height="16"/>
   </tile>
   <tile id="99">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/platform_3.png" width="32" height="16"/>
+   <image source="Tiles/platform_3.png" width="32" height="16"/>
   </tile>
   <tile id="100">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/platform_4.png" width="32" height="16"/>
+   <image source="Tiles/platform_4.png" width="32" height="16"/>
   </tile>
   <tile id="101">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/platform_shadow.png" width="32" height="6"/>
+   <image source="Tiles/platform_shadow.png" width="32" height="6"/>
   </tile>
   <tile id="102">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/platform_wall_connection_left.png" width="16" height="16"/>
+   <image source="Tiles/platform_wall_connection_left.png" width="16" height="16"/>
   </tile>
   <tile id="103">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/platform_wall_connection_right.png" width="16" height="16"/>
+   <image source="Tiles/platform_wall_connection_right.png" width="16" height="16"/>
   </tile>
   <tile id="104">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/spikes.png" width="32" height="38"/>
+   <image source="Tiles/spikes.png" width="32" height="38"/>
   </tile>
   <tile id="105">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/stairs_tile_1.png" width="32" height="32"/>
+   <image source="Tiles/stairs_tile_1.png" width="32" height="32"/>
   </tile>
   <tile id="106">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/stairs_tile_2.png" width="32" height="32"/>
+   <image source="Tiles/stairs_tile_2.png" width="32" height="32"/>
   </tile>
   <tile id="107">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/stairs_tile_3.png" width="32" height="32"/>
+   <image source="Tiles/stairs_tile_3.png" width="32" height="32"/>
   </tile>
   <tile id="108">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/stairs_tile_4.png" width="32" height="32"/>
+   <image source="Tiles/stairs_tile_4.png" width="32" height="32"/>
   </tile>
   <tile id="109">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/stairs_tile_carpet_1.png" width="32" height="32"/>
+   <image source="Tiles/stairs_tile_carpet_1.png" width="32" height="32"/>
   </tile>
   <tile id="110">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/stairs_tile_carpet_2.png" width="32" height="32"/>
+   <image source="Tiles/stairs_tile_carpet_2.png" width="32" height="32"/>
   </tile>
   <tile id="111">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/stairs_tile_carpet_3.png" width="32" height="32"/>
+   <image source="Tiles/stairs_tile_carpet_3.png" width="32" height="32"/>
   </tile>
   <tile id="112">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/stairs_tile_carpet_4.png" width="32" height="32"/>
+   <image source="Tiles/stairs_tile_carpet_4.png" width="32" height="32"/>
   </tile>
   <tile id="113">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/stairs_wood_1.png" width="32" height="32"/>
+   <image source="Tiles/stairs_wood_1.png" width="32" height="32"/>
   </tile>
   <tile id="114">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/stairs_wood_2.png" width="32" height="32"/>
+   <image source="Tiles/stairs_wood_2.png" width="32" height="32"/>
   </tile>
   <tile id="115">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/stairs_wood_3.png" width="32" height="32"/>
+   <image source="Tiles/stairs_wood_3.png" width="32" height="32"/>
   </tile>
   <tile id="116">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/stairs_wood_4.png" width="32" height="32"/>
+   <image source="Tiles/stairs_wood_4.png" width="32" height="32"/>
   </tile>
   <tile id="117">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/stairs_wood_carpet_1.png" width="32" height="32"/>
+   <image source="Tiles/stairs_wood_carpet_1.png" width="32" height="32"/>
   </tile>
   <tile id="118">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/stairs_wood_carpet_2.png" width="32" height="32"/>
+   <image source="Tiles/stairs_wood_carpet_2.png" width="32" height="32"/>
   </tile>
   <tile id="119">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/stairs_wood_carpet_3.png" width="32" height="32"/>
+   <image source="Tiles/stairs_wood_carpet_3.png" width="32" height="32"/>
   </tile>
   <tile id="120">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/stairs_wood_carpet_4.png" width="32" height="32"/>
+   <image source="Tiles/stairs_wood_carpet_4.png" width="32" height="32"/>
   </tile>
   <tile id="121">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/tile_side_left.png" width="32" height="32"/>
+   <image source="Tiles/tile_side_left.png" width="32" height="32"/>
   </tile>
   <tile id="122">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/tile_side_right.png" width="32" height="32"/>
+   <image source="Tiles/tile_side_right.png" width="32" height="32"/>
   </tile>
   <tile id="123">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/wall_1.png" width="21" height="17"/>
+   <image source="Tiles/wall_1.png" width="21" height="17"/>
   </tile>
   <tile id="124">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/wall_2.png" width="32" height="17"/>
+   <image source="Tiles/wall_2.png" width="32" height="17"/>
   </tile>
   <tile id="125">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/wall_3.png" width="32" height="22"/>
+   <image source="Tiles/wall_3.png" width="32" height="22"/>
   </tile>
   <tile id="126">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/wall_4.png" width="32" height="17"/>
+   <image source="Tiles/wall_4.png" width="32" height="17"/>
   </tile>
   <tile id="127">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/wall_5.png" width="15" height="17"/>
+   <image source="Tiles/wall_5.png" width="15" height="17"/>
   </tile>
   <tile id="128">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/wall_6.png" width="22" height="32"/>
+   <image source="Tiles/wall_6.png" width="22" height="32"/>
   </tile>
   <tile id="129">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/wall_7.png" width="24" height="32"/>
+   <image source="Tiles/wall_7.png" width="24" height="32"/>
   </tile>
   <tile id="130">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/wall_8.png" width="32" height="32"/>
+   <image source="Tiles/wall_8.png" width="32" height="32"/>
   </tile>
   <tile id="131">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/wall_9.png" width="16" height="32"/>
+   <image source="Tiles/wall_9.png" width="16" height="32"/>
   </tile>
   <tile id="132">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/wall_10.png" width="15" height="32"/>
+   <image source="Tiles/wall_10.png" width="15" height="32"/>
   </tile>
   <tile id="133">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/wall_11.png" width="21" height="32"/>
+   <image source="Tiles/wall_11.png" width="21" height="32"/>
   </tile>
   <tile id="134">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/wall_12.png" width="32" height="11"/>
+   <image source="Tiles/wall_12.png" width="32" height="11"/>
   </tile>
   <tile id="135">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/wall_13.png" width="32" height="15"/>
+   <image source="Tiles/wall_13.png" width="32" height="15"/>
   </tile>
   <tile id="136">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/wall_14.png" width="32" height="11"/>
+   <image source="Tiles/wall_14.png" width="32" height="11"/>
   </tile>
   <tile id="137">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/wall_15.png" width="32" height="32"/>
+   <image source="Tiles/wall_15.png" width="32" height="32"/>
   </tile>
   <tile id="138">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/wall_16.png" width="32" height="32"/>
+   <image source="Tiles/wall_16.png" width="32" height="32"/>
   </tile>
   <tile id="139">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/wall_17.png" width="32" height="32"/>
+   <image source="Tiles/wall_17.png" width="32" height="32"/>
   </tile>
   <tile id="140">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/wall_18.png" width="32" height="32"/>
+   <image source="Tiles/wall_18.png" width="32" height="32"/>
   </tile>
   <tile id="141">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/window_big_1.png" width="32" height="32"/>
+   <image source="Tiles/window_big_1.png" width="32" height="32"/>
   </tile>
   <tile id="142">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/window_big_2.png" width="29" height="32"/>
+   <image source="Tiles/window_big_2.png" width="29" height="32"/>
   </tile>
   <tile id="143">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/window_big_3.png" width="32" height="32"/>
+   <image source="Tiles/window_big_3.png" width="32" height="32"/>
   </tile>
   <tile id="144">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/window_big_4.png" width="32" height="32"/>
+   <image source="Tiles/window_big_4.png" width="32" height="32"/>
   </tile>
   <tile id="145">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/window_big_5.png" width="30" height="32"/>
+   <image source="Tiles/window_big_5.png" width="30" height="32"/>
   </tile>
   <tile id="146">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/window_big_6.png" width="32" height="32"/>
+   <image source="Tiles/window_big_6.png" width="32" height="32"/>
   </tile>
   <tile id="147">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/window_glass_1.png" width="32" height="32"/>
+   <image source="Tiles/window_glass_1.png" width="32" height="32"/>
   </tile>
   <tile id="148">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/window_glass_2.png" width="32" height="32"/>
+   <image source="Tiles/window_glass_2.png" width="32" height="32"/>
   </tile>
   <tile id="149">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/window_glass_tall_1.png" width="32" height="32"/>
+   <image source="Tiles/window_glass_tall_1.png" width="32" height="32"/>
   </tile>
   <tile id="150">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/window_glass_tall_2.png" width="32" height="32"/>
+   <image source="Tiles/window_glass_tall_2.png" width="32" height="32"/>
   </tile>
   <tile id="151">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/window_glass_tall_3.png" width="32" height="32"/>
+   <image source="Tiles/window_glass_tall_3.png" width="32" height="32"/>
   </tile>
   <tile id="152">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/window_small_1.png" width="32" height="32"/>
+   <image source="Tiles/window_small_1.png" width="32" height="32"/>
   </tile>
   <tile id="153">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/window_small_2.png" width="32" height="32"/>
+   <image source="Tiles/window_small_2.png" width="32" height="32"/>
   </tile>
   <tile id="154">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/window_tall_1.png" width="32" height="32"/>
+   <image source="Tiles/window_tall_1.png" width="32" height="32"/>
   </tile>
   <tile id="155">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/window_tall_2.png" width="32" height="32"/>
+   <image source="Tiles/window_tall_2.png" width="32" height="32"/>
   </tile>
   <tile id="156">
-   <image source="Java/testprojet/T-JAV-501-BDX_1/lwjgl3/build/resources/main/Tiles/window_tall_3.png" width="32" height="32"/>
+   <image source="Tiles/window_tall_3.png" width="32" height="32"/>
   </tile>
  </tileset>
  <objectgroup id="2" name="platform">
@@ -535,8 +535,8 @@
   <object id="31" x="5120" y="192">
    <polygon points="0,0 0,32 544,32 544,384 576,384 576,0"/>
   </object>
-  <object id="32" x="5664" y="576">
-   <polygon points="0,0 0,32 32,32 32,0"/>
+  <object id="32" x="5658.53" y="485.082">
+   <polygon points="0,0 0,122.421 32,122.421 32,0"/>
   </object>
   <object id="33" x="5856" y="576">
    <polygon points="0,0 0,32 1344,32 1344,0"/>
@@ -553,10 +553,10 @@
   <object id="37" x="8768" y="576">
    <polygon points="0,0 0,32 2528,32 2528,0"/>
   </object>
-  <object id="38" x="11136" y="416">
+  <object id="38" x="11134.8" y="419.464">
    <polygon points="0,0 128,0 128,-64 0,-64"/>
   </object>
-  <object id="39" x="11296" y="576">
+  <object id="39" x="11296" y="580.618">
    <polygon points="0,0 0,-96 128,-96 128,-384 192,-384 192,0 0,0"/>
   </object>
   <object id="40" x="11488" y="576">
@@ -580,13 +580,13 @@
   <object id="46" x="16224" y="576">
    <polygon points="0,0 0,32 992,32 992,0"/>
   </object>
-  <object id="47" x="17216" y="576">
+  <object id="47" x="17236.8" y="555.245">
    <polygon points="0,0 0,-32 256,-32 256,-64 480,-64 480,0 448,0 448,-32 288,-32 288,0"/>
   </object>
   <object id="48" x="17696" y="576">
    <polygon points="0,0 0,32 1120,32 1120,0"/>
   </object>
-  <object id="49" x="18912" y="416">
+  <object id="49" x="18916.5" y="493.704">
    <polygon points="0,0 0,64 64,64 64,0"/>
   </object>
   <object id="51" x="19488" y="320">
@@ -598,7 +598,7 @@
   <object id="53" x="19936" y="576">
    <polygon points="0,0 928,0 928,32 0,32"/>
   </object>
-  <object id="54" x="20864" y="608">
+  <object id="54" x="20864.4" y="608.866">
    <polygon points="0,0 0,-32 192,-224 512,-224 512,-96 544,-96 544,-32 512,-32 512,-64 480,-64 480,-192 192,-192"/>
   </object>
   <object id="55" x="21408" y="576">
@@ -631,31 +631,93 @@
   <object id="65" x="19200" y="448">
    <polygon points="0,0 0,64 96,64 96,0"/>
   </object>
+  <object id="80" x="5862.95" y="605.175">
+   <polygon points="0,0 15.2553,0.429637 -0.67801,-20.6226"/>
+  </object>
+  <object id="81" x="1735.12" y="601.99">
+   <polygon points="0,0 14.473,0.346264 -0.643242,-16.6207"/>
+  </object>
+  <object id="82" x="17223.2" y="592.151">
+   <polygon points="0,0 17.4414,0.733968 -0.775171,-35.2305"/>
+  </object>
+  <object id="83" x="17479.6" y="551.224">
+   <polygon points="0,0 12.6905,0.545901 -0.564019,-26.2033"/>
+  </object>
+  <object id="84" x="17668.5" y="564.259">
+   <polygon points="0,0 21.5136,0.979902 -0.956158,-47.0353"/>
+  </object>
+  <object id="85" x="17665" y="575.601">
+   <polygon points="0,0 21.5136,0.979902 -0.956158,-47.0353"/>
+  </object>
+  <object id="86" x="18919.5" y="476.359">
+   <polygon points="0,0 50.0191,0.979902 -2.22307,-47.0353"/>
+  </object>
+  <object id="87" x="19208.6" y="506.132">
+   <polygon points="0,0 79.2034,0.979902 -3.52014,-47.0353"/>
+  </object>
+  <object id="88" x="19496.5" y="378.535">
+   <polygon points="0,0 47.983,0.979902 -2.13257,-47.0353"/>
+  </object>
+  <object id="89" x="19719.2" y="539.449">
+   <polygon points="0,0 51.3765,0.979902 -2.2834,-47.0353"/>
+  </object>
+  <object id="90" x="19941.5" y="603.174">
+   <polygon points="0,0 12.6905,0.343368 -0.564019,-16.4816"/>
+  </object>
+  <object id="93" x="1614.17" y="604.134">
+   <polygon points="0,0 14.473,0.346264 -0.643242,-16.6207"/>
+  </object>
+  <object id="97" x="17672.5" y="557.917">
+   <polygon points="0,0 17.4414,0.733968 -0.775171,-35.2305"/>
+  </object>
  </objectgroup>
- <layer id="5" name="Tile Layer 2" width="800" height="20">
-  <data encoding="csv">
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,
-0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-</data>
- </layer>
+ <objectgroup id="6" name="SolidObjects">
+  <object id="67" x="330.378" y="576.289">
+   <polygon points="0,0 111.417,1.11171 -4.95185,-53.3622"/>
+  </object>
+  <object id="68" x="743.423" y="578.441">
+   <polygon points="0,0 83.3879,0.520389 -3.70613,-24.9787"/>
+  </object>
+  <object id="69" x="2442.19" y="572.759">
+   <polygon points="0,0 21.5136,0.979902 -0.956158,-47.0353"/>
+  </object>
+  <object id="70" x="7211.89" y="572.065">
+   <polygon points="0,0 173.898,1.67436 -7.72876,-80.3692"/>
+  </object>
+  <object id="71" x="7624.35" y="346.25">
+   <polygon points="0,0 50.0633,0.979902 -2.22503,-47.0353"/>
+  </object>
+  <object id="72" x="11146.4" y="410.211">
+   <polygon points="0,0 113.268,0.932775 -5.0341,-44.7732"/>
+  </object>
+  <object id="73" x="11305" y="571.311">
+   <polygon points="0,0 25.4251,1.61139 -1.13,-77.3466"/>
+  </object>
+  <object id="74" x="11434.3" y="568.593">
+   <polygon points="0,0 47.2929,7.53173 -2.1019,-361.522"/>
+  </object>
+  <object id="75" x="15882.5" y="601.973">
+   <polygon points="0,0 31.6834,3.63118 -1.40815,-174.297"/>
+  </object>
+  <object id="76" x="15564.8" y="600.406">
+   <polygon points="0,0 108.396,3.56448 -4.81759,-171.095"/>
+  </object>
+  <object id="77" x="15404.2" y="601.907">
+   <polygon points="0,0 42.866,3.69788 -1.90515,-177.498"/>
+  </object>
+  <object id="78" x="15213.7" y="602.707">
+   <polygon points="0,0 106.555,3.71455 -4.73578,-178.299"/>
+  </object>
+  <object id="94" x="2978.93" y="573.331">
+   <polygon points="0,0 21.5136,0.979902 -0.956158,-47.0353"/>
+  </object>
+  <object id="95" x="15043.1" y="603.35">
+   <polygon points="0,0 21.5136,3.71455 -0.956158,-178.299"/>
+  </object>
+  <object id="99" x="18786.8" y="581.362">
+   <polygon points="0,0 25.5232,0 24.956,32.8966 0.567183,33.4638"/>
+  </object>
+ </objectgroup>
  <layer id="1" name="Tile Layer 1" width="800" height="20">
   <data encoding="csv">
 31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,31,34,
@@ -680,5 +742,4 @@
 8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,107,105,105,105,109,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,107,105,105,105,105,105,109,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,107,105,105,105,105,109,8,8,107,105,105,109,107,105,105,105,109,8,8,107,105,105,105,105,105,105,109,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,107,105,105,105,105,105,105,105,105,105,105,105,105,105,105,105,105,105,105,105,105,105,105,105,105,105,105,105,105,105,105,105,105,105,105,105,109,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,105,105,105,109,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,105,105,105,105,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8,8
 </data>
  </layer>
- <imagelayer id="4" name="Image Layer 1"/>
 </map>

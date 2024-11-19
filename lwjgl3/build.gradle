@@ -26,7 +26,7 @@ repositories {
 }
 
 jacoco {
-    toolVersion = "0.8.7"
+    toolVersion = "0.8.12"
 }
 
 apply plugin: 'io.github.fourlastor.construo'
