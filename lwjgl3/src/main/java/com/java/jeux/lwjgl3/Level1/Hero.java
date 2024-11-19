@@ -6,10 +6,10 @@ public class Hero extends com.java.jeux.lwjgl3.Level1.Character {
     private int defaultLives;
 
     public Hero(String name, int health, int damage, int lives, String specialAttack, int defaultHealth, int defaultLives) {
-        super(name, health, damage, lives);
-        this.specialAttack = specialAttack;
-        this.defaultHealth = defaultHealth;
-        this.defaultLives = defaultLives;
+
+    }
+
+    public static void create() {
     }
 
     // Implémentation de la méthode abstraite takeDamage

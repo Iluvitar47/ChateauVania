@@ -14,7 +14,7 @@
  */
 //Note, the above license and copyright applies to this file only.
 
-package com.java.jeux.lwjgl3.Level1;
+package com.java.jeux.lwjgl3;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -22,6 +22,8 @@ import java.io.InputStreamReader;
 import java.lang.management.ManagementFactory;
 import java.util.ArrayList;
 
+import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
+import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
 import org.lwjgl.system.macosx.LibC;
 
 /**
@@ -175,5 +177,27 @@ public class StartupHelper {
      */
     public static boolean startNewJvmIfRequired() {
         return startNewJvmIfRequired(true);
+    }
+
+    public static class Lwjgl3Launcher {
+        public static void main(String[] args) {
+            if (startNewJvmIfRequired()) return;
+
+            createApplication();
+        }
+
+        private static Lwjgl3Application createApplication() {
+            return new Lwjgl3Application(new Level1Launcher(), getDefaultConfiguration());
+        }
+
+        private static Lwjgl3ApplicationConfiguration getDefaultConfiguration() {
+            Lwjgl3ApplicationConfiguration configuration = new Lwjgl3ApplicationConfiguration();
+            configuration.setTitle("ProjetJava");
+            configuration.useVsync(true);
+            configuration.setForegroundFPS(Lwjgl3ApplicationConfiguration.getDisplayMode().refreshRate + 1);
+            configuration.setWindowedMode(1900, 1000);
+            configuration.setWindowIcon("libgdx128.png", "libgdx64.png", "libgdx32.png", "libgdx16.png");
+            return configuration;
+        }
     }
 }

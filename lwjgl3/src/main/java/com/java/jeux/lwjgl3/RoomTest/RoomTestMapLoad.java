@@ -87,18 +87,4 @@ public class RoomTestMapLoad {
         }
         return groundObjects;
     }
-
-    public List<Rectangle> getBorders(String layerName) {
-        List<Rectangle> borderRectangles = new ArrayList<>();
-
-        for (MapObject object : map.getLayers().get(layerName).getObjects()) {
-            if (object instanceof PolygonMapObject) {
-                Polygon polygon = ((PolygonMapObject) object).getPolygon();
-                Rectangle boundingBox = polygon.getBoundingRectangle();
-                borderRectangles.add(boundingBox);
-            }
-        }
-
-        return borderRectangles;
-    }
 }
