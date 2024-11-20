@@ -16,13 +16,12 @@ import com.badlogic.gdx.math.Rectangle;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
 public class MapLoad {
     private TiledMap map;
     private OrthogonalTiledMapRenderer mapRenderer;
     private OrthographicCamera camera;
     private ShapeRenderer shapeRenderer;
+    public List<Rectangle> deathZone;
 
     public void create() {
         map = new TmxMapLoader().load("Maps/Level_1.tmx");
@@ -33,6 +32,8 @@ public class MapLoad {
         camera.position.set(camera.viewportWidth / 2, camera.viewportHeight / 2, 0);
         camera.update();
         shapeRenderer = new ShapeRenderer();
+
+        deathZone = getDeathZoneObjects();
     }
 
     public void render() {
@@ -43,6 +44,10 @@ public class MapLoad {
         shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
         shapeRenderer.setColor(Color.RED);
         for (Rectangle rect : getGroundObjects()) {
+            shapeRenderer.rect(rect.x, rect.y, rect.width, rect.height);
+        }
+        shapeRenderer.setColor(Color.BLUE);
+        for (Rectangle rect : deathZone) {
             shapeRenderer.rect(rect.x, rect.y, rect.width, rect.height);
         }
         shapeRenderer.end();
@@ -104,4 +109,20 @@ public class MapLoad {
         return solidObjects;
     }
 
+    public List<Rectangle> getDeathZoneObjects() {
+        List<Rectangle> deathZoneObjects = new ArrayList<>();
+        if (map.getLayers().get("DeathZone") != null) {
+            MapObjects objects = map.getLayers().get("DeathZone").getObjects();
+            for (MapObject object : objects) {
+                if (object instanceof PolygonMapObject) {
+                    Polygon polygon = ((PolygonMapObject) object).getPolygon();
+                    Rectangle boundingRectangle = polygon.getBoundingRectangle();
+                    deathZoneObjects.add(boundingRectangle);
+                }
+            }
+        } else {
+            Gdx.app.log("MapTest", "DeathZone layer not found");
+        }
+        return deathZoneObjects;
+    }
 }
