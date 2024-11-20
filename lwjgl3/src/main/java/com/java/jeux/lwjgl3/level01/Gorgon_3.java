@@ -33,7 +33,7 @@ public class Gorgon_3 extends Ennemies {
         Array<TextureRegion> hurtFrames = spriteManager.getAnimation(directory, "Hurt");
 
         idleAnimation = new Animation<>(0.1f, idleFrames);
-        deadAnimation = new Animation<>(0.2f, deadFrames);
+        deadAnimation = new Animation<>(0.1f, deadFrames);
         hurtAnimation = new Animation<>(0.1f, hurtFrames);
 
         deathSound = Gdx.audio.newSound(Gdx.files.internal("assets/deathSound.mp3"));
