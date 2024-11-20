@@ -4,6 +4,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
+import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.utils.Array;
 
 import java.util.HashMap;
@@ -66,5 +67,13 @@ public class Gorgon_2 extends Ennemies {
             currentPixmap.dispose();
         }
     }
-
+    @Override
+    public Rectangle getHitBox() {
+        if (isFacingRight()) {
+            return new Rectangle(position.x +45, position.y, spriteWidth -20, spriteHeight);
+        } else if (!isFacingRight()) {
+            return new Rectangle(position.x +45, position.y, spriteWidth -20, spriteHeight);
+        }
+        return null;
+    }
 }
