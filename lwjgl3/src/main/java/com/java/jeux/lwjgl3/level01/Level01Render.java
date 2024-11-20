@@ -40,13 +40,41 @@ public class Level01Render extends ApplicationAdapter {
         batch = new SpriteBatch();
         shapeRenderer = new ShapeRenderer();
 
-        player = new Player(36, 64, 10, 2);
+        player = new Player(64, 50, 10, 2);
         player.create();
 
         enemies = new ArrayList<>();
-        Gorgon_1 gorgon_1 = new Gorgon_1(100, 50, 4, 2);
+        Gorgon_1 gorgon_1 = new Gorgon_1(4000, 500, 4, 2);
         gorgon_1.create();
         enemies.add(gorgon_1);
+
+        Gorgon_1 gorgon_2 = new Gorgon_1(7000, 500, 4, 2);
+        gorgon_2.create();
+        enemies.add(gorgon_2);
+
+        Gorgon_1 gorgon_3 = new Gorgon_1(13000, 500, 4, 2);
+        gorgon_3.create();
+        enemies.add(gorgon_3);
+
+        Gorgon_1 gorgon_4 = new Gorgon_1(14000, 500, 4, 2);
+        gorgon_4.create();
+        enemies.add(gorgon_4);
+
+        Gorgon_2 gorgon_5 = new Gorgon_2(5600, 100, 4, 2);
+        gorgon_5.create();
+        enemies.add(gorgon_5);
+
+        Gorgon_2 gorgon_6 = new Gorgon_2(10500, 500, 4, 2);
+        gorgon_6.create();
+        enemies.add(gorgon_6);
+
+        Gorgon_2 gorgon_7 = new Gorgon_2(17000, 500, 4, 2);
+        gorgon_7.create();
+        enemies.add(gorgon_7);
+
+        Gorgon_3 gorgon_8 = new Gorgon_3(25500, 500, 10, 3);
+        gorgon_8.create();
+        enemies.add(gorgon_8);
 
         gravityTest = new GravityTest(mapLoad.getGroundObjects());
         attackManager = new AttackManager();
@@ -116,10 +144,6 @@ public class Level01Render extends ApplicationAdapter {
 
 
         attackManager.checkPlayerAttacks(player, enemies);
-        attackManager.checkEnemyAttacks(player, enemies);
-        attackManager.resetPlayerHit();
-
-        System.out.println("Player health: " + player.getHealth());
 
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
