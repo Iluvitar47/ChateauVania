@@ -65,7 +65,7 @@ public class Level01Render extends ApplicationAdapter {
             solidObjectsManager.applyCollision(enemy);
         }
 
-        cameraController.update(new Vector2(player.getPosition().x, player.getPosition().y), Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        cameraController.update(new Vector2(player.getPosition().x+player.getWeightBetweenHitBoxAndSprite()+player.getHitBox().width, player.getPosition().y), Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
