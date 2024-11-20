@@ -23,6 +23,7 @@ public class Level01Render extends ApplicationAdapter {
     private CameraController cameraController;
     private OrthographicCamera camera;
     private SolidObjectsManager solidObjectsManager;
+    private AttackManager attackManager;
 
     @Override
     public void create() {
@@ -42,16 +43,13 @@ public class Level01Render extends ApplicationAdapter {
         player = new Player(36, 36, 10, 2);
         player.create();
 
-
         enemies = new ArrayList<>();
         Gorgon_1 gorgon_1 = new Gorgon_1(100, 50, 4, 2);
-
         gorgon_1.create();
-
         enemies.add(gorgon_1);
 
         gravityTest = new GravityTest(mapLoad.getGroundObjects());
-
+        attackManager = new AttackManager();
     }
 
     @Override
@@ -65,7 +63,7 @@ public class Level01Render extends ApplicationAdapter {
             solidObjectsManager.applyCollision(enemy);
         }
 
-        cameraController.update(new Vector2(player.getPosition().x+player.getWeightBetweenHitBoxAndSprite()+player.getHitBox().width, player.getPosition().y), Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        cameraController.update(new Vector2(player.getPosition().x + player.getWeightBetweenHitBoxAndSprite() + player.getHitBox().width, player.getPosition().y), Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
@@ -117,11 +115,7 @@ public class Level01Render extends ApplicationAdapter {
         }
 
 
-        for (Ennemies enemy : enemies) {
-            if (!enemy.isDead()) {
-                checkCollision(enemy);
-            }
-        }
+        attackManager.checkPlayerAttacks(player, enemies);
 
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
@@ -131,20 +125,6 @@ public class Level01Render extends ApplicationAdapter {
         }
         batch.end();
     }
-
-    private void checkCollision(Ennemies enemy) {
-        Rectangle enemyBounds = enemy.getHitBox();
-
-        if (player.isAttacking()) {
-            for (Rectangle attackBox : player.getAttackBoxes()) {
-                if (attackBox.overlaps(enemyBounds)) {
-                    enemy.die();
-                    break;
-                }
-            }
-        }
-    }
-
 
     @Override
     public void dispose() {
