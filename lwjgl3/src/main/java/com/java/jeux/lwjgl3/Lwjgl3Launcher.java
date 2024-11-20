@@ -2,9 +2,10 @@ package com.java.jeux.lwjgl3;
 
 import com.badlogic.gdx.graphics.Color;
 import com.java.jeux.lwjgl3.level01.Level01Render;
+import com.java.jeux.lwjgl3.level01.LaunchPage;
+import com.java.jeux.lwjgl3.level01.SettingsWindow;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3Application;
 import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
-import com.java.jeux.lwjgl3.level01.SettingsWindow;
 
 public class Lwjgl3Launcher {
     public static void main(String[] args) {
@@ -12,6 +13,17 @@ public class Lwjgl3Launcher {
         settingsWindow.setVisible(true);
 
         while (!settingsWindow.isSettingsApplied()) {
+            try {
+                Thread.sleep(100);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+        LaunchPage launchPage = new LaunchPage(settingsWindow);
+        launchPage.setVisible(true);
+
+        while (!launchPage.isStartGame()) {
             try {
                 Thread.sleep(100);
             } catch (InterruptedException e) {
