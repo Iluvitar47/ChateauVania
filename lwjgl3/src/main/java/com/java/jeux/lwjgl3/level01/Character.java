@@ -18,6 +18,7 @@ public abstract class Character implements DeathCycle {
     protected int AttackDamage;
     protected int currentHealth;
     protected boolean isDying = false;
+    protected boolean takeHit = false;
 
     public Character(float startX, float startY, int MaxHealth, int AttackDamage) {
         this.position = new Vector2(startX, startY);
@@ -111,6 +112,9 @@ public abstract class Character implements DeathCycle {
                 currentHealth = 0;
                 die();
             }
+            else {
+                hurt();
+            }
         }
     }
 
@@ -138,5 +142,16 @@ public abstract class Character implements DeathCycle {
 
     public boolean isDead() {
         return isDead;
+    }
+
+    @Override
+    public boolean hurt() {
+        takeHit = true;
+        return takeHit;
+    }
+
+    @Override
+    public int getAttackDamage() {
+        return AttackDamage;
     }
 }

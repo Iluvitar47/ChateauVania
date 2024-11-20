@@ -10,10 +10,12 @@ import com.badlogic.gdx.math.Rectangle;
 public abstract class Ennemies extends Character {
     protected Animation<TextureRegion> idleAnimation;
     protected Animation<TextureRegion> deadAnimation;
+    protected Animation<TextureRegion> hurtAnimation;
     protected Sound deathSound;
     protected float deathTimer = 0f;
     protected final float repopTime = 5f;
     protected final float preRepopTime = 2f;
+    private float hurtElapsedTime = 0f;
 
     public Ennemies(float startX, float startY, int MaxHealth, int AttackDamage) {
         super(startX, startY, MaxHealth, AttackDamage);
@@ -32,6 +34,13 @@ public abstract class Ennemies extends Character {
             deathTimer += deltaTime;
             if (deathTimer >= repopTime) {
                 respawn();
+            }
+        } else if (takeHit) {
+
+            hurtElapsedTime += deltaTime;
+            if (hurtAnimation.isAnimationFinished(hurtElapsedTime)) {
+                takeHit = false;
+                hurtElapsedTime = 0f;
             }
         } else {
             elapsedTime += deltaTime;
@@ -53,6 +62,9 @@ public abstract class Ennemies extends Character {
             TextureRegion currentFrame = deadAnimation.getKeyFrame(elapsedTime, false);
             batch.draw(currentFrame, position.x, position.y);
             batch.setColor(Color.WHITE);
+        } else if (takeHit) {
+            TextureRegion currentFrame = hurtAnimation.getKeyFrame(hurtElapsedTime, false);
+            batch.draw(currentFrame, position.x, position.y);
         } else {
             TextureRegion currentFrame = idleAnimation.getKeyFrame(elapsedTime, true);
             batch.draw(currentFrame, position.x, position.y);
@@ -80,6 +92,4 @@ public abstract class Ennemies extends Character {
     public Rectangle getHitBox() {
         return new Rectangle(position.x + hitboxOffsetX, position.y, spriteWidth, spriteHeight);
     }
-
 }
-

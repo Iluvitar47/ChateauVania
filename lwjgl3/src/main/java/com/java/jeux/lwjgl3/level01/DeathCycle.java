@@ -9,8 +9,10 @@ public interface DeathCycle {
 
     void setHealth(int health);
     void setMaxHealth(int maxHealth);
+    int getAttackDamage();
     void takeDamage(int amount);
     void heal(int amount);
     void die();
     void respawn();
+    boolean hurt();
 }

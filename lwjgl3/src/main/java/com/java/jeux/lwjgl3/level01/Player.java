@@ -188,7 +188,7 @@ public class Player extends Character {
     public void respawn() {
         super.respawn();
         currentHealth = MaxHealth;
-        position.set(0, 0);
+        position.set(36, 36);
     }
 
     @Override

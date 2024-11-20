@@ -24,13 +24,16 @@ public class Gorgon_2 extends Ennemies {
         Map<String, Integer> animations = new HashMap<>();
         animations.put("Idle", 7);
         animations.put("Dead", 3);
+        animations.put("Hurt", 3);
 
         spriteManager.loadSprites(directory, animations, "single");
         Array<TextureRegion> idleFrames = spriteManager.getAnimation(directory, "Idle");
         Array<TextureRegion> deadFrames = spriteManager.getAnimation(directory, "Dead");
+        Array<TextureRegion> hurtFrames = spriteManager.getAnimation(directory, "Hurt");
 
         idleAnimation = new Animation<>(0.1f, idleFrames);
         deadAnimation = new Animation<>(0.2f, deadFrames);
+        hurtAnimation = new Animation<>(0.1f, hurtFrames);
 
         deathSound = Gdx.audio.newSound(Gdx.files.internal("assets/deathSound.mp3"));
 
