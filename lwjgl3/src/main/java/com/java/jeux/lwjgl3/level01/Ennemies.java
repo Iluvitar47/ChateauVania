@@ -7,17 +7,16 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 
-public abstract class Ennemies extends Character{
+public abstract class Ennemies extends Character {
     protected Animation<TextureRegion> idleAnimation;
     protected Animation<TextureRegion> deadAnimation;
     protected Sound deathSound;
-    protected boolean isDying = false;
     protected float deathTimer = 0f;
     protected final float repopTime = 5f;
     protected final float preRepopTime = 2f;
 
-    public Ennemies(float startX, float startY) {
-        super(startX, startY);
+    public Ennemies(float startX, float startY, int MaxHealth, int AttackDamage) {
+        super(startX, startY, MaxHealth, AttackDamage);
     }
 
     @Override
@@ -60,6 +59,7 @@ public abstract class Ennemies extends Character{
         }
     }
 
+    @Override
     public void die() {
         if (!isDying && !isDead) {
             isDying = true;
@@ -70,14 +70,16 @@ public abstract class Ennemies extends Character{
         }
     }
 
+    @Override
     public void respawn() {
-        isDead = false;
-        isDying = false;
-        elapsedTime = 0;
+        super.respawn();
+        deathTimer = 0f;
     }
 
     @Override
     public Rectangle getHitBox() {
         return new Rectangle(position.x + hitboxOffsetX, position.y, spriteWidth, spriteHeight);
     }
+
 }
+

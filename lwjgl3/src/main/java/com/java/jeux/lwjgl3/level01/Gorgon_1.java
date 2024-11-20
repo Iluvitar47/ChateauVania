@@ -12,8 +12,8 @@ public class Gorgon_1 extends Ennemies {
     private SpriteResourceManager spriteManager;
     private Pixmap currentPixmap;
 
-    public Gorgon_1(float startX, float startY) {
-        super(startX, startY);
+    public Gorgon_1(float startX, float startY, int MaxHealth, int AttackDamage) {
+        super(startX, startY, MaxHealth, AttackDamage);
         spriteManager = new SpriteResourceManager();
     }
 
@@ -62,5 +62,4 @@ public class Gorgon_1 extends Ennemies {
             currentPixmap.dispose();
         }
     }
-
 }

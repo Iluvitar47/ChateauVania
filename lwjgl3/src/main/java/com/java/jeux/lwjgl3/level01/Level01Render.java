@@ -39,23 +39,16 @@ public class Level01Render extends ApplicationAdapter {
         batch = new SpriteBatch();
         shapeRenderer = new ShapeRenderer();
 
-        player = new Player(36, 36);
+        player = new Player(36, 36, 10, 2);
         player.create();
 
 
         enemies = new ArrayList<>();
-        Gorgon_1 gorgon_1 = new Gorgon_1(800, 800);
-        Gorgon_2 gorgon_2 = new Gorgon_2(900, 800);
-        Gorgon_3 gorgon_3 = new Gorgon_3(1000, 800);
+        Gorgon_1 gorgon_1 = new Gorgon_1(100, 50, 4, 2);
 
         gorgon_1.create();
-        gorgon_2.create();
-        gorgon_3.create();
-
 
         enemies.add(gorgon_1);
-        enemies.add(gorgon_2);
-        enemies.add(gorgon_3);
 
         gravityTest = new GravityTest(mapLoad.getGroundObjects());
 
@@ -72,7 +65,7 @@ public class Level01Render extends ApplicationAdapter {
             solidObjectsManager.applyCollision(enemy);
         }
 
-        cameraController.update(new Vector2(player.getX(), player.getY()), Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        cameraController.update(new Vector2(player.getPosition().x, player.getPosition().y), Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);

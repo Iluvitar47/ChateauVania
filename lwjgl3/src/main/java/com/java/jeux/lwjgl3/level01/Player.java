@@ -8,8 +8,8 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.math.Rectangle;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Player extends Character {
@@ -18,13 +18,15 @@ public class Player extends Character {
     private Animation<TextureRegion> currentAnimation;
     private float elapsedTime = 0f, attackElapsedTime = 0f;
     private final float speed = 100f;
-    public boolean facingRight = true, isWalking = false, isAttacking = false;
+    private boolean facingRight = true, isWalking = false, isAttacking = false;
     private SpriteResourceManager spriteManager;
     private Pixmap currentPixmap;
     private Jump jump = new Jump(150, 250, 300);
+    private int lives = 3;
 
-    public Player(float startX, float startY) {
-        super(startX, startY);
+    public Player(float startX, float startY, int MaxHealth, int AttackDamage) {
+        super(startX, startY, MaxHealth, AttackDamage);
+        this.currentHealth = MaxHealth;
         spriteManager = new SpriteResourceManager();
     }
 
@@ -44,10 +46,13 @@ public class Player extends Character {
         attackAnimation = new Animation<>(0.1f, spriteManager.getAnimation(directory, "Attack"));
         currentAnimation = idleAnimation;
 
+
         currentPixmap = preparePixmap();
+
+
         float[] dimensions = spriteManager.calculateFrameDimensions(idleAnimation.getKeyFrame(0), currentPixmap);
-        spriteWidth = dimensions[0] -15;
-        spriteHeight = dimensions[1] +4;
+        spriteWidth = dimensions[0] - 15;
+        spriteHeight = dimensions[1] + 4;
         hitboxOffsetX = dimensions[2];
     }
 
@@ -57,20 +62,14 @@ public class Player extends Character {
         return firstFrame.getTexture().getTextureData().consumePixmap();
     }
 
-    public void render(SpriteBatch batch) {
-        TextureRegion currentFrame = currentAnimation.getKeyFrame(elapsedTime, true);
-        if (facingRight) {
-            batch.draw(currentFrame, position.x, position.y, currentFrame.getRegionWidth(), currentFrame.getRegionHeight());
-        } else {
-            batch.draw(currentFrame, position.x + currentFrame.getRegionWidth(), position.y, -currentFrame.getRegionWidth(), currentFrame.getRegionHeight());
-        }
-
-    }
-
+    @Override
     public void update(float deltaTime) {
         elapsedTime += deltaTime;
+
+
         Animation<TextureRegion> newAnimation = currentAnimation;
-        jump.updateJump(this, deltaTime );
+        jump.updateJump(this, deltaTime);
+
         if (isAttacking) {
             attackElapsedTime += deltaTime;
             if (attackAnimation.isAnimationFinished(attackElapsedTime)) {
@@ -92,8 +91,6 @@ public class Player extends Character {
         handleMovement(deltaTime);
     }
 
-    private String lastDirection = "right";
-
     private void handleMovement(float deltaTime) {
         if (!isAttacking) {
             isWalking = false;
@@ -107,21 +104,11 @@ public class Player extends Character {
                 } else if (pressingLeft) {
                     position.x -= speed * deltaTime;
                     facingRight = false;
-                    lastDirection = "left";
                     isWalking = true;
                 } else if (pressingRight) {
                     position.x += speed * deltaTime;
                     facingRight = true;
-                    lastDirection = "right";
                     isWalking = true;
-                }
-
-                if (pressingLeft && pressingRight) {
-                    if (lastDirection.equals("right")) {
-                        facingRight = true;
-                    } else if (lastDirection.equals("left")) {
-                        facingRight = false;
-                    }
                 }
             }
 
@@ -136,24 +123,72 @@ public class Player extends Character {
         }
     }
 
-
-    public boolean isAttacking() {
-        return isAttacking;
+    @Override
+    public void render(SpriteBatch batch) {
+        TextureRegion currentFrame = currentAnimation.getKeyFrame(elapsedTime, true);
+        if (facingRight) {
+            batch.draw(currentFrame, position.x, position.y, currentFrame.getRegionWidth(), currentFrame.getRegionHeight());
+        } else {
+            batch.draw(currentFrame, position.x + currentFrame.getRegionWidth(), position.y, -currentFrame.getRegionWidth(), currentFrame.getRegionHeight());
+        }
     }
 
     @Override
-    public float getWidth() {
-        return spriteWidth;
+    public Rectangle getHitBox() {
+
+        if (facingRight) {
+            return new Rectangle(position.x + hitboxOffsetX / 2 + 15, position.y, spriteWidth, spriteHeight);
+        } else {
+            return new Rectangle(position.x + hitboxOffsetX / 2 + 20, position.y, spriteWidth, spriteHeight);
+        }
+    }
+
+    public List<Rectangle> getAttackBoxes() {
+        List<Rectangle> attackBoxes = new ArrayList<>();
+        Rectangle hitBox = getHitBox();
+
+        float attackBoxWidth = 35;
+        float attackBoxHeight = hitBox.height + 5;
+
+        attackBoxes.add(new Rectangle(
+            hitBox.x - attackBoxWidth,
+            hitBox.y,
+            attackBoxWidth,
+            attackBoxHeight
+        ));
+
+        attackBoxes.add(new Rectangle(
+            hitBox.x + hitBox.width,
+            hitBox.y,
+            attackBoxWidth,
+            attackBoxHeight
+        ));
+
+        return attackBoxes;
     }
 
     @Override
-    public float getHeight() {
-        return spriteHeight;
+    public boolean isDying() {
+        return isDying;
     }
 
     @Override
-    public boolean isFacingRight() {
-        return facingRight;
+    public void die() {
+        super.die();
+        lives--;
+        if (lives <= 0) {
+            System.out.println("Game Over!");
+        } else {
+            System.out.println("Respawning...");
+            respawn();
+        }
+    }
+
+    @Override
+    public void respawn() {
+        super.respawn();
+        currentHealth = MaxHealth;
+        position.set(0, 0);
     }
 
     @Override
@@ -165,91 +200,22 @@ public class Player extends Character {
         }
     }
 
-    @Override
-    public Rectangle getHitBox() {
-        if (facingRight) {
-            return new Rectangle(position.x + hitboxOffsetX / 2 + 15, position.y, spriteWidth, spriteHeight);
-        }
-        if (!facingRight) {
-            return new Rectangle(position.x + hitboxOffsetX / 2 + 20, position.y, spriteWidth, spriteHeight);
-        }
-
-        return null;
-    }
-
-    public float getX() {
-        return this.position.x + hitboxOffsetX / 2;
-    }
-
-    public float getY() {
-        return this.position.y;
-    }
-
-    public List<Rectangle> getAttackBoxes() {
-        List<Rectangle> attackBoxes = new ArrayList<>();
-        Rectangle hitBox = getHitBox();
-
-        float attackBoxWidth = 35;
-        float attackBoxHeight = hitBox.height+5;
-
-
-        Rectangle leftAttackBox = new Rectangle(
-            hitBox.x - attackBoxWidth,
-            hitBox.y,
-            attackBoxWidth,
-            attackBoxHeight
-        );
-
-        Rectangle rightAttackBox = new Rectangle(
-            hitBox.x + hitBox.width,
-            hitBox.y,
-            attackBoxWidth,
-            attackBoxHeight
-        );
-
-        attackBoxes.add(leftAttackBox);
-        attackBoxes.add(rightAttackBox);
-
-        return attackBoxes;
-    }
-
-    public String getName() {
-        return "";
-    }
-
-    public int getHealth() {
-        return 0;
-    }
-
-    public int getDamage() {
-        return 0;
-    }
-
-    public String getSpecialAttack() {
-        return "";
-    }
-
     public int getLives() {
-        return 3;
+        return lives;
     }
 
-    public int getDefaultHealth() {
-        return 100;
+    public void setLives(int lives) {
+        this.lives = lives;
     }
 
-    public int getDefaultLives() {
-        return 3;
+    @Override
+    public boolean isFacingRight() {
+        return facingRight;
     }
 
-    public void takeDamage(int i) {
+    public boolean isAttacking() {
+        return isAttacking;
     }
 
-    public void respawn() {
-    }
 
-    public void useSpecialAttack() {
-    }
-
-    public void attack(Player target) {
-    }
 }
