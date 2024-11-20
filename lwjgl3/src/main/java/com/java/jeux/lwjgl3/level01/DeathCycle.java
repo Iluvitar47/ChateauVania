@@ -6,6 +6,7 @@ public interface DeathCycle {
 
     boolean isAlive();
     boolean isDying();
+    boolean isDead();
 
     void setHealth(int health);
     void setMaxHealth(int maxHealth);

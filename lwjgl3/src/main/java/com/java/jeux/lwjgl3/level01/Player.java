@@ -14,7 +14,7 @@ import java.util.Map;
 
 public class Player extends Character {
     private SpriteBatch batch;
-    private Animation<TextureRegion> idleAnimation, walkAnimation, attackAnimation;
+    private Animation<TextureRegion> idleAnimation, walkAnimation, attackAnimation, hurtAnimation, deathAnimation;
     private Animation<TextureRegion> currentAnimation;
     private float elapsedTime = 0f, attackElapsedTime = 0f;
     private final float speed = 100f;
@@ -39,11 +39,15 @@ public class Player extends Character {
         animations.put("Idle", 8);
         animations.put("Walk", 10);
         animations.put("Attack", 6);
+        animations.put("Hurt", 3);
+        animations.put("Death", 10);
 
         spriteManager.loadSprites(directory, animations, "folder");
         idleAnimation = new Animation<>(0.1f, spriteManager.getAnimation(directory, "Idle"));
         walkAnimation = new Animation<>(0.1f, spriteManager.getAnimation(directory, "Walk"));
         attackAnimation = new Animation<>(0.1f, spriteManager.getAnimation(directory, "Attack"));
+        hurtAnimation = new Animation<>(0.1f, spriteManager.getAnimation(directory, "Hurt"));
+        deathAnimation = new Animation<>(0.1f, spriteManager.getAnimation(directory, "Death"));
         currentAnimation = idleAnimation;
 
 
@@ -80,7 +84,9 @@ public class Player extends Character {
             newAnimation = attackAnimation;
         } else if (isWalking) {
             newAnimation = walkAnimation;
-        } else {
+        }
+
+        else {
             newAnimation = idleAnimation;
         }
 

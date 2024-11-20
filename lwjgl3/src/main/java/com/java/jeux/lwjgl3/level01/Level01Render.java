@@ -40,7 +40,7 @@ public class Level01Render extends ApplicationAdapter {
         batch = new SpriteBatch();
         shapeRenderer = new ShapeRenderer();
 
-        player = new Player(36, 36, 10, 2);
+        player = new Player(36, 64, 10, 2);
         player.create();
 
         enemies = new ArrayList<>();
@@ -116,6 +116,10 @@ public class Level01Render extends ApplicationAdapter {
 
 
         attackManager.checkPlayerAttacks(player, enemies);
+        attackManager.checkEnemyAttacks(player, enemies);
+        attackManager.resetPlayerHit();
+
+        System.out.println("Player health: " + player.getHealth());
 
         batch.setProjectionMatrix(camera.combined);
         batch.begin();

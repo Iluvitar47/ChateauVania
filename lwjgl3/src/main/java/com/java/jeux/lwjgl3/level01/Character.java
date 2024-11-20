@@ -140,6 +140,7 @@ public abstract class Character implements DeathCycle {
         return isDying;
     }
 
+    @Override
     public boolean isDead() {
         return isDead;
     }
