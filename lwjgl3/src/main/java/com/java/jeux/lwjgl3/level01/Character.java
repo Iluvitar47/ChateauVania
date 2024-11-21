@@ -1,37 +1,43 @@
 package com.java.jeux.lwjgl3.level01;
 
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 
 public abstract class Character implements DeathCycle {
+
     protected Vector2 position;
     protected Vector2 velocity = new Vector2(0, 0);
     protected boolean onGround;
-    protected float elapsedTime = 0f;
-    public boolean isDead = false;
+    protected boolean facingRight = true, isWalking = false;
     protected float hitboxOffsetX = 0;
-    protected float spriteWidth;
-    protected float spriteHeight;
+
+    protected float spriteWidth, spriteHeight;
+    protected float elapsedTime = 0f;
+
+    protected boolean isDead = false, isDying = false;
+    protected Sound deathSound;
+    protected boolean isAttacking = false, takeHit = false;
     protected boolean isColliding;
-    protected int MaxHealth;
-    protected int AttackDamage;
-    protected int currentHealth;
-    protected boolean isDying = false;
-    protected boolean takeHit = false;
+
+    protected int MaxHealth, currentHealth, AttackDamage;
 
     public Character(float startX, float startY, int MaxHealth, int AttackDamage) {
         this.position = new Vector2(startX, startY);
         this.MaxHealth = MaxHealth;
         this.AttackDamage = AttackDamage;
-        this.currentHealth = MaxHealth; // Initialisation des PV
+        this.currentHealth = MaxHealth;
     }
 
     public abstract void create();
     public abstract void update(float deltaTime);
     public abstract void render(SpriteBatch batch);
     public abstract void dispose();
-    public abstract boolean isFacingRight();
+
+    public boolean isFacingRight() {
+        return facingRight;
+    }
 
     public abstract Rectangle getHitBox();
 
@@ -127,6 +133,13 @@ public abstract class Character implements DeathCycle {
 
     @Override
     public void die() {
+        if (!isDying && !isDead) {
+            isDying = true;
+            elapsedTime = 0;
+            if (deathSound != null) {
+                deathSound.play(0.1f);
+            }
+        }
     }
 
     @Override
@@ -154,5 +167,9 @@ public abstract class Character implements DeathCycle {
     @Override
     public int getAttackDamage() {
         return AttackDamage;
+    }
+
+    public boolean isAttacking() {
+        return isAttacking;
     }
 }

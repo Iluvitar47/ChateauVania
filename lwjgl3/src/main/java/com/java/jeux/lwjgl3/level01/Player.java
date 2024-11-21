@@ -18,7 +18,6 @@ public class Player extends Character {
     private Animation<TextureRegion> currentAnimation;
     private float elapsedTime = 0f, attackElapsedTime = 0f;
     private final float speed = 100f;
-    private boolean facingRight = true, isWalking = false, isAttacking = false;
     private SpriteResourceManager spriteManager;
     private Pixmap currentPixmap;
     private Jump jump = new Jump(150, 250, 300);
@@ -87,9 +86,7 @@ public class Player extends Character {
             newAnimation = attackAnimation;
         } else if (isWalking) {
             newAnimation = walkAnimation;
-        }
-
-        else {
+        } else {
             newAnimation = idleAnimation;
         }
 
@@ -196,15 +193,5 @@ public class Player extends Character {
     public void setLives(int lives) {
         this.lives = lives;
     }
-
-    @Override
-    public boolean isFacingRight() {
-        return facingRight;
-    }
-
-    public boolean isAttacking() {
-        return isAttacking;
-    }
-
 
 }

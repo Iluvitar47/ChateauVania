@@ -11,7 +11,6 @@ public abstract class Ennemies extends Character {
     protected Animation<TextureRegion> idleAnimation;
     protected Animation<TextureRegion> deadAnimation;
     protected Animation<TextureRegion> hurtAnimation;
-    protected Sound deathSound;
     protected float deathTimer = 0f;
     protected final float repopTime = 5f;
     protected final float preRepopTime = 2f;
@@ -68,17 +67,6 @@ public abstract class Ennemies extends Character {
         } else {
             TextureRegion currentFrame = idleAnimation.getKeyFrame(elapsedTime, true);
             batch.draw(currentFrame, position.x, position.y);
-        }
-    }
-
-    @Override
-    public void die() {
-        if (!isDying && !isDead) {
-            isDying = true;
-            elapsedTime = 0;
-            if (deathSound != null) {
-                deathSound.play(0.1f);
-            }
         }
     }
 
