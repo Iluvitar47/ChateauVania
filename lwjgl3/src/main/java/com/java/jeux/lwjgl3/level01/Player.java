@@ -23,6 +23,7 @@ public class Player extends Character {
     private Pixmap currentPixmap;
     private Jump jump = new Jump(150, 250, 300);
     private int lives = 3;
+    private AttackBoxManager attackBoxManager;
 
     public Player(float startX, float startY, int MaxHealth, int AttackDamage) {
         super(startX, startY, MaxHealth, AttackDamage);
@@ -58,6 +59,8 @@ public class Player extends Character {
         spriteWidth = dimensions[0] - 15;
         spriteHeight = dimensions[1] + 4;
         hitboxOffsetX = dimensions[2];
+
+        attackBoxManager = new AttackBoxManager(35, getHitBox().height + 5);
     }
 
     private Pixmap preparePixmap() {
@@ -150,27 +153,7 @@ public class Player extends Character {
     }
 
     public List<Rectangle> getAttackBoxes() {
-        List<Rectangle> attackBoxes = new ArrayList<>();
-        Rectangle hitBox = getHitBox();
-
-        float attackBoxWidth = 35;
-        float attackBoxHeight = hitBox.height + 5;
-
-        attackBoxes.add(new Rectangle(
-            hitBox.x - attackBoxWidth,
-            hitBox.y,
-            attackBoxWidth,
-            attackBoxHeight
-        ));
-
-        attackBoxes.add(new Rectangle(
-            hitBox.x + hitBox.width,
-            hitBox.y,
-            attackBoxWidth,
-            attackBoxHeight
-        ));
-
-        return attackBoxes;
+        return attackBoxManager.generateAttackBoxes(getHitBox(), true, true);
     }
 
     @Override
