@@ -33,7 +33,6 @@ public class Player extends Character {
     @Override
     public void create() {
         batch = new SpriteBatch();
-
         String directory = "assets/Characters/Hero";
         Map<String, Integer> animations = new HashMap<>();
         animations.put("Idle", 8);
@@ -41,7 +40,6 @@ public class Player extends Character {
         animations.put("Attack", 6);
         animations.put("Hurt", 3);
         animations.put("Death", 10);
-
         spriteManager.loadSprites(directory, animations, "folder");
         idleAnimation = new Animation<>(0.1f, spriteManager.getAnimation(directory, "Idle"));
         walkAnimation = new Animation<>(0.1f, spriteManager.getAnimation(directory, "Walk"));
@@ -49,16 +47,11 @@ public class Player extends Character {
         hurtAnimation = new Animation<>(0.1f, spriteManager.getAnimation(directory, "Hurt"));
         deathAnimation = new Animation<>(0.1f, spriteManager.getAnimation(directory, "Death"));
         currentAnimation = idleAnimation;
-
-
         currentPixmap = preparePixmap();
-
-
         float[] dimensions = spriteManager.calculateFrameDimensions(idleAnimation.getKeyFrame(0), currentPixmap);
         spriteWidth = dimensions[0] - 15;
         spriteHeight = dimensions[1] + 4;
         hitboxOffsetX = dimensions[2];
-
         attackBoxManager = new AttackBoxManager(35, getHitBox().height + 5);
     }
 
@@ -71,12 +64,27 @@ public class Player extends Character {
     @Override
     public void update(float deltaTime) {
         elapsedTime += deltaTime;
-
-
         Animation<TextureRegion> newAnimation = currentAnimation;
         jump.updateJump(this, deltaTime);
-
-        if (isAttacking) {
+        if (isDying) {
+            if (deathAnimation.isAnimationFinished(elapsedTime)) {
+                if (lives > 0) {
+                    respawn();
+                } else {
+                    isDead = true;
+                }
+            }
+            newAnimation = deathAnimation;
+        } else if (takeHit) {
+            if (hurtAnimation.isAnimationFinished(elapsedTime)) {
+                takeHit = false;
+                elapsedTime = 0;
+                if (currentHealth <= 0) {
+                    die();
+                }
+            }
+            newAnimation = hurtAnimation;
+        } else if (isAttacking) {
             attackElapsedTime += deltaTime;
             if (attackAnimation.isAnimationFinished(attackElapsedTime)) {
                 isAttacking = false;
@@ -89,11 +97,9 @@ public class Player extends Character {
         } else {
             newAnimation = idleAnimation;
         }
-
         if (newAnimation != currentAnimation) {
             currentAnimation = newAnimation;
         }
-
         handleMovement(deltaTime);
     }
 
@@ -131,6 +137,10 @@ public class Player extends Character {
 
     @Override
     public void render(SpriteBatch batch) {
+        if (isDead) {
+            return;
+        }
+
         TextureRegion currentFrame = currentAnimation.getKeyFrame(elapsedTime, true);
         if (facingRight) {
             batch.draw(currentFrame, position.x, position.y, currentFrame.getRegionWidth(), currentFrame.getRegionHeight());
@@ -138,6 +148,7 @@ public class Player extends Character {
             batch.draw(currentFrame, position.x + currentFrame.getRegionWidth(), position.y, -currentFrame.getRegionWidth(), currentFrame.getRegionHeight());
         }
     }
+
 
     @Override
     public Rectangle getHitBox() {
@@ -160,21 +171,28 @@ public class Player extends Character {
 
     @Override
     public void die() {
-        super.die();
-        lives--;
-        if (lives <= 0) {
-            System.out.println("Game Over!");
-        } else {
-            System.out.println("Respawning...");
-            respawn();
+        if (!isDying && !isDead) {
+            isDying = true;
+            elapsedTime = 0;
+            currentAnimation = deathAnimation;
+            lives--;
+
+            if (lives <= 0) {
+                System.out.println("Game Over!");
+            } else {
+                System.out.println("Respawning...");
+            }
         }
     }
 
     @Override
     public void respawn() {
-        super.respawn();
+        isDead = false;
+        isDying = false;
+        elapsedTime = 0;
         currentHealth = MaxHealth;
-        position.set(36, 36);
+        position.set(36, 64);
+        currentAnimation = idleAnimation;
     }
 
     @Override
