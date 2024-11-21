@@ -3,7 +3,7 @@ lwjgl3/build/reports/jacoco/test/html/index.html
 
 
 
-# ProjetJava
+# CastleVania
 
 A [libGDX](https://libgdx.com/) project generated with [gdx-liftoff](https://github.com/libgdx/gdx-liftoff).
 
