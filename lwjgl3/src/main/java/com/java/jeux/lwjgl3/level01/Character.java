@@ -7,7 +7,7 @@ import com.badlogic.gdx.math.Vector2;
 
 public abstract class Character implements DeathCycle {
 
-    protected static Vector2 position;
+    protected Vector2 position;
     protected Vector2 velocity = new Vector2(0, 0);
     protected boolean onGround;
     protected boolean facingRight = true, isWalking = false;
@@ -51,7 +51,7 @@ public abstract class Character implements DeathCycle {
         return spriteHeight;
     }
 
-    public static Vector2 getPosition() {
+    public Vector2 getPosition() {
         return position;
     }
 
