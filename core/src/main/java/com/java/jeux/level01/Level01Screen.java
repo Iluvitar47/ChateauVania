@@ -27,6 +27,7 @@ public class Level01Screen implements Screen {
     private SolidObjectsManager solidObjectsManager;
     private AttackManager attackManager;
     private Viewport viewport;
+    private SpriteBatch HUDbatch = new SpriteBatch();
 
     public Level01Screen(Player player){
         leve01MapLoader = new Leve01MapLoader();
@@ -179,6 +180,9 @@ public class Level01Screen implements Screen {
             enemy.render(batch);
         }
         batch.end();
+
+        HUDbatch.begin();
+        HUDbatch.end();
     }
 
     @Override
