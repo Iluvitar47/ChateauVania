@@ -108,6 +108,13 @@ public class Level01Render extends ApplicationAdapter {
         shapeRenderer.end();
 
         shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
+        shapeRenderer.setColor(Color.BROWN);
+        for (Rectangle rect : mapLoad.getDeathZoneObjects()) {
+            shapeRenderer.rect(rect.x, rect.y, rect.width, rect.height);
+        }
+        shapeRenderer.end();
+
+        shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
         shapeRenderer.setColor(Color.GREEN);
         Rectangle playerBounds = player.getHitBox();
         shapeRenderer.rect(playerBounds.x, playerBounds.y, playerBounds.width, playerBounds.height);
@@ -146,6 +153,18 @@ public class Level01Render extends ApplicationAdapter {
         attackManager.checkPlayerAttacks(player, enemies);
         attackManager.checkEnemyAttacks(player, enemies);
         attackManager.resetPlayerHit();
+
+        for (Rectangle deathZone : mapLoad.getDeathZoneObjects()) {
+            if (player.getHitBox().overlaps(deathZone)) {
+                player.die();
+            }
+
+            for (Ennemies enemy : enemies) {
+                if (enemy.getHitBox().overlaps(deathZone)) {
+                    enemy.die();
+                }
+            }
+        }
 
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
