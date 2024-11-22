@@ -1,9 +1,31 @@
-Retrouvez l'intégralité du contenu des tests dans le dossier suivant en ouvrant dans le navigateur le fichier suivant:
+Retrouvez l'intégralité du contenu des tests en ouvrant dans le navigateur le fichier suivant (chemin absolu à adapter en fonction de votre architecture:
 lwjgl3/build/reports/jacoco/test/html/index.html
 
 
+# CASTLEVANIA
 
-# CastleVania
+Bienvenu dans le monde de Castlevania, un jeu de plateforme en 2D. Vous incarnez un personnage qui doit traverser un chateau hanté pour atteindre le boss final. Vous devrez éviter les pièges et les ennemis qui se dresseront sur votre chemin. Vous pourrez ramasser des objets pour vous aider dans votre quête.
+
+Ce jeu a été créé dans le cadre de notre projet Java. Il a été réalisé par un Théo Deschamps et Mathias Guignet.
+
+Pour jouer, il vous suffit de faire tourner le fichier Lwjgl3Launcher.java.
+
+Pour jouer, utilisez Q et D pour vous déplacer respectivement à geuche puis à droite ainsi que la barre d'espace pour sauter. Vous pouvez également attaquer en appuyant sur la touche "E".
+
+Le but du jeu est de traverser le chateau et de battre le boss final.
+
+
+Ce jeu a été créé avec la librairie LibGDX. Il a été développé en Java. 
+
+Si vous souhaitez consulter plus d'informations sur le fonctionnement de LibGDX, vous pouvez lire la suite des explications ci-dessous ou bien vous rendre sur le site officiel de LibGDX: https://libgdx.com/
+
+Bonne chance et bon jeu !
+
+
+
+
+
+# LibGDX
 
 A [libGDX](https://libgdx.com/) project generated with [gdx-liftoff](https://github.com/libgdx/gdx-liftoff).
 
