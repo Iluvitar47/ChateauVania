@@ -44,7 +44,7 @@ public class Level01Render extends ApplicationAdapter {
         player.create();
 
         enemies = new ArrayList<>();
-        Gorgon_1 gorgon_1 = new Gorgon_1(100, 50, 4, 2);
+        Gorgon_1 gorgon_1 = new Gorgon_1(100, 50, 4, 2, this);
         gorgon_1.create();
         enemies.add(gorgon_1);
 
@@ -128,6 +128,14 @@ public class Level01Render extends ApplicationAdapter {
             enemy.render(batch);
         }
         batch.end();
+    }
+
+    public Vector2 getPlayerPosition() {
+        return player.getPosition();
+    }
+
+    public Player getPlayer() {
+        return player;
     }
 
     @Override

@@ -14,8 +14,8 @@ public class Gorgon_3 extends Ennemies {
     private SpriteResourceManager spriteManager;
     private Pixmap currentPixmap;
 
-    public Gorgon_3(float startX, float startY, int MaxHealth, int AttackDamage) {
-        super(startX, startY, MaxHealth, AttackDamage);
+    public Gorgon_3(float startX, float startY, int MaxHealth, int AttackDamage, Level01Render level) {
+        super(startX, startY, MaxHealth, AttackDamage, level);
         spriteManager = new SpriteResourceManager();
     }
 

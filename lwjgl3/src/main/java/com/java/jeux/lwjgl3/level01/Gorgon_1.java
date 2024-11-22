@@ -13,8 +13,8 @@ public class Gorgon_1 extends Ennemies {
     private SpriteResourceManager spriteManager;
     private Pixmap currentPixmap;
 
-    public Gorgon_1(float startX, float startY, int MaxHealth, int AttackDamage) {
-        super(startX, startY, MaxHealth, AttackDamage);
+    public Gorgon_1(float startX, float startY, int MaxHealth, int AttackDamage, Level01Render level) {
+        super(startX, startY, MaxHealth, AttackDamage, level);
         spriteManager = new SpriteResourceManager();
     }
 
@@ -25,15 +25,18 @@ public class Gorgon_1 extends Ennemies {
         animations.put("Idle", 7);
         animations.put("Dead", 3);
         animations.put("Hurt", 3);
+        animations.put("Walk", 13);
 
         spriteManager.loadSprites(directory, animations, "single");
         Array<TextureRegion> idleFrames = spriteManager.getAnimation(directory, "Idle");
         Array<TextureRegion> deadFrames = spriteManager.getAnimation(directory, "Dead");
         Array<TextureRegion> hurtFrames = spriteManager.getAnimation(directory, "Hurt");
+        Array<TextureRegion> walkFrames = spriteManager.getAnimation(directory, "Walk");
 
         idleAnimation = new Animation<>(0.1f, idleFrames);
         deadAnimation = new Animation<>(0.1f, deadFrames);
         hurtAnimation = new Animation<>(0.1f, hurtFrames);
+        walkAnimation = new Animation<>(0.1f, walkFrames);
 
         deathSound = Gdx.audio.newSound(Gdx.files.internal("assets/deathSound.mp3"));
 
@@ -76,4 +79,5 @@ public class Gorgon_1 extends Ennemies {
         }
         return null;
     }
+
 }
