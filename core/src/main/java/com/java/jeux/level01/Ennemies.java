@@ -1,6 +1,5 @@
-package com.java.jeux.lwjgl3.level01;
+package com.java.jeux.level01;
 
-import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -13,7 +12,6 @@ public abstract class Ennemies extends Character {
     protected Animation<TextureRegion> deadAnimation;
     protected Animation<TextureRegion> hurtAnimation;
     protected Animation<TextureRegion> walkAnimation;
-    private Level01Render level;
 
     protected float deathTimer = 0f;
     protected final float repopTime = 5f;
@@ -26,9 +24,9 @@ public abstract class Ennemies extends Character {
 
     protected Player player;
 
-    public Ennemies(float startX, float startY, int MaxHealth, int AttackDamage, Level01Render level) {
+    public Ennemies(float startX, float startY, int MaxHealth, int AttackDamage, Player player) {
         super(startX, startY, MaxHealth, AttackDamage);
-        this.level = level;
+        this.player = player;
     }
 
     @Override
@@ -120,13 +118,13 @@ public abstract class Ennemies extends Character {
     }
 
     private boolean detectPlayer() {
-        Vector2 playerPosition = level.getPlayerPosition();
+        Vector2 playerPosition = player.getPosition();
         float distance = position.dst(playerPosition);
         return distance <= detectionRadius;
     }
 
     private void moveTowardsPlayer(float deltaTime) {
-        Vector2 playerPosition = level.getPlayerPosition();
+        Vector2 playerPosition = player.getPosition();
         Vector2 direction = playerPosition.cpy().sub(position).nor();
         position.add(direction.scl(moveSpeed * deltaTime));
         facingRight = direction.x >= 0;
@@ -134,7 +132,7 @@ public abstract class Ennemies extends Character {
 
 
     protected Player getPlayer() {
-        return level.getPlayer();
+        return player;
     }
 
 }

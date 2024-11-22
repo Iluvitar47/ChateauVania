@@ -1,4 +1,4 @@
-package com.java.jeux.lwjgl3.level01;
+package com.java.jeux.level01;
 
 public interface DeathCycle {
     int getMaxHealth();

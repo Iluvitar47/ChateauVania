@@ -3,7 +3,7 @@ package com.java.jeux.lwjgl3;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-import com.java.jeux.lwjgl3.level01.Player;
+import com.java.jeux.level01.Player;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 

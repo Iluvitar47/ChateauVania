@@ -1,50 +1,52 @@
-package com.java.jeux.lwjgl3.level01;
+package com.java.jeux.level01;
 
-import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.graphics.OrthographicCamera;
+import com.badlogic.gdx.utils.ScreenUtils;
+import com.badlogic.gdx.utils.viewport.FitViewport;
+import com.badlogic.gdx.utils.viewport.Viewport;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Level01Render extends ApplicationAdapter {
+public class Level01Screen implements Screen {
     private SpriteBatch batch;
     private Player player;
     private List<Ennemies> enemies;
-    private MapLoad mapLoad;
+    private Leve01MapLoader leve01MapLoader;
     private ShapeRenderer shapeRenderer;
     private GravityTest gravityTest;
     private CameraController cameraController;
     private OrthographicCamera camera;
     private SolidObjectsManager solidObjectsManager;
     private AttackManager attackManager;
+    private Viewport viewport;
 
-    @Override
-    public void create() {
-        mapLoad = new MapLoad();
-        mapLoad.create();
+    public Level01Screen(Player player){
+        leve01MapLoader = new Leve01MapLoader();
+        leve01MapLoader.create();
+        this.viewport = new FitViewport(Gdx.graphics.getWidth(), Gdx.graphics.getHeight(), leve01MapLoader.getCamera());
 
-        List<Rectangle> solidObjects = mapLoad.getSolidObjects();
+        List<Rectangle> solidObjects = leve01MapLoader.getSolidObjects();
         solidObjectsManager = new SolidObjectsManager(solidObjects);
 
-        camera = mapLoad.getCamera();
-        cameraController = new CameraController(camera, mapLoad.getMapWidth(), mapLoad.getMapHeight());
+        camera = leve01MapLoader.getCamera();
+        cameraController = new CameraController(camera, leve01MapLoader.getMapWidth(), leve01MapLoader.getMapHeight());
         cameraController.setZoom(0.5f);
 
         batch = new SpriteBatch();
         shapeRenderer = new ShapeRenderer();
 
-        player = new Player(64, 50, 10, 2);
-        player.create();
+        this.player = player;
 
         enemies = new ArrayList<>();
-        Gorgon_1 gorgon_1 = new Gorgon_1(100, 50, 4, 2, this);
+        Gorgon_1 gorgon_1 = new Gorgon_1(100, 50, 4, 2, player);
         gorgon_1.create();
         enemies.add(gorgon_1);
 
@@ -76,14 +78,17 @@ public class Level01Render extends ApplicationAdapter {
         // gorgon_8.create();
         // enemies.add(gorgon_8);
 
-        gravityTest = new GravityTest(mapLoad.getGroundObjects());
+        gravityTest = new GravityTest(leve01MapLoader.getGroundObjects());
         attackManager = new AttackManager();
     }
 
     @Override
-    public void render() {
-        float deltaTime = Gdx.graphics.getDeltaTime();
+    public void show() {
 
+    }
+
+    @Override
+    public void render(float deltaTime) {
         solidObjectsManager.applyCollision(player);
         gravityTest.applyGravity(player, deltaTime);
         for (Ennemies enemy : enemies) {
@@ -91,25 +96,26 @@ public class Level01Render extends ApplicationAdapter {
             solidObjectsManager.applyCollision(enemy);
         }
 
-        cameraController.update(new Vector2(player.getPosition().x + player.getWeightBetweenHitBoxAndSprite() + player.getHitBox().width, player.getPosition().y), Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
+        cameraController.update(new Vector2(player.getPosition().x + player.getWeightBetweenHitBoxAndSprite() + player.getHitBox().width, player.getPosition().y));
 
-        Gdx.gl.glClearColor(0, 0, 0, 1);
-        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+        ScreenUtils.clear(Color.BLACK);
+//        Gdx.gl.glClearColor(0, 0, 0, 1);
+//        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
-        mapLoad.render();
+        leve01MapLoader.render();
 
         shapeRenderer.setProjectionMatrix(camera.combined);
 
         shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
         shapeRenderer.setColor(Color.BLUE);
-        for (Rectangle rect : mapLoad.getSolidObjects()) {
+        for (Rectangle rect : leve01MapLoader.getSolidObjects()) {
             shapeRenderer.rect(rect.x, rect.y, rect.width, rect.height);
         }
         shapeRenderer.end();
 
         shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
         shapeRenderer.setColor(Color.BROWN);
-        for (Rectangle rect : mapLoad.getDeathZoneObjects()) {
+        for (Rectangle rect : leve01MapLoader.getDeathZoneObjects()) {
             shapeRenderer.rect(rect.x, rect.y, rect.width, rect.height);
         }
         shapeRenderer.end();
@@ -139,7 +145,7 @@ public class Level01Render extends ApplicationAdapter {
 
         shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
         shapeRenderer.setColor(Color.RED);
-        for (Rectangle ground : mapLoad.getGroundObjects()) {
+        for (Rectangle ground : leve01MapLoader.getGroundObjects()) {
             shapeRenderer.rect(ground.x, ground.y, ground.width, ground.height);
         }
         shapeRenderer.end();
@@ -154,7 +160,7 @@ public class Level01Render extends ApplicationAdapter {
         attackManager.checkEnemyAttacks(player, enemies);
         attackManager.resetPlayerHit();
 
-        for (Rectangle deathZone : mapLoad.getDeathZoneObjects()) {
+        for (Rectangle deathZone : leve01MapLoader.getDeathZoneObjects()) {
             if (player.getHitBox().overlaps(deathZone)) {
                 player.die();
             }
@@ -175,22 +181,38 @@ public class Level01Render extends ApplicationAdapter {
         batch.end();
     }
 
-    public Vector2 getPlayerPosition() {
-        return player.getPosition();
+    @Override
+    public void resize(int width, int height) {
+        this.viewport.update(width, height, false);
     }
 
-    public Player getPlayer() {
-        return player;
+    @Override
+    public void pause() {
+        // Never called bc not android
+    }
+
+    @Override
+    public void resume() {
+        // Never called bc not android
+    }
+
+    @Override
+    public void hide() {
+
     }
 
     @Override
     public void dispose() {
-        mapLoad.dispose();
+        leve01MapLoader.dispose();
         batch.dispose();
         shapeRenderer.dispose();
         player.dispose();
         for (Ennemies enemy : enemies) {
             enemy.dispose();
         }
+    }
+
+    public Player getPlayer() {
+        return player;
     }
 }

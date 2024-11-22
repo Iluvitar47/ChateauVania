@@ -1,4 +1,4 @@
-package com.java.jeux.lwjgl3.level01;
+package com.java.jeux.level01;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Pixmap;

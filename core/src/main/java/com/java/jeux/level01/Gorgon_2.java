@@ -1,4 +1,4 @@
-package com.java.jeux.lwjgl3.level01;
+package com.java.jeux.level01;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Pixmap;
@@ -10,18 +10,18 @@ import com.badlogic.gdx.utils.Array;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Gorgon_3 extends Ennemies {
+public class Gorgon_2 extends Ennemies {
     private SpriteResourceManager spriteManager;
     private Pixmap currentPixmap;
 
-    public Gorgon_3(float startX, float startY, int MaxHealth, int AttackDamage, Level01Render level) {
-        super(startX, startY, MaxHealth, AttackDamage, level);
+    public Gorgon_2(float startX, float startY, int MaxHealth, int AttackDamage, Player player) {
+        super(startX, startY, MaxHealth, AttackDamage, player);
         spriteManager = new SpriteResourceManager();
     }
 
     @Override
     public void create() {
-        String directory = "assets/Characters/Gorgon_3";
+        String directory = "assets/Characters/Gorgon_2";
         Map<String, Integer> animations = new HashMap<>();
         animations.put("Idle", 7);
         animations.put("Dead", 3);

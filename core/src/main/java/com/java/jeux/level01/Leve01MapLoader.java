@@ -1,4 +1,4 @@
-package com.java.jeux.lwjgl3.level01;
+package com.java.jeux.level01;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
@@ -16,7 +16,7 @@ import com.badlogic.gdx.math.Rectangle;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MapLoad {
+public class Leve01MapLoader {
     private TiledMap map;
     private OrthogonalTiledMapRenderer mapRenderer;
     private OrthographicCamera camera;
