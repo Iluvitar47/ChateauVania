@@ -51,7 +51,7 @@ public abstract class Character implements DeathCycle {
         return spriteHeight;
     }
 
-    public Vector2 getPosition() {
+    public static Vector2 getPosition() {
         return position;
     }
 

@@ -205,7 +205,7 @@ public class Player extends Character {
         }
     }
 
-    public int getLives() {
+    public static int getLives() {
         return lives;
     }
 
