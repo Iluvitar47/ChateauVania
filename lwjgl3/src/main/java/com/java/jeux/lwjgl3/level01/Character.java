@@ -7,7 +7,7 @@ import com.badlogic.gdx.math.Vector2;
 
 public abstract class Character implements DeathCycle {
 
-    protected Vector2 position;
+    protected static Vector2 position;
     protected Vector2 velocity = new Vector2(0, 0);
     protected boolean onGround;
     protected boolean facingRight = true, isWalking = false;
