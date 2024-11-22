@@ -144,6 +144,8 @@ public class Level01Render extends ApplicationAdapter {
 
 
         attackManager.checkPlayerAttacks(player, enemies);
+        attackManager.checkEnemyAttacks(player, enemies);
+        attackManager.resetPlayerHit();
 
         batch.setProjectionMatrix(camera.combined);
         batch.begin();

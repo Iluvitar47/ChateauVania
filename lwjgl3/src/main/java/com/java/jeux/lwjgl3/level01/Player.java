@@ -23,6 +23,16 @@ public class Player extends Character {
     private Jump jump = new Jump(150, 250, 300);
     private int lives = 3;
     private AttackBoxManager attackBoxManager;
+    private boolean isKnockedBack = false;
+    private float knockBackTime = 0.5f;
+    private float knockBackElapsed = 0f;
+
+    private boolean isInvincible = false;
+    private float invincibilityTime = 1f;
+    private float invincibilityElapsed = 0f;
+
+    private float knockBackSpeed = 200f;
+
 
     public Player(float startX, float startY, int MaxHealth, int AttackDamage) {
         super(startX, startY, MaxHealth, AttackDamage);
@@ -65,8 +75,20 @@ public class Player extends Character {
     @Override
     public void update(float deltaTime) {
         elapsedTime += deltaTime;
+
+        if (isKnockedBack) {
+            handleKnockBack(deltaTime);
+        } else {
+            handleMovement(deltaTime);
+        }
+
+        if (isInvincible) {
+            handleInvincibility(deltaTime);
+        }
+
         Animation<TextureRegion> newAnimation = currentAnimation;
         jump.updateJump(this, deltaTime);
+
         if (isDying) {
             if (deathAnimation.isAnimationFinished(elapsedTime)) {
                 if (lives > 0) {
@@ -98,11 +120,12 @@ public class Player extends Character {
         } else {
             newAnimation = idleAnimation;
         }
+
         if (newAnimation != currentAnimation) {
             currentAnimation = newAnimation;
         }
-        handleMovement(deltaTime);
     }
+
 
     private void handleMovement(float deltaTime) {
         if (!isAttacking) {
@@ -142,6 +165,11 @@ public class Player extends Character {
             return;
         }
 
+
+        if (isInvincible && ((int)(invincibilityElapsed * 10) % 2 == 0)) {
+            return;
+        }
+
         TextureRegion currentFrame = currentAnimation.getKeyFrame(elapsedTime, true);
         if (facingRight) {
             batch.draw(currentFrame, position.x, position.y, currentFrame.getRegionWidth(), currentFrame.getRegionHeight());
@@ -149,6 +177,7 @@ public class Player extends Character {
             batch.draw(currentFrame, position.x + currentFrame.getRegionWidth(), position.y, -currentFrame.getRegionWidth(), currentFrame.getRegionHeight());
         }
     }
+
 
 
     @Override
@@ -214,8 +243,52 @@ public class Player extends Character {
     }
 
     public int getCurrentHealth() {
-        return 0;
+        return this.currentHealth;
     }
+
+    @Override
+    public void takeDamage(int amount) {
+        if (!isInvincible) {
+            currentHealth -= amount;
+            if (currentHealth <= 0) {
+                die();
+            } else {
+                startKnockBack();
+                startInvincibility();
+            }
+        }
+    }
+
+    private void startKnockBack() {
+        isKnockedBack = true;
+        knockBackElapsed = 0f;
+    }
+
+    private void startInvincibility() {
+        isInvincible = true;
+        invincibilityElapsed = 0f;
+    }
+    private void handleKnockBack(float deltaTime) {
+        knockBackElapsed += deltaTime;
+        float knockBackDirection = facingRight ? -1 : 1;
+        position.x += knockBackSpeed * knockBackDirection * deltaTime;
+
+        if (knockBackElapsed >= knockBackTime) {
+            isKnockedBack = false;
+        }
+    }
+    private void handleInvincibility(float deltaTime) {
+        invincibilityElapsed += deltaTime;
+
+
+        if ((int)(invincibilityElapsed * 10) % 2 == 0) {
+
+        }
+
+        if (invincibilityElapsed >= invincibilityTime) {
+            isInvincible = false;
+        }
+    }
+
+
 }
-
-
