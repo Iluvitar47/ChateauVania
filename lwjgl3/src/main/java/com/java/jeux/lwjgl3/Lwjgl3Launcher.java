@@ -7,7 +7,12 @@ import com.badlogic.gdx.backends.lwjgl3.Lwjgl3ApplicationConfiguration;
 
 public class Lwjgl3Launcher {
     public static void main(String[] args) {
-        // Création et lancement direct de l'application sans fenêtres préliminaires
+        // Vérifie si le programme tourne sous macOS
+        if (System.getProperty("os.name").toLowerCase().contains("mac")) {
+            if (!"1".equals(System.getProperty("java.awt.headless"))) {
+                System.setProperty("java.awt.headless", "true");
+            }
+        }
         createApplication();
     }
 
@@ -21,7 +26,6 @@ public class Lwjgl3Launcher {
         configuration.useVsync(true);
         configuration.setForegroundFPS(Lwjgl3ApplicationConfiguration.getDisplayMode().refreshRate + 1);
 
-        // Configuration par défaut : taille de fenêtre et couleurs initiales
         configuration.setWindowedMode(1280, 720); // Largeur et hauteur par défaut
         configuration.setInitialBackgroundColor(new Color(0.5f, 0.5f, 0.5f, 1.0f)); // Gris moyen
 
