@@ -40,17 +40,6 @@ public class Leve01MapLoader {
         camera.update();
         mapRenderer.setView(camera);
         mapRenderer.render();
-        shapeRenderer.setProjectionMatrix(camera.combined);
-        shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
-        shapeRenderer.setColor(Color.RED);
-        for (Rectangle rect : getGroundObjects()) {
-            shapeRenderer.rect(rect.x, rect.y, rect.width, rect.height);
-        }
-        shapeRenderer.setColor(Color.BLUE);
-        for (Rectangle rect : deathZone) {
-            shapeRenderer.rect(rect.x, rect.y, rect.width, rect.height);
-        }
-        shapeRenderer.end();
     }
 
     public OrthographicCamera getCamera() {

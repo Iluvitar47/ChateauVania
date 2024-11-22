@@ -13,33 +13,54 @@ import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 
 public class MainMenuScreen implements Screen {
-    private ChateauVania vania;
-    private Stage stage;
-    private Table table;
-    private Skin uiSkin;
+    private final Stage stage;
 
 
     public MainMenuScreen(ChateauVania chateauVania) {
-        this.vania = chateauVania;
+        final MainMenuScreen that = this;
         stage = new Stage();
         Gdx.input.setInputProcessor(stage);
 
-        table = new Table();
+        Table table = new Table();
         table.setFillParent(true);
         stage.addActor(table);
 
-        table.setDebug(true); // This is optional, but enables debug lines for tables.
+//        table.setDebug(true); // This is optional, but enables debug lines for tables.
 
-        uiSkin = new Skin(Gdx.files.internal("UI/uiskin.json"));
-
-        TextButton button = new TextButton("START", uiSkin);
-        button.addListener(new ClickListener(){
+        TextButton startButton = new TextButton("START", ChateauVania.getUiSkin());
+        startButton.addListener(new ClickListener(){
             @Override
             public void clicked (InputEvent event, float x, float y) {
-                vania.startGame();
+                chateauVania.startGame();
+                that.dispose();
             }
         });
-        table.add(button);
+        table.add(startButton).expand();
+
+        table.row();
+
+        TextButton optButton = new TextButton("SETTINGS", ChateauVania.getUiSkin());
+        optButton.addListener(new ClickListener(){
+            @Override
+            public void clicked (InputEvent event, float x, float y) {
+                chateauVania.setScreen(new SettingsScreen(() -> {
+                    chateauVania.setScreen(that);
+                    Gdx.input.setInputProcessor(stage);
+                }));
+            }
+        });
+        table.add(optButton).expand();
+
+        table.row();
+
+        TextButton quitButton = new TextButton("QUIT", ChateauVania.getUiSkin());
+        quitButton.addListener(new ClickListener(){
+            @Override
+            public void clicked (InputEvent event, float x, float y) {
+                Gdx.app.exit();
+            }
+        });
+        table.add(quitButton).expand();
     }
 
     @Override

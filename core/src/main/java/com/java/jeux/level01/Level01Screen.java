@@ -11,11 +11,13 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.utils.ScreenUtils;
 import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
+import com.java.jeux.AbstractLevel;
+import com.java.jeux.GlobalSettings;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Level01Screen implements Screen {
+public class Level01Screen extends AbstractLevel {
     private SpriteBatch batch;
     private Player player;
     private List<Ennemies> enemies;
@@ -89,7 +91,7 @@ public class Level01Screen implements Screen {
     }
 
     @Override
-    public void render(float deltaTime) {
+    public void renderLevel(float deltaTime) {
         solidObjectsManager.applyCollision(player);
         gravityTest.applyGravity(player, deltaTime);
         for (Ennemies enemy : enemies) {
@@ -105,51 +107,56 @@ public class Level01Screen implements Screen {
 
         leve01MapLoader.render();
 
-        shapeRenderer.setProjectionMatrix(camera.combined);
 
-        shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
-        shapeRenderer.setColor(Color.BLUE);
-        for (Rectangle rect : leve01MapLoader.getSolidObjects()) {
-            shapeRenderer.rect(rect.x, rect.y, rect.width, rect.height);
-        }
-        shapeRenderer.end();
-
-        shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
-        shapeRenderer.setColor(Color.BROWN);
-        for (Rectangle rect : leve01MapLoader.getDeathZoneObjects()) {
-            shapeRenderer.rect(rect.x, rect.y, rect.width, rect.height);
-        }
-        shapeRenderer.end();
-
-        shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
-        shapeRenderer.setColor(Color.GREEN);
-        Rectangle playerBounds = player.getHitBox();
-        shapeRenderer.rect(playerBounds.x, playerBounds.y, playerBounds.width, playerBounds.height);
-
-        shapeRenderer.setColor(Color.BLUE);
-        for (Ennemies enemy : enemies) {
-            Rectangle enemyBounds = enemy.getHitBox();
-            if (!enemy.isDead()) {
-                shapeRenderer.rect(enemyBounds.x, enemyBounds.y, enemyBounds.width, enemyBounds.height);
-            }
-        }
-        shapeRenderer.end();
-
-        if (player.isAttacking()) {
+        if (GlobalSettings.getShowDebugHitboxes()) {
+            shapeRenderer.setProjectionMatrix(camera.combined);
             shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
-            shapeRenderer.setColor(Color.YELLOW);
-            for (Rectangle attackBox : player.getAttackBoxes()) {
-                shapeRenderer.rect(attackBox.x, attackBox.y, attackBox.width, attackBox.height);
+            shapeRenderer.setColor(Color.BLUE);
+            for (Rectangle rect : leve01MapLoader.getSolidObjects()) {
+                shapeRenderer.rect(rect.x, rect.y, rect.width, rect.height);
             }
             shapeRenderer.end();
+
+            shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
+            shapeRenderer.setColor(Color.BROWN);
+            for (Rectangle rect : leve01MapLoader.getDeathZoneObjects()) {
+                shapeRenderer.rect(rect.x, rect.y, rect.width, rect.height);
+            }
+            shapeRenderer.end();
+
+            shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
+            shapeRenderer.setColor(Color.GREEN);
+            Rectangle playerBounds = player.getHitBox();
+            shapeRenderer.rect(playerBounds.x, playerBounds.y, playerBounds.width, playerBounds.height);
+
+            shapeRenderer.setColor(Color.BLUE);
+            for (Ennemies enemy : enemies) {
+                Rectangle enemyBounds = enemy.getHitBox();
+                if (!enemy.isDead()) {
+                    shapeRenderer.rect(enemyBounds.x, enemyBounds.y, enemyBounds.width, enemyBounds.height);
+                }
+            }
+            shapeRenderer.end();
+
+            if (player.isAttacking()) {
+                shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
+                shapeRenderer.setColor(Color.YELLOW);
+                for (Rectangle attackBox : player.getAttackBoxes()) {
+                    shapeRenderer.rect(attackBox.x, attackBox.y, attackBox.width, attackBox.height);
+                }
+                shapeRenderer.end();
+            }
+
+            shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
+            shapeRenderer.setColor(Color.RED);
+            for (Rectangle ground : leve01MapLoader.getGroundObjects()) {
+                shapeRenderer.rect(ground.x, ground.y, ground.width, ground.height);
+            }
+            shapeRenderer.end();
+
         }
 
-        shapeRenderer.begin(ShapeRenderer.ShapeType.Line);
-        shapeRenderer.setColor(Color.RED);
-        for (Rectangle ground : leve01MapLoader.getGroundObjects()) {
-            shapeRenderer.rect(ground.x, ground.y, ground.width, ground.height);
-        }
-        shapeRenderer.end();
+
 
         player.update(deltaTime);
         for (Ennemies enemy : enemies) {
@@ -182,6 +189,7 @@ public class Level01Screen implements Screen {
         batch.end();
 
         HUDbatch.begin();
+        // Render hearts on top of the sprite batch.
         HUDbatch.end();
     }
 

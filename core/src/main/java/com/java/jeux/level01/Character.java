@@ -4,6 +4,7 @@ import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
+import com.java.jeux.GlobalSettings;
 
 public abstract class Character implements DeathCycle {
 
@@ -138,7 +139,7 @@ public abstract class Character implements DeathCycle {
             isDying = true;
             elapsedTime = 0;
             if (deathSound != null) {
-                deathSound.play(0.1f);
+                deathSound.play(GlobalSettings.getGlobalVolume());
             }
         }
     }

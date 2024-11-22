@@ -40,7 +40,6 @@ public class Gorgon_1 extends Ennemies {
 
         deathSound = Gdx.audio.newSound(Gdx.files.internal("assets/deathSound.mp3"));
 
-
         currentPixmap = preparePixmap();
         float[] dimensions = spriteManager.calculateFrameDimensions(idleAnimation.getKeyFrame(0), currentPixmap);
         spriteWidth = dimensions[0];

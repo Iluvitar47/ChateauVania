@@ -7,6 +7,8 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.math.Rectangle;
+import com.java.jeux.ChateauVania;
+import com.java.jeux.GameOverScreen;
 
 import java.util.HashMap;
 import java.util.List;
@@ -172,9 +174,9 @@ public class Player extends Character {
 
         TextureRegion currentFrame = currentAnimation.getKeyFrame(elapsedTime, true);
         if (facingRight) {
-            batch.draw(currentFrame, position.x, position.y, currentFrame.getRegionWidth(), currentFrame.getRegionHeight());
+            batch.draw(currentFrame, position.x, position.y-5, currentFrame.getRegionWidth(), currentFrame.getRegionHeight());
         } else {
-            batch.draw(currentFrame, position.x + currentFrame.getRegionWidth(), position.y, -currentFrame.getRegionWidth(), currentFrame.getRegionHeight());
+            batch.draw(currentFrame, position.x + currentFrame.getRegionWidth(), position.y-5, -currentFrame.getRegionWidth(), currentFrame.getRegionHeight());
         }
     }
 
@@ -208,7 +210,7 @@ public class Player extends Character {
             lives--;
 
             if (lives <= 0) {
-                System.out.println("Game Over!");
+                ChateauVania.getInstance().setScreen(new GameOverScreen());
             } else {
                 System.out.println("Respawning...");
             }
