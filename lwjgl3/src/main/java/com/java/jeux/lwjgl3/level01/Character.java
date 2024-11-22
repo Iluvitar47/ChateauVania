@@ -21,7 +21,9 @@ public abstract class Character implements DeathCycle {
     protected boolean isAttacking = false, takeHit = false;
     protected boolean isColliding;
 
-    protected int MaxHealth, currentHealth, AttackDamage;
+    protected int MaxHealth;
+    protected static int currentHealth;
+    protected int AttackDamage;
 
     public Character(float startX, float startY, int MaxHealth, int AttackDamage) {
         this.position = new Vector2(startX, startY);
@@ -90,7 +92,6 @@ public abstract class Character implements DeathCycle {
         return MaxHealth;
     }
 
-    @Override
     public int getHealth() {
         return currentHealth;
     }

@@ -59,6 +59,7 @@ public class Player extends Character {
         TextureRegion firstFrame = idleAnimation.getKeyFrame(0);
         firstFrame.getTexture().getTextureData().prepare();
         return firstFrame.getTexture().getTextureData().consumePixmap();
+
     }
 
     @Override
@@ -212,4 +213,9 @@ public class Player extends Character {
         this.lives = lives;
     }
 
+    public int getCurrentHealth() {
+        return 0;
+    }
 }
+
+
