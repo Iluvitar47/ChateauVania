@@ -91,7 +91,7 @@ public abstract class Character implements DeathCycle {
     }
 
     @Override
-    public int getHealth() {
+    public static int getHealth() {
         return currentHealth;
     }
 
