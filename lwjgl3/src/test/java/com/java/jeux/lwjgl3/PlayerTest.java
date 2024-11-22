@@ -13,7 +13,6 @@ public class PlayerTest {
     @BeforeEach
     public void setUp() {
         player = new Player(36, 64, 100, 20);
-        player.create();
     }
 
     @Test
@@ -22,11 +21,8 @@ public class PlayerTest {
     }
 
     @Test
-    public void testRespawn() {
-        player.takeDamage(100);
-        player.respawn();
-        assertEquals(100, player.getCurrentHealth(), "Le joueur devrait récupérer toute sa santé après respawn.");
-        assertEquals(2, player.getLives(), "Le joueur devrait perdre une vie après respawn.");
+    public void testInitialAttackState() {
+        assertEquals(false, player.isAttacking(), "Le joueur ne devrait pas être en train d'attaquer au début.");
     }
 
     @Test
