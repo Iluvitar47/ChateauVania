@@ -13,6 +13,8 @@ import com.badlogic.gdx.utils.viewport.Viewport;
 import com.java.jeux.AbstractLevel;
 import com.java.jeux.GlobalSettings;
 import com.java.jeux.level01.character.Enemy;
+import com.java.jeux.level01.character.Ennemies.Gorgon_2;
+import com.java.jeux.level01.character.Ennemies.Gorgon_3;
 import com.java.jeux.level01.managers.AttackManager;
 import com.java.jeux.level01.managers.CameraManager;
 import com.java.jeux.level01.managers.GravityManager;
@@ -67,33 +69,33 @@ public class Level01Screen extends AbstractLevel {
         gorgon_1.create();
         enemies.add(gorgon_1);
 
-        // Gorgon_1 gorgon_2 = new Gorgon_1(7000, 500, 4, 2);
-        // gorgon_2.create();
-        // enemies.add(gorgon_2);
+         Gorgon_1 gorgon_2 = new Gorgon_1(7000, 500, 4, 2, player);
+         gorgon_2.create();
+         enemies.add(gorgon_2);
 
-        // Gorgon_1 gorgon_3 = new Gorgon_1(13000, 500, 4, 2);
-        // gorgon_3.create();
-        // enemies.add(gorgon_3);
+         Gorgon_1 gorgon_3 = new Gorgon_1(13000, 500, 4, 2, player);
+         gorgon_3.create();
+         enemies.add(gorgon_3);
 
-        // Gorgon_1 gorgon_4 = new Gorgon_1(14000, 500, 4, 2);
-        // gorgon_4.create();
-        // enemies.add(gorgon_4);
+         Gorgon_1 gorgon_4 = new Gorgon_1(14000, 500, 4, 2, player);
+         gorgon_4.create();
+         enemies.add(gorgon_4);
 
-        // Gorgon_2 gorgon_5 = new Gorgon_2(5600, 100, 4, 2);
-        // gorgon_5.create();
-        // enemies.add(gorgon_5);
+         Gorgon_2 gorgon_5 = new Gorgon_2(5600, 100, 4, 2, player);
+         gorgon_5.create();
+         enemies.add(gorgon_5);
 
-        // Gorgon_2 gorgon_6 = new Gorgon_2(10500, 500, 4, 2);
-        // gorgon_6.create();
-        // enemies.add(gorgon_6);
+         Gorgon_2 gorgon_6 = new Gorgon_2(10500, 500, 4, 2, player);
+         gorgon_6.create();
+         enemies.add(gorgon_6);
 
-        // Gorgon_2 gorgon_7 = new Gorgon_2(17000, 500, 4, 2);
-        // gorgon_7.create();
-        // enemies.add(gorgon_7);
+         Gorgon_2 gorgon_7 = new Gorgon_2(17000, 500, 4, 2, player);
+         gorgon_7.create();
+         enemies.add(gorgon_7);
 
-        // Gorgon_3 gorgon_8 = new Gorgon_3(25500, 500, 10, 3);
-        // gorgon_8.create();
-        // enemies.add(gorgon_8);
+         Gorgon_3 gorgon_8 = new Gorgon_3(25500, 500, 15, 3, player);
+         gorgon_8.create();
+         enemies.add(gorgon_8);
 
         gravityManager = new GravityManager(leve01MapLoader.getGroundObjects());
         attackManager = new AttackManager();
