@@ -3,9 +3,17 @@ package com.java.jeux.level01;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * The `LaunchPage` class represents the launch page of the game.
+ */
 public class LaunchPage extends JFrame {
     private boolean startGame = false;
 
+    /**
+     * Constructs a new `LaunchPage` with the specified settings window.
+     *
+     * @param settingsWindow the settings window
+     */
     public LaunchPage(SettingsWindow settingsWindow) {
         setTitle("Launch Page");
         setSize(settingsWindow.getWidthValue(), settingsWindow.getHeightValue());
@@ -38,6 +46,11 @@ public class LaunchPage extends JFrame {
         add(panel);
     }
 
+    /**
+     * Checks if the game should start.
+     *
+     * @return true if the game should start, false otherwise
+     */
     public boolean isStartGame() {
         return startGame;
     }
