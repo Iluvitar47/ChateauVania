@@ -18,6 +18,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * The `Player` class represents the player character in the game.
+ */
 public class Player extends Character implements PlayerActions {
     private SpriteBatch batch;
     private Animation<TextureRegion> idleAnimation, walkAnimation, attackAnimation, hurtAnimation, deathAnimation;
@@ -39,13 +42,23 @@ public class Player extends Character implements PlayerActions {
 
     private float knockBackSpeed = 200f;
 
-
+    /**
+     * Constructs a new `Player` with the specified starting position, maximum health, and attack damage.
+     *
+     * @param startX the starting x-coordinate
+     * @param startY the starting y-coordinate
+     * @param MaxHealth the maximum health
+     * @param AttackDamage the attack damage
+     */
     public Player(float startX, float startY, int MaxHealth, int AttackDamage) {
         super(startX, startY, MaxHealth, AttackDamage);
         this.currentHealth = MaxHealth;
         spriteManager = new SpriteResourceManager();
     }
 
+    /**
+     * Initializes the player by loading animations and setting up the sprite batch.
+     */
     @Override
     public void create() {
         batch = new SpriteBatch();
@@ -71,13 +84,22 @@ public class Player extends Character implements PlayerActions {
         attackBoxManager = new AttackBoxManager(35, getHitBox().height + 5);
     }
 
+    /**
+     * Prepares the pixmap for the player's sprite.
+     *
+     * @return the prepared pixmap
+     */
     private Pixmap preparePixmap() {
         TextureRegion firstFrame = idleAnimation.getKeyFrame(0);
         firstFrame.getTexture().getTextureData().prepare();
         return firstFrame.getTexture().getTextureData().consumePixmap();
-
     }
 
+    /**
+     * Updates the player's state based on the elapsed time.
+     *
+     * @param deltaTime the time in seconds since the last update
+     */
     @Override
     public void update(float deltaTime) {
         elapsedTime += deltaTime;
@@ -132,7 +154,11 @@ public class Player extends Character implements PlayerActions {
         }
     }
 
-
+    /**
+     * Handles the player's movement based on input.
+     *
+     * @param deltaTime the time in seconds since the last update
+     */
     private void handleMovement(float deltaTime) {
         if (!isAttacking) {
             isWalking = false;
@@ -165,12 +191,16 @@ public class Player extends Character implements PlayerActions {
         }
     }
 
+    /**
+     * Renders the player using the specified sprite batch.
+     *
+     * @param batch the sprite batch to use for rendering
+     */
     @Override
     public void render(SpriteBatch batch) {
         if (isDead) {
             return;
         }
-
 
         if (isInvincible && ((int)(invincibilityElapsed * 10) % 2 == 0)) {
             return;
@@ -184,11 +214,13 @@ public class Player extends Character implements PlayerActions {
         }
     }
 
-
-
+    /**
+     * Gets the hitbox of the player.
+     *
+     * @return the hitbox
+     */
     @Override
     public Rectangle getHitBox() {
-
         if (facingRight) {
             return new Rectangle(position.x + hitboxOffsetX / 2 + 15, position.y, spriteWidth, spriteHeight);
         } else {
@@ -196,6 +228,11 @@ public class Player extends Character implements PlayerActions {
         }
     }
 
+    /**
+     * Gets the attack boxes of the player.
+     *
+     * @return a list of rectangles representing the attack boxes
+     */
     public List<Rectangle> getAttackBoxes() {
         return attackBoxManager.generateAttackBoxes(getHitBox(), true, true);
     }
@@ -250,14 +287,29 @@ public class Player extends Character implements PlayerActions {
         }
     }
 
+    /**
+     * Gets the number of lives the player has.
+     *
+     * @return the number of lives
+     */
     public int getLives() {
         return lives;
     }
 
+    /**
+     * Sets the number of lives the player has.
+     *
+     * @param lives the new number of lives
+     */
     public void setLives(int lives) {
         this.lives = lives;
     }
 
+    /**
+     * Gets the current health of the player.
+     *
+     * @return the current health
+     */
     public int getCurrentHealth() {
         return this.currentHealth;
     }
@@ -275,6 +327,9 @@ public class Player extends Character implements PlayerActions {
         }
     }
 
+    /**
+     * Starts the knockback effect for the player.
+     */
     public void startKnockBack() {
         isKnockedBack = true;
         knockBackElapsed = 0f;
@@ -285,6 +340,9 @@ public class Player extends Character implements PlayerActions {
         return false;
     }
 
+    /**
+     * Starts the invincibility period for the player.
+     */
     public void startInvincibility() {
         isInvincible = true;
         invincibilityElapsed = 0f;
@@ -295,6 +353,11 @@ public class Player extends Character implements PlayerActions {
         return false;
     }
 
+    /**
+     * Handles the knockback effect for the player.
+     *
+     * @param deltaTime the time in seconds since the last update
+     */
     private void handleKnockBack(float deltaTime) {
         knockBackElapsed += deltaTime;
         float knockBackDirection = facingRight ? -1 : 1;
@@ -304,9 +367,14 @@ public class Player extends Character implements PlayerActions {
             isKnockedBack = false;
         }
     }
+
+    /**
+     * Handles the invincibility period for the player.
+     *
+     * @param deltaTime the time in seconds since the last update
+     */
     private void handleInvincibility(float deltaTime) {
         invincibilityElapsed += deltaTime;
-
 
         if ((int)(invincibilityElapsed * 10) % 2 == 0) {
 
@@ -316,6 +384,4 @@ public class Player extends Character implements PlayerActions {
             isInvincible = false;
         }
     }
-
-
 }

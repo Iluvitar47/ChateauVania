@@ -23,6 +23,9 @@ import com.java.jeux.level01.character.Ennemies.Gorgon_1;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The `Level01Screen` class extends the `AbstractLevel` class and represents the first level of the game.
+ */
 public class Level01Screen extends AbstractLevel {
     private SpriteBatch batch;
     private Player player;
@@ -37,6 +40,11 @@ public class Level01Screen extends AbstractLevel {
     private Viewport viewport;
     private SpriteBatch HUDbatch = new SpriteBatch();
 
+    /**
+     * Constructs a new `Level01Screen` with the specified player.
+     *
+     * @param player the player character for this level
+     */
     public Level01Screen(Player player){
         leve01MapLoader = new Leve01MapLoader();
         leve01MapLoader.create();
@@ -91,11 +99,19 @@ public class Level01Screen extends AbstractLevel {
         attackManager = new AttackManager();
     }
 
+    /**
+     * Called when this screen becomes the current screen for a {@link com.badlogic.gdx.Game}.
+     */
     @Override
     public void show() {
 
     }
 
+    /**
+     * Renders the level.
+     *
+     * @param deltaTime the time in seconds since the last render
+     */
     @Override
     public void renderLevel(float deltaTime) {
         solidObjectsManager.applyCollision(player);
@@ -112,7 +128,6 @@ public class Level01Screen extends AbstractLevel {
 //        Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
 
         leve01MapLoader.render();
-
 
         if (GlobalSettings.getShowDebugHitboxes()) {
             shapeRenderer.setProjectionMatrix(camera.combined);
@@ -159,16 +174,12 @@ public class Level01Screen extends AbstractLevel {
                 shapeRenderer.rect(ground.x, ground.y, ground.width, ground.height);
             }
             shapeRenderer.end();
-
         }
-
-
 
         player.update(deltaTime);
         for (Enemy enemy : enemies) {
             enemy.update(deltaTime);
         }
-
 
         attackManager.checkPlayerAttacks(player, enemies);
         attackManager.checkEnemyAttacks(player, enemies);
@@ -199,26 +210,44 @@ public class Level01Screen extends AbstractLevel {
         HUDbatch.end();
     }
 
+    /**
+     * Called when the screen is resized.
+     *
+     * @param width the new width of the screen
+     * @param height the new height of the screen
+     */
     @Override
     public void resize(int width, int height) {
         this.viewport.update(width, height, false);
     }
 
+    /**
+     * Called when the game is paused.
+     */
     @Override
     public void pause() {
         // Never called bc not android
     }
 
+    /**
+     * Called when the game is resumed from a paused state.
+     */
     @Override
     public void resume() {
         // Never called bc not android
     }
 
+    /**
+     * Called when this screen is no longer the current screen for a {@link com.badlogic.gdx.Game}.
+     */
     @Override
     public void hide() {
 
     }
 
+    /**
+     * Called when this screen should release all resources.
+     */
     @Override
     public void dispose() {
         leve01MapLoader.dispose();
@@ -230,6 +259,11 @@ public class Level01Screen extends AbstractLevel {
         }
     }
 
+    /**
+     * Gets the player character for this level.
+     *
+     * @return the player character
+     */
     public Player getPlayer() {
         return player;
     }

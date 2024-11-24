@@ -6,7 +6,8 @@ import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.*;
+import com.badlogic.gdx.scenes.scene2d.ui.Table;
+import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 
 /**
@@ -14,15 +15,18 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
  */
 public class MainMenuScreen implements Screen {
     private final Stage stage;
-    private final ChateauVania game;
+    private final Runnable startGameAction;
+    private final Runnable settingsAction;
 
     /**
-     * Constructs a new `MainMenuScreen` with the specified game instance.
+     * Constructs a new `MainMenuScreen` with the specified actions for the buttons.
      *
-     * @param game the game instance
+     * @param startGameAction the action to be performed when the start game button is clicked
+     * @param settingsAction the action to be performed when the settings button is clicked
      */
-    public MainMenuScreen(ChateauVania game) {
-        this.game = game;
+    public MainMenuScreen(Runnable startGameAction, Runnable settingsAction) {
+        this.startGameAction = startGameAction;
+        this.settingsAction = settingsAction;
         stage = new Stage();
         Gdx.input.setInputProcessor(stage);
 
@@ -30,45 +34,47 @@ public class MainMenuScreen implements Screen {
         table.setFillParent(true);
         stage.addActor(table);
 
-        Label titleLabel = new Label("Main Menu", ChateauVania.getUiSkin());
-        table.add(titleLabel).expandY();
-        table.row();
-
-        TextButton startButton = new TextButton("START", ChateauVania.getUiSkin());
+        TextButton startButton = new TextButton("Start Game", ChateauVania.getUiSkin());
         startButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.startGame();
+                startGameAction.run();
             }
         });
-        table.add(startButton).expandY();
-        table.row();
+        table.add(startButton).expand().row();
 
-        TextButton settingsButton = new TextButton("SETTINGS", ChateauVania.getUiSkin());
+        TextButton settingsButton = new TextButton("Settings", ChateauVania.getUiSkin());
         settingsButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
-                game.setScreen(new SettingsScreen(() -> game.setScreen(MainMenuScreen.this)));
+                settingsAction.run();
             }
         });
-        table.add(settingsButton).expandY();
-        table.row();
+        table.add(settingsButton).expand().row();
 
-        TextButton exitButton = new TextButton("EXIT", ChateauVania.getUiSkin());
+        TextButton exitButton = new TextButton("Exit", ChateauVania.getUiSkin());
         exitButton.addListener(new ClickListener() {
             @Override
             public void clicked(InputEvent event, float x, float y) {
                 Gdx.app.exit();
             }
         });
-        table.add(exitButton).expandY();
+        table.add(exitButton).expand();
     }
 
+    /**
+     * Called when this screen becomes the current screen for a {@link com.badlogic.gdx.Game}.
+     */
     @Override
     public void show() {
         // Method implementation
     }
 
+    /**
+     * Called when the screen should render itself.
+     *
+     * @param delta The time in seconds since the last render.
+     */
     @Override
     public void render(float delta) {
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
@@ -76,26 +82,44 @@ public class MainMenuScreen implements Screen {
         stage.draw();
     }
 
+    /**
+     * Called when the screen is resized.
+     *
+     * @param width The new width of the screen.
+     * @param height The new height of the screen.
+     */
     @Override
     public void resize(int width, int height) {
         stage.getViewport().update(width, height, true);
     }
 
+    /**
+     * Called when the game is paused.
+     */
     @Override
     public void pause() {
         // Method implementation
     }
 
+    /**
+     * Called when the game is resumed from a paused state.
+     */
     @Override
     public void resume() {
         // Method implementation
     }
 
+    /**
+     * Called when this screen is no longer the current screen for a {@link com.badlogic.gdx.Game}.
+     */
     @Override
     public void hide() {
         // Method implementation
     }
 
+    /**
+     * Called when this screen should release all resources.
+     */
     @Override
     public void dispose() {
         stage.dispose();
