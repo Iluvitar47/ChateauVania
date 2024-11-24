@@ -1,6 +1,9 @@
 Retrouvez l'intégralité du contenu des tests en ouvrant dans le navigateur le fichier suivant (chemin absolu à adapter en fonction de votre architecture:
 lwjgl3/build/reports/jacoco/test/html/index.html
 
+La documentation javadoc est disponible dans le dossier suivant:
+build/docs/javadoc/index.html
+
 # CHATEAUVANIA
 
 Bienvenu dans le monde de Castlevania, un jeu de plateforme en 2D. Vous incarnez un personnage qui doit traverser un chateau hanté pour atteindre le boss final. Vous devrez éviter les pièges et les ennemis qui se dresseront sur votre chemin. Vous pourrez ramasser des objets pour vous aider dans votre quête.
