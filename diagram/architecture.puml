@@ -1,0 +1,801 @@
+@startuml
+class com.java.jeux.lwjgl3.RoomTest.RoomTestMapLoad {
+- TiledMap map
+- OrthogonalTiledMapRenderer mapRenderer
+- OrthographicCamera camera
+- ShapeRenderer shapeRenderer
++ void create()
++ void render()
++ OrthographicCamera getCamera()
++ void dispose()
++ int getMapWidth()
++ int getMapHeight()
++ List<Rectangle> getGroundObjects()
++ List<Rectangle> getBorders(String)
++ List<Rectangle> getSolidObjects()
+}
+
+
+interface com.java.jeux.level01.contracts.CharacterState {
+~ Vector2 getPosition()
+~ void setPosition(Vector2)
+~ float getWidth()
+~ float getHeight()
+~ Rectangle getHitBox()
+~ float getWeightBetweenHitBoxAndSprite()
+~ Vector2 getVelocity()
+~ void setVelocity(Vector2)
+~ boolean isFacingRight()
+~ boolean isOnGround()
+~ void setOnGround(boolean)
+~ boolean isColliding()
+~ void setColliding(boolean)
+~ boolean isAttacking()
+~ boolean hurt()
+}
+
+interface com.java.jeux.level01.contracts.DeathCycle {
+~ int getMaxHealth()
+~ int getHealth()
+~ boolean isAlive()
+~ boolean isDying()
+~ boolean isDead()
+~ void setHealth(int)
+~ void setMaxHealth(int)
+~ int getAttackDamage()
+~ void takeDamage(int)
+~ void heal(int)
+~ void die()
+~ void respawn()
+~ boolean hurt()
+}
+
+class com.java.jeux.lwjgl3.RoomTest.MapsBordersManager {
+- List<Rectangle> leftBorders
+- List<Rectangle> upBorders
+- List<Rectangle> rightBorders
++ <<Create>> MapsBordersManager(List<Rectangle>,List<Rectangle>,List<Rectangle>)
++ void applyBorders(Character)
+}
+
+
+class com.java.jeux.level01.character.Ennemies.Gorgon_3 {
+- SpriteResourceManager spriteManager
+- Pixmap currentPixmap
++ <<Create>> Gorgon_3(float,float,int,int,Player)
++ void create()
+- Pixmap preparePixmap()
++ boolean isFacingRight()
++ void dispose()
++ Rectangle getHitBox()
+}
+
+
+class com.java.jeux.ChateauVania {
+- {static} ChateauVania INSTANCE
+- {static} Skin uiSkin
+- Player player
++ {static} Skin getUiSkin()
++ void create()
++ void startGame()
++ {static} ChateauVania getInstance()
+}
+note top of com.java.jeux.ChateauVania
+ {@link com.badlogic.gdx.ApplicationListener} implementation shared by all platforms. 
+end note
+
+
+
+abstract class com.java.jeux.level01.character.Character {
+# Vector2 position
+# Vector2 velocity
+# boolean onGround
+# boolean facingRight
+# float hitboxOffsetX
+# float spriteWidth
+# float elapsedTime
+# boolean isDead
+# Sound deathSound
+# boolean isAttacking
+# boolean isColliding
+# int MaxHealth
+# {static} int currentHealth
+# int AttackDamage
++ <<Create>> Character(float,float,int,int)
++ {abstract}void create()
++ {abstract}void update(float)
++ {abstract}void render(SpriteBatch)
++ {abstract}void dispose()
++ boolean isFacingRight()
++ {abstract}Rectangle getHitBox()
++ float getWidth()
++ float getHeight()
++ Vector2 getPosition()
++ void setPosition(Vector2)
++ Vector2 getVelocity()
++ void setVelocity(Vector2)
++ boolean isOnGround()
++ void setOnGround(boolean)
++ boolean isColliding()
++ void setColliding(boolean)
++ float getWeightBetweenHitBoxAndSprite()
++ int getMaxHealth()
++ int getHealth()
++ void setHealth(int)
++ void setMaxHealth(int)
++ boolean isAlive()
++ void takeDamage(int)
++ void heal(int)
++ void die()
++ void respawn()
++ boolean isDying()
++ boolean isDead()
++ boolean hurt()
++ int getAttackDamage()
++ boolean isAttacking()
+}
+
+
+class com.java.jeux.lwjgl3.RoomTest.Gorgon_3 {
+- SpriteResourceManager spriteManager
+- Pixmap currentPixmap
++ <<Create>> Gorgon_3(float,float)
++ void create()
+- Pixmap preparePixmap()
++ boolean isFacingRight()
++ void dispose()
+}
+
+
+class com.java.jeux.level01.Level01Screen {
+- SpriteBatch batch
+- Player player
+- List<Enemy> enemies
+- Leve01MapLoader leve01MapLoader
+- ShapeRenderer shapeRenderer
+- GravityManager gravityManager
+- CameraManager cameraManager
+- OrthographicCamera camera
+- SolidObjectsManager solidObjectsManager
+- AttackManager attackManager
+- Viewport viewport
+- SpriteBatch HUDbatch
++ <<Create>> Level01Screen(Player)
++ void show()
++ void renderLevel(float)
++ void resize(int,int)
++ void pause()
++ void resume()
++ void hide()
++ void dispose()
++ Player getPlayer()
+}
+
+
+class com.java.jeux.level01.SettingsWindow {
+- JTextField widthField
+- JTextField heightField
+- JSlider brightnessSlider
+- JSlider saturationSlider
+- boolean settingsApplied
++ <<Create>> SettingsWindow()
++ boolean isSettingsApplied()
++ int getWidthValue()
++ int getHeightValue()
++ float getBrightnessValue()
++ float getSaturationValue()
+}
+
+
+abstract class com.java.jeux.lwjgl3.RoomTest.Ennemies {
+# Animation<TextureRegion> idleAnimation
+# Animation<TextureRegion> deadAnimation
+# Sound deathSound
+# boolean isDying
+# float deathTimer
+# float repopTime
+# float preRepopTime
++ <<Create>> Ennemies(float,float)
++ void update(float)
++ void render(SpriteBatch)
++ void die()
++ void respawn()
++ Rectangle getHitBox()
+}
+
+
+class com.java.jeux.lwjgl3.PlayerTest {
+- Player player
++ void setUp()
++ void testInitialLives()
++ void testInitialAttackState()
++ void testInitialPosition()
+}
+
+
+abstract class com.java.jeux.level01.character.Enemy {
+# Animation<TextureRegion> idleAnimation
+# Animation<TextureRegion> deadAnimation
+# Animation<TextureRegion> hurtAnimation
+# Animation<TextureRegion> walkAnimation
+# float deathTimer
+# float repopTime
+# float preRepopTime
+- float hurtElapsedTime
+# float detectionRadius
+# float moveSpeed
+# Player player
++ <<Create>> Enemy(float,float,int,int,Player)
++ void update(float)
++ void render(SpriteBatch)
++ boolean detectPlayer()
++ Player getPlayer()
++ void moveTowardsPlayer(float)
++ Animation<TextureRegion> getIdleAnimation()
++ Animation<TextureRegion> getDeadAnimation()
++ Animation<TextureRegion> getHurtAnimation()
++ Animation<TextureRegion> getWalkAnimation()
++ float getRepopTime()
++ float getDeathTimer()
++ void respawn()
+}
+
+
+class com.java.jeux.lwjgl3.RoomTest.GravityTest {
+- float gravity
+- List<Rectangle> groundObjects
++ <<Create>> GravityTest(List<Rectangle>)
++ void applyGravity(Character,float)
+}
+
+
+class com.java.jeux.level01.managers.AttackManager {
+- Set<Enemy> attackedEnemies
+- boolean playerHit
++ void checkPlayerAttacks(Player,List<Enemy>)
++ void checkEnemyAttacks(Player,List<Enemy>)
++ void resetPlayerHit()
+}
+
+
+class com.java.jeux.level01.managers.CameraManager {
+- OrthographicCamera camera
+- float mapWidth
+- float mapHeight
+- float targetZoom
++ <<Create>> CameraManager(OrthographicCamera,float,float)
++ void setZoom(float)
++ void update(Vector2)
+}
+
+
+class com.java.jeux.lwjgl3.RoomTest.RoomTestLevel {
+- SpriteBatch batch
+- Player player
+- List<Ennemies> enemies
+- RoomTestMapLoad roomTestMapLoad
+- ShapeRenderer shapeRenderer
+- GravityTest gravityTest
+- CameraController cameraController
+- OrthographicCamera camera
+- MapsBordersManager mapsBordersManager
+- SolidObjectsManager solidObjectsManager
++ void create()
++ void render()
+- void checkCollision(Ennemies)
++ void dispose()
+}
+
+
+class com.java.jeux.level01.managers.JumpManager {
+- float maxJumpHeight
+- float jumpSpeed
+- float horizontalSpeed
+- boolean isJumping
+- float currentHeight
+- float initialYPosition
+- boolean directionLocked
++ <<Create>> JumpManager(float,float,float)
++ void startJump(com.java.jeux.level01.character.Character)
++ void updateJump(Character,float)
++ boolean isJumping()
++ boolean isDirectionLocked()
+}
+
+
+class com.java.jeux.lwjgl3.RoomTest.Gorgon_2 {
+- SpriteResourceManager spriteManager
+- Pixmap currentPixmap
++ <<Create>> Gorgon_2(float,float)
++ void create()
+- Pixmap preparePixmap()
++ boolean isFacingRight()
++ void dispose()
+}
+
+
+class com.java.jeux.level01.managers.SolidObjectsManager {
+- List<Rectangle> solidObjects
++ <<Create>> SolidObjectsManager(List<Rectangle>)
++ void applyCollision(com.java.jeux.level01.character.Character)
+- void resolveCollision(Character,Rectangle)
+}
+
+
+class com.java.jeux.lwjgl3.RoomTest.SolidObjectsManager {
+- List<Rectangle> solidObjects
++ <<Create>> SolidObjectsManager(List<Rectangle>)
++ void applyCollision(Character)
+- void resolveCollision(Character,Rectangle)
+}
+
+
+interface com.java.jeux.level01.contracts.PlayerActions {
+~ int getLives()
+~ void setLives(int)
+~ List<Rectangle> getAttackBoxes()
+~ Animation<TextureRegion> getCurrentAnimation()
+~ void setCurrentAnimation(Animation<TextureRegion>)
+~ void startInvincibility()
+~ boolean isInvincible()
+~ void startKnockBack()
+~ boolean isKnockedBack()
+}
+
+class com.java.jeux.lwjgl3.RoomTest.Player {
+- SpriteBatch batch
+- Animation<TextureRegion> idleAnimation
+- Animation<TextureRegion> currentAnimation
+- float elapsedTime
+- float speed
++ boolean facingRight
+- SpriteResourceManager spriteManager
+- Pixmap currentPixmap
+- Jump jump
+- String lastDirection
++ <<Create>> Player(float,float)
++ void create()
+- Pixmap preparePixmap()
++ void render(SpriteBatch)
++ void update(float)
+- void handleMovement(float)
++ boolean isAttacking()
++ float getWidth()
++ float getHeight()
++ boolean isFacingRight()
++ void dispose()
++ Rectangle getHitBox()
++ float getX()
++ float getY()
++ List<Rectangle> getAttackBoxes()
+}
+
+
+class com.java.jeux.level01.LaunchPage {
+- boolean startGame
++ <<Create>> LaunchPage(SettingsWindow)
++ boolean isStartGame()
+}
+
+
+class com.java.jeux.GameOverScreen {
+- Stage stage
++ <<Create>> GameOverScreen()
++ void show()
++ void render(float)
++ void resize(int,int)
++ void pause()
++ void resume()
++ void hide()
++ void dispose()
+}
+
+
+interface com.java.jeux.level01.contracts.EnemyBehavior {
+~ boolean detectPlayer()
+~ Player getPlayer()
+~ void moveTowardsPlayer(float)
+~ Animation<TextureRegion> getIdleAnimation()
+~ Animation<TextureRegion> getDeadAnimation()
+~ Animation<TextureRegion> getHurtAnimation()
+~ Animation<TextureRegion> getWalkAnimation()
+~ void respawn()
+~ float getRepopTime()
+~ float getDeathTimer()
+}
+
+class com.java.jeux.lwjgl3.RoomTest.Jump {
+- float maxJumpHeight
+- float jumpSpeed
+- float horizontalSpeed
+- boolean isJumping
+- float currentHeight
+- float initialYPosition
+- boolean directionLocked
++ <<Create>> Jump(float,float,float)
++ void startJump(Character)
++ void updateJump(Character,float)
++ boolean isJumping()
++ boolean isDirectionLocked()
+}
+
+
+abstract class com.java.jeux.AbstractLevel {
++ void render(float)
+# {abstract}void renderLevel(float)
+}
+
+class com.java.jeux.level01.managers.SpriteResourceManager {
+- Map<String,Map<String,Array<TextureRegion>>> spriteResources
++ <<Create>> SpriteResourceManager()
++ void loadSprites(String,Map<String,Integer>,String)
+- Array<TextureRegion> loadFromSingleImage(File,String,int)
+- Array<TextureRegion> loadFromFolder(File)
++ Array<TextureRegion> getAnimation(String,String)
++ float[] calculateFrameDimensions(TextureRegion,Pixmap)
++ void dispose()
+}
+
+note left of com.java.jeux.level01.managers.SpriteResourceManager::SpriteResourceManager()
+ Constructeur de la classe SpriteResourceManager pour initialiser la "map" des ressources
+end note
+note right of com.java.jeux.level01.managers.SpriteResourceManager::loadSprites(String,Map<String,Integer>,String)
+
+     * Charge les animations pour un personnage donné.
+     * @param directory Le chemin du dossier du personnage.
+     * @param animations Un map des animations disponibles, où la clé est le nom de l'animation et la valeur est le nombre de frames.
+     * @param method La méthode de chargement ("single" pour découper une image unique, "folder" pour un dossier d'images).
+     
+end note
+note left of com.java.jeux.level01.managers.SpriteResourceManager::loadFromSingleImage(File,String,int)
+ Méthode pour charger des frames à partir d'une image unique
+end note
+note right of com.java.jeux.level01.managers.SpriteResourceManager::loadFromFolder(File)
+ Méthode pour charger des frames à partir d'un dossier d'images
+end note
+note left of com.java.jeux.level01.managers.SpriteResourceManager::getAnimation(String,String)
+ Méthode pour obtenir une animation spécifique pour un personnage
+end note
+note right of com.java.jeux.level01.managers.SpriteResourceManager::calculateFrameDimensions(TextureRegion,Pixmap)
+
+     * Calcule les dimensions de la frame pour déterminer la taille et l'offset de la hitbox.
+     * @param frame La frame de l'animation.
+     * @param pixmap Le pixmap de la texture.
+     * @return Un tableau contenant la largeur, la hauteur et l'offset en X.
+     
+end note
+
+class com.java.jeux.level01.character.Player {
+- SpriteBatch batch
+- Animation<TextureRegion> idleAnimation
+- Animation<TextureRegion> currentAnimation
+- float elapsedTime
+- float speed
+- SpriteResourceManager spriteManager
+- Pixmap currentPixmap
+- JumpManager jumpManager
+- int lives
+- AttackBoxManager attackBoxManager
+- boolean isKnockedBack
+- float knockBackTime
+- float knockBackElapsed
+- boolean isInvincible
+- float invincibilityTime
+- float invincibilityElapsed
+- float knockBackSpeed
++ <<Create>> Player(float,float,int,int)
++ void create()
+- Pixmap preparePixmap()
++ void update(float)
+- void handleMovement(float)
++ void render(SpriteBatch)
++ Rectangle getHitBox()
++ List<Rectangle> getAttackBoxes()
++ Animation<TextureRegion> getCurrentAnimation()
++ void setCurrentAnimation(Animation<TextureRegion>)
++ boolean isDying()
++ void die()
++ void respawn()
++ void dispose()
++ int getLives()
++ void setLives(int)
++ int getCurrentHealth()
++ void takeDamage(int)
++ void startKnockBack()
++ boolean isKnockedBack()
++ void startInvincibility()
++ boolean isInvincible()
+- void handleKnockBack(float)
+- void handleInvincibility(float)
+}
+
+
+class com.java.jeux.level01.managers.AttackBoxManager {
+- float attackBoxWidth
+- float attackBoxHeight
++ <<Create>> AttackBoxManager(float,float)
++ List<Rectangle> generateAttackBoxes(Rectangle,boolean,boolean)
++ float getAttackBoxWidth()
++ void setAttackBoxWidth(float)
++ float getAttackBoxHeight()
++ void setAttackBoxHeight(float)
+}
+
+
+class com.java.jeux.SettingsScreen {
+- Stage stage
++ <<Create>> SettingsScreen(Runnable)
++ void show()
++ void render(float)
++ void resize(int,int)
++ void pause()
++ void resume()
++ void hide()
++ void dispose()
+}
+
+
+class com.java.jeux.level01.Leve01MapLoader {
+- TiledMap map
+- OrthogonalTiledMapRenderer mapRenderer
+- OrthographicCamera camera
+- ShapeRenderer shapeRenderer
++ List<Rectangle> deathZone
++ void create()
++ void render()
++ OrthographicCamera getCamera()
++ void dispose()
++ int getMapWidth()
++ int getMapHeight()
++ List<Rectangle> getGroundObjects()
++ List<Rectangle> getSolidObjects()
++ List<Rectangle> getDeathZoneObjects()
+}
+
+
+class com.java.jeux.lwjgl3.RoomTest.Gorgon_1 {
+- SpriteResourceManager spriteManager
+- Pixmap currentPixmap
++ <<Create>> Gorgon_1(float,float)
++ void create()
+- Pixmap preparePixmap()
++ boolean isFacingRight()
++ void dispose()
+}
+
+
+class com.java.jeux.level01.managers.GravityManager {
+- float gravity
+- List<Rectangle> groundObjects
++ <<Create>> GravityManager(List<Rectangle>)
++ void applyGravity(Character,float)
+}
+
+
+class com.java.jeux.level01.character.Ennemies.Gorgon_1 {
+- SpriteResourceManager spriteManager
+- Pixmap currentPixmap
++ <<Create>> Gorgon_1(float,float,int,int,Player)
++ void create()
+- Pixmap preparePixmap()
++ boolean isFacingRight()
++ void dispose()
++ Rectangle getHitBox()
+}
+
+
+class com.java.jeux.lwjgl3.Lwjgl3Launcher {
++ {static} void main(String[])
+- {static} Lwjgl3Application createApplication()
+- {static} Lwjgl3ApplicationConfiguration getDefaultConfiguration()
+}
+
+class com.java.jeux.GlobalSettings {
+- {static} float globalVolume
+- {static} boolean showDebugHitboxes
++ {static} void setGlobalVolume(float)
++ {static} float getGlobalVolume()
++ {static} boolean getShowDebugHitboxes()
++ {static} void toggleShowDebugHitboxes()
+}
+
+
+class com.java.jeux.lwjgl3.StartupHelper {
+- {static} String JVM_RESTARTED_ARG
+- <<Create>> StartupHelper()
++ {static} boolean startNewJvmIfRequired(boolean)
++ {static} boolean startNewJvmIfRequired()
+}
+note top of com.java.jeux.lwjgl3.StartupHelper
+
+ * Adds some utilities to ensure that the JVM was started with the
+ * {@code -XstartOnFirstThread} argument, which is required on macOS for LWJGL 3
+ * to function. Also helps on Windows when users have names with characters from
+ * outside the Latin alphabet, a common cause of startup crashes.
+ * <br>
+ * <a href="https://jvm-gaming.org/t/starting-jvm-on-mac-with-xstartonfirstthread-programmatically/57547">Based on this java-gaming.org post by kappa</a>
+ * @author damios
+ 
+end note
+
+
+note left of com.java.jeux.lwjgl3.StartupHelper::startNewJvmIfRequired(boolean)
+
+     * Starts a new JVM if the application was started on macOS without the
+     * {@code -XstartOnFirstThread} argument. This also includes some code for
+     * Windows, for the case where the user's home directory includes certain
+     * non-Latin-alphabet characters (without this code, most LWJGL3 apps fail
+     * immediately for those users). Returns whether a new JVM was started and
+     * thus no code should be executed.
+     * <p>
+     * <u>Usage:</u>
+     *
+     * <pre><code>
+     * public static void main(String... args) {
+     * 	if (StartupHelper.startNewJvmIfRequired(true)) return; // This handles macOS support and helps on Windows.
+     * 	// after this is the actual main method code
+     * }
+     * </code></pre>
+     *
+     * @param redirectOutput
+     *            whether the output of the new JVM should be rerouted to the
+     *            old JVM, so it can be accessed in the same place; keeps the
+     *            old JVM running if enabled
+     * @return whether a new JVM was started and thus no code should be executed
+     *         in this one
+     
+end note
+note right of com.java.jeux.lwjgl3.StartupHelper::startNewJvmIfRequired()
+
+     * Starts a new JVM if the application was started on macOS without the
+     * {@code -XstartOnFirstThread} argument. Returns whether a new JVM was
+     * started and thus no code should be executed. Redirects the output of the
+     * new JVM to the old one.
+     * <p>
+     * <u>Usage:</u>
+     *
+     * <pre>
+     * public static void main(String... args) {
+     * 	if (StartupHelper.startNewJvmIfRequired()) return; // This handles macOS support and helps on Windows.
+     * 	// the actual main method code
+     * }
+     * </pre>
+     *
+     * @return whether a new JVM was started and thus no code should be executed
+     *         in this one
+     
+end note
+
+class com.java.jeux.lwjgl3.RoomTest.CameraController {
+- OrthographicCamera camera
+- float mapWidth
+- float mapHeight
+- float targetZoom
++ <<Create>> CameraController(OrthographicCamera,float,float)
++ void setZoom(float)
++ void update(Vector2,float,float)
+}
+
+
+abstract class com.java.jeux.lwjgl3.RoomTest.Character {
+# Vector2 position
+# Vector2 velocity
+# boolean onGround
+# float elapsedTime
++ boolean isDead
+# float hitboxOffsetX
+# float spriteWidth
+# float spriteHeight
+# boolean isColliding
++ <<Create>> Character(float,float)
++ {abstract}void create()
++ {abstract}void update(float)
++ {abstract}void render(SpriteBatch)
++ {abstract}void dispose()
++ {abstract}boolean isFacingRight()
++ {abstract}Rectangle getHitBox()
++ float getWidth()
++ float getHeight()
++ Vector2 getPosition()
++ void setPosition(Vector2)
++ Vector2 getVelocity()
++ boolean isOnGround()
++ void setOnGround(boolean)
++ boolean isDead()
++ boolean isColliding()
++ void setColliding(boolean)
++ float getWeightBetweenHitBoxAndSprite()
+}
+
+
+class com.java.jeux.lwjgl3.RoomTest.SpriteResourceManager {
+- Map<String,Map<String,Array<TextureRegion>>> spriteResources
++ <<Create>> SpriteResourceManager()
++ void loadSprites(String,Map<String,Integer>,String)
+- Array<TextureRegion> loadFromSingleImage(File,String,int)
+- Array<TextureRegion> loadFromFolder(File)
++ Array<TextureRegion> getAnimation(String,String)
++ float[] calculateFrameDimensions(TextureRegion,Pixmap)
++ void dispose()
+}
+
+note left of com.java.jeux.lwjgl3.RoomTest.SpriteResourceManager::SpriteResourceManager()
+ Constructeur de la classe SpriteResourceManager pour initialiser la "map" des ressources
+end note
+note right of com.java.jeux.lwjgl3.RoomTest.SpriteResourceManager::loadSprites(String,Map<String,Integer>,String)
+
+     * Charge les animations pour un personnage donné.
+     * @param directory Le chemin du dossier du personnage.
+     * @param animations Un map des animations disponibles, où la clé est le nom de l'animation et la valeur est le nombre de frames.
+     * @param method La méthode de chargement ("single" pour découper une image unique, "folder" pour un dossier d'images).
+     
+end note
+note left of com.java.jeux.lwjgl3.RoomTest.SpriteResourceManager::loadFromSingleImage(File,String,int)
+ Méthode pour charger des frames à partir d'une image unique
+end note
+note right of com.java.jeux.lwjgl3.RoomTest.SpriteResourceManager::loadFromFolder(File)
+ Méthode pour charger des frames à partir d'un dossier d'images
+end note
+note left of com.java.jeux.lwjgl3.RoomTest.SpriteResourceManager::getAnimation(String,String)
+ Méthode pour obtenir une animation spécifique pour un personnage
+end note
+note right of com.java.jeux.lwjgl3.RoomTest.SpriteResourceManager::calculateFrameDimensions(TextureRegion,Pixmap)
+
+     * Calcule les dimensions de la frame pour déterminer la taille et l'offset de la hitbox.
+     * @param frame La frame de l'animation.
+     * @param pixmap Le pixmap de la texture.
+     * @return Un tableau contenant la largeur, la hauteur et l'offset en X.
+     
+end note
+
+class com.java.jeux.level01.character.Ennemies.Gorgon_2 {
+- SpriteResourceManager spriteManager
+- Pixmap currentPixmap
++ <<Create>> Gorgon_2(float,float,int,int,Player)
++ void create()
+- Pixmap preparePixmap()
++ boolean isFacingRight()
++ void dispose()
++ Rectangle getHitBox()
+}
+
+
+class com.java.jeux.MainMenuScreen {
+- Stage stage
++ <<Create>> MainMenuScreen(ChateauVania)
++ void show()
++ void render(float)
++ void resize(int,int)
++ void pause()
++ void resume()
++ void hide()
++ void dispose()
+}
+
+
+
+
+com.java.jeux.level01.character.Enemy <|-- com.java.jeux.level01.character.Ennemies.Gorgon_3
+com.badlogic.gdx.Game <|-- com.java.jeux.ChateauVania
+com.java.jeux.level01.contracts.DeathCycle <|.. com.java.jeux.level01.character.Character
+com.java.jeux.level01.contracts.CharacterState <|.. com.java.jeux.level01.character.Character
+com.java.jeux.lwjgl3.RoomTest.Ennemies <|-- com.java.jeux.lwjgl3.RoomTest.Gorgon_3
+com.java.jeux.AbstractLevel <|-- com.java.jeux.level01.Level01Screen
+com.java.jeux.level01.JFrame <|-- com.java.jeux.level01.SettingsWindow
+com.java.jeux.lwjgl3.RoomTest.Character <|-- com.java.jeux.lwjgl3.RoomTest.Ennemies
+com.java.jeux.level01.contracts.EnemyBehavior <|.. com.java.jeux.level01.character.Enemy
+com.java.jeux.level01.character.Character <|-- com.java.jeux.level01.character.Enemy
+com.badlogic.gdx.ApplicationAdapter <|-- com.java.jeux.lwjgl3.RoomTest.RoomTestLevel
+com.java.jeux.lwjgl3.RoomTest.Ennemies <|-- com.java.jeux.lwjgl3.RoomTest.Gorgon_2
+com.java.jeux.lwjgl3.RoomTest.Character <|-- com.java.jeux.lwjgl3.RoomTest.Player
+com.java.jeux.level01.JFrame <|-- com.java.jeux.level01.LaunchPage
+com.badlogic.gdx.Screen <|.. com.java.jeux.GameOverScreen
+com.badlogic.gdx.Screen <|.. com.java.jeux.AbstractLevel
+com.java.jeux.level01.contracts.PlayerActions <|.. com.java.jeux.level01.character.Player
+com.java.jeux.level01.character.Character <|-- com.java.jeux.level01.character.Player
+com.badlogic.gdx.Screen <|.. com.java.jeux.SettingsScreen
+com.java.jeux.lwjgl3.RoomTest.Ennemies <|-- com.java.jeux.lwjgl3.RoomTest.Gorgon_1
+com.java.jeux.level01.character.Enemy <|-- com.java.jeux.level01.character.Ennemies.Gorgon_1
+com.java.jeux.level01.character.Enemy <|-- com.java.jeux.level01.character.Ennemies.Gorgon_2
+com.badlogic.gdx.Screen <|.. com.java.jeux.MainMenuScreen
+@enduml
