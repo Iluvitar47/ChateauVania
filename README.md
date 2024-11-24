@@ -21,11 +21,11 @@ Si vous souhaitez consulter plus d'informations sur le fonctionnement de LibGDX,
 Bonne chance et bon jeu !
 
 
-# Lancez le jeu
+## Lancez le jeu
 
 Pour lancer le jeu, il vous suffit de lance le fichier ChateauVania.jar situé dans le dossier root du projet.
 
-# A propos de l'architecture du projet
+## A propos de l'architecture du projet
 
 Le projet est divisé en plusieurs dossiers :
 Le dossier core contient l'ensemble des classes du jeu.
