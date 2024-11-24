@@ -10,19 +10,25 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * The `SpriteResourceManager` class manages the loading and retrieval of sprite resources for characters.
+ */
 public class SpriteResourceManager {
     private Map<String, Map<String, Array<TextureRegion>>> spriteResources;
 
-    // Constructeur de la classe SpriteResourceManager pour initialiser la "map" des ressources
+    /**
+     * Constructs a new `SpriteResourceManager` to initialize the resource map.
+     */
     public SpriteResourceManager() {
         spriteResources = new HashMap<>();
     }
 
     /**
-     * Charge les animations pour un personnage donné.
-     * @param directory Le chemin du dossier du personnage.
-     * @param animations Un map des animations disponibles, où la clé est le nom de l'animation et la valeur est le nombre de frames.
-     * @param method La méthode de chargement ("single" pour découper une image unique, "folder" pour un dossier d'images).
+     * Loads the animations for a given character.
+     *
+     * @param directory  the path to the character's folder
+     * @param animations a map of available animations, where the key is the animation name and the value is the number of frames
+     * @param method     the loading method ("single" to cut a single image, "folder" for a folder of images)
      */
     public void loadSprites(String directory, Map<String, Integer> animations, String method) {
         File folder = new File(Gdx.files.internal(directory).file().getPath());
@@ -44,11 +50,18 @@ public class SpriteResourceManager {
 
             spriteResources.put(directory, animationMap);
         } else {
-            Gdx.app.log("SpriteResourceManager", "Le dossier " + directory + " est introuvable ou n'est pas un dossier.");
+            Gdx.app.log("SpriteResourceManager", "The folder " + directory + " is not found or is not a folder.");
         }
     }
 
-    // Méthode pour charger des frames à partir d'une image unique
+    /**
+     * Loads frames from a single image.
+     *
+     * @param folder        the folder containing the image
+     * @param animationType the type of animation
+     * @param frameCount    the number of frames
+     * @return an array of texture regions
+     */
     private Array<TextureRegion> loadFromSingleImage(File folder, String animationType, int frameCount) {
         Array<TextureRegion> frames = new Array<>();
         File imageFile = new File(folder, animationType + ".png");
@@ -65,7 +78,12 @@ public class SpriteResourceManager {
         return frames;
     }
 
-    // Méthode pour charger des frames à partir d'un dossier d'images
+    /**
+     * Loads frames from a folder of images.
+     *
+     * @param animationFolder the folder containing the images
+     * @return an array of texture regions
+     */
     private Array<TextureRegion> loadFromFolder(File animationFolder) {
         Array<TextureRegion> frames = new Array<>();
         if (animationFolder.exists() && animationFolder.isDirectory()) {
@@ -81,7 +99,13 @@ public class SpriteResourceManager {
         return frames;
     }
 
-    // Méthode pour obtenir une animation spécifique pour un personnage
+    /**
+     * Gets a specific animation for a character.
+     *
+     * @param directory     the path to the character's folder
+     * @param animationType the type of animation
+     * @return an array of texture regions
+     */
     public Array<TextureRegion> getAnimation(String directory, String animationType) {
         if (spriteResources.containsKey(directory)) {
             Map<String, Array<TextureRegion>> animations = spriteResources.get(directory);
@@ -91,10 +115,11 @@ public class SpriteResourceManager {
     }
 
     /**
-     * Calcule les dimensions de la frame pour déterminer la taille et l'offset de la hitbox.
-     * @param frame La frame de l'animation.
-     * @param pixmap Le pixmap de la texture.
-     * @return Un tableau contenant la largeur, la hauteur et l'offset en X.
+     * Calculates the frame dimensions to determine the size and offset of the hitbox.
+     *
+     * @param frame  the animation frame
+     * @param pixmap the pixmap of the texture
+     * @return an array containing the width, height, and X offset
      */
     public float[] calculateFrameDimensions(TextureRegion frame, Pixmap pixmap) {
         int minX = frame.getRegionWidth();
@@ -129,6 +154,9 @@ public class SpriteResourceManager {
         return new float[]{width, height, offsetX};
     }
 
+    /**
+     * Disposes of the resources used by the sprite manager.
+     */
     public void dispose() {
         for (Map<String, Array<TextureRegion>> animations : spriteResources.values()) {
             for (Array<TextureRegion> textures : animations.values()) {

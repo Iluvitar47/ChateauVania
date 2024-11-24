@@ -5,6 +5,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * The `SettingsWindow` class represents a settings window in the game.
+ */
 public class SettingsWindow extends JFrame {
     private final JTextField widthField;
     private final JTextField heightField;
@@ -12,6 +15,9 @@ public class SettingsWindow extends JFrame {
     private final JSlider saturationSlider;
     private boolean settingsApplied = false;
 
+    /**
+     * Constructs a new `SettingsWindow` and initializes the UI components.
+     */
     public SettingsWindow() {
         setTitle("Settings");
         setSize(300, 200);
@@ -29,7 +35,7 @@ public class SettingsWindow extends JFrame {
         brightnessSlider = new JSlider(0, 100, 50);
         add(brightnessSlider);
 
-        add(new JLabel("Saturation:")); // Mise à jour du label
+        add(new JLabel("Saturation:"));
         saturationSlider = new JSlider(0, 100, 100);
         add(saturationSlider);
 
@@ -47,22 +53,47 @@ public class SettingsWindow extends JFrame {
         setLocationRelativeTo(null);
     }
 
+    /**
+     * Checks if the settings have been applied.
+     *
+     * @return true if the settings have been applied, false otherwise
+     */
     public boolean isSettingsApplied() {
         return settingsApplied;
     }
 
+    /**
+     * Gets the width value from the text field.
+     *
+     * @return the width value
+     */
     public int getWidthValue() {
         return Integer.parseInt(widthField.getText());
     }
 
+    /**
+     * Gets the height value from the text field.
+     *
+     * @return the height value
+     */
     public int getHeightValue() {
         return Integer.parseInt(heightField.getText());
     }
 
+    /**
+     * Gets the brightness value from the slider.
+     *
+     * @return the brightness value as a float between 0.0 and 1.0
+     */
     public float getBrightnessValue() {
         return brightnessSlider.getValue() / 100.0f;
     }
 
+    /**
+     * Gets the saturation value from the slider.
+     *
+     * @return the saturation value as a float between 0.0 and 1.0
+     */
     public float getSaturationValue() {
         return saturationSlider.getValue() / 100.0f;
     }

@@ -49,3 +49,10 @@ jobs:
           files: build/reports/jacoco/test/jacocoTestReport.xml
           flags: unittests
           name: codecov-umbrella
+
+      # Étape 8: Upload Javadoc comme artefact
+      - name: Upload Javadoc as artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: javadoc
+          path: build/docs/javadoc

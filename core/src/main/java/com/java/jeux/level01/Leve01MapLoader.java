@@ -16,6 +16,9 @@ import com.badlogic.gdx.math.Rectangle;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * The `Leve01MapLoader` class is responsible for loading and rendering the map for level 1.
+ */
 public class Leve01MapLoader {
     private TiledMap map;
     private OrthogonalTiledMapRenderer mapRenderer;
@@ -23,6 +26,9 @@ public class Leve01MapLoader {
     private ShapeRenderer shapeRenderer;
     public List<Rectangle> deathZone;
 
+    /**
+     * Initializes the map loader, loading the map and setting up the camera and shape renderer.
+     */
     public void create() {
         map = new TmxMapLoader().load("Maps/Level_1.tmx");
         mapRenderer = new OrthogonalTiledMapRenderer(map);
@@ -36,34 +42,60 @@ public class Leve01MapLoader {
         deathZone = getDeathZoneObjects();
     }
 
+    /**
+     * Renders the map.
+     */
     public void render() {
         camera.update();
         mapRenderer.setView(camera);
         mapRenderer.render();
     }
 
+    /**
+     * Gets the camera used for rendering the map.
+     *
+     * @return the camera
+     */
     public OrthographicCamera getCamera() {
         return camera;
     }
 
+    /**
+     * Disposes of the resources used by the map loader.
+     */
     public void dispose() {
         map.dispose();
         mapRenderer.dispose();
         shapeRenderer.dispose();
     }
 
+    /**
+     * Gets the width of the map in pixels.
+     *
+     * @return the width of the map
+     */
     public int getMapWidth() {
         int width = map.getProperties().get("width", Integer.class);
         int tileWidth = map.getProperties().get("tilewidth", Integer.class);
         return width * tileWidth;
     }
 
+    /**
+     * Gets the height of the map in pixels.
+     *
+     * @return the height of the map
+     */
     public int getMapHeight() {
         int height = map.getProperties().get("height", Integer.class);
         int tileHeight = map.getProperties().get("tileheight", Integer.class);
         return height * tileHeight;
     }
 
+    /**
+     * Gets the ground objects from the map.
+     *
+     * @return a list of rectangles representing the ground objects
+     */
     public List<Rectangle> getGroundObjects() {
         List<Rectangle> groundObjects = new ArrayList<>();
         if (map.getLayers().get("platform") != null) {
@@ -81,6 +113,11 @@ public class Leve01MapLoader {
         return groundObjects;
     }
 
+    /**
+     * Gets the solid objects from the map.
+     *
+     * @return a list of rectangles representing the solid objects
+     */
     public List<Rectangle> getSolidObjects() {
         List<Rectangle> solidObjects = new ArrayList<>();
         if (map.getLayers().get("SolidObjects") != null) {
@@ -98,6 +135,11 @@ public class Leve01MapLoader {
         return solidObjects;
     }
 
+    /**
+     * Gets the death zone objects from the map.
+     *
+     * @return a list of rectangles representing the death zone objects
+     */
     public List<Rectangle> getDeathZoneObjects() {
         List<Rectangle> deathZoneObjects = new ArrayList<>();
         if (map.getLayers().get("DeathZone") != null) {
@@ -114,6 +156,4 @@ public class Leve01MapLoader {
         }
         return deathZoneObjects;
     }
-
-
 }

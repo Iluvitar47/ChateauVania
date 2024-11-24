@@ -21,6 +21,16 @@ java {
   targetCompatibility = JavaVersion.VERSION_17
 }
 
+tasks.javadoc {
+  options {
+    encoding = 'UTF-8'
+    charSet = 'UTF-8'
+    author = true
+    version = true
+    links = ['https://docs.oracle.com/javase/8/docs/api/']
+  }
+}
+
 repositories {
   mavenCentral()
 }

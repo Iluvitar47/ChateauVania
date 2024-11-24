@@ -3,17 +3,19 @@ package com.java.jeux;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.scenes.scene2d.Actor;
-import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.*;
-import com.badlogic.gdx.scenes.scene2d.utils.ChangeListener;
-import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
+import com.badlogic.gdx.scenes.scene2d.ui.Label;
+import com.badlogic.gdx.scenes.scene2d.ui.Table;
 
+/**
+ * The `GameOverScreen` class implements the `Screen` interface and represents the game over screen of the game.
+ */
 public class GameOverScreen implements Screen {
     private final Stage stage;
 
-
+    /**
+     * Constructs a new `GameOverScreen`.
+     */
     public GameOverScreen() {
         stage = new Stage();
         Gdx.input.setInputProcessor(stage);
@@ -28,7 +30,7 @@ public class GameOverScreen implements Screen {
 
     @Override
     public void show() {
-
+        // Method implementation
     }
 
     @Override
@@ -41,22 +43,21 @@ public class GameOverScreen implements Screen {
     @Override
     public void resize(int width, int height) {
         stage.getViewport().update(width, height, true);
-
     }
 
     @Override
     public void pause() {
-
+        // Method implementation
     }
 
     @Override
     public void resume() {
-
+        // Method implementation
     }
 
     @Override
     public void hide() {
-
+        // Method implementation
     }
 
     @Override

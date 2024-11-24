@@ -1,22 +1,43 @@
 package com.java.jeux;
 
+/**
+ * The `GlobalSettings` class manages the global settings for the game.
+ */
 public class GlobalSettings {
-    private static float globalVolume = 1;
+    private static float globalVolume = 1.0f;
     private static boolean showDebugHitboxes = false;
 
-    public static void setGlobalVolume(float volume){
-        globalVolume = volume;
-    }
-
-    public static float getGlobalVolume(){
+    /**
+     * Gets the global volume.
+     *
+     * @return the global volume
+     */
+    public static float getGlobalVolume() {
         return globalVolume;
     }
 
-    public static boolean getShowDebugHitboxes(){
+    /**
+     * Sets the global volume.
+     *
+     * @param volume the new global volume
+     */
+    public static void setGlobalVolume(float volume) {
+        globalVolume = volume;
+    }
+
+    /**
+     * Checks if debug hitboxes are shown.
+     *
+     * @return true if debug hitboxes are shown, false otherwise
+     */
+    public static boolean getShowDebugHitboxes() {
         return showDebugHitboxes;
     }
 
-    public static void toggleShowDebugHitboxes(){
+    /**
+     * Toggles the visibility of debug hitboxes.
+     */
+    public static void toggleShowDebugHitboxes() {
         showDebugHitboxes = !showDebugHitboxes;
     }
 }

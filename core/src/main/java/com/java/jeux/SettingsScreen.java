@@ -13,10 +13,17 @@ import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 
 import java.util.concurrent.Callable;
 
+/**
+ * The `SettingsScreen` class implements the `Screen` interface and represents the settings screen of the game.
+ */
 public class SettingsScreen implements Screen {
     private final Stage stage;
 
-
+    /**
+     * Constructs a new `SettingsScreen` with the specified restore action.
+     *
+     * @param restoreAction the action to be performed when the back button is clicked
+     */
     public SettingsScreen(Runnable restoreAction) {
         stage = new Stage();
         Gdx.input.setInputProcessor(stage);
@@ -67,7 +74,7 @@ public class SettingsScreen implements Screen {
 
     @Override
     public void show() {
-
+        // Method implementation
     }
 
     @Override
@@ -80,22 +87,21 @@ public class SettingsScreen implements Screen {
     @Override
     public void resize(int width, int height) {
         stage.getViewport().update(width, height, true);
-
     }
 
     @Override
     public void pause() {
-
+        // Method implementation
     }
 
     @Override
     public void resume() {
-
+        // Method implementation
     }
 
     @Override
     public void hide() {
-
+        // Method implementation
     }
 
     @Override

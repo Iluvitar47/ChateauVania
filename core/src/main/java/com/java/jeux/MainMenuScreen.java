@@ -2,22 +2,27 @@ package com.java.jeux;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Screen;
-import com.badlogic.gdx.assets.loaders.SkinLoader;
-import com.badlogic.gdx.files.FileHandle;
 import com.badlogic.gdx.graphics.GL20;
+import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.InputEvent;
 import com.badlogic.gdx.scenes.scene2d.Stage;
-import com.badlogic.gdx.scenes.scene2d.ui.Skin;
-import com.badlogic.gdx.scenes.scene2d.ui.Table;
-import com.badlogic.gdx.scenes.scene2d.ui.TextButton;
+import com.badlogic.gdx.scenes.scene2d.ui.*;
 import com.badlogic.gdx.scenes.scene2d.utils.ClickListener;
 
+/**
+ * The `MainMenuScreen` class implements the `Screen` interface and represents the main menu screen of the game.
+ */
 public class MainMenuScreen implements Screen {
     private final Stage stage;
+    private final ChateauVania game;
 
-
-    public MainMenuScreen(ChateauVania chateauVania) {
-        final MainMenuScreen that = this;
+    /**
+     * Constructs a new `MainMenuScreen` with the specified game instance.
+     *
+     * @param game the game instance
+     */
+    public MainMenuScreen(ChateauVania game) {
+        this.game = game;
         stage = new Stage();
         Gdx.input.setInputProcessor(stage);
 
@@ -25,47 +30,43 @@ public class MainMenuScreen implements Screen {
         table.setFillParent(true);
         stage.addActor(table);
 
-//        table.setDebug(true); // This is optional, but enables debug lines for tables.
+        Label titleLabel = new Label("Main Menu", ChateauVania.getUiSkin());
+        table.add(titleLabel).expandY();
+        table.row();
 
         TextButton startButton = new TextButton("START", ChateauVania.getUiSkin());
-        startButton.addListener(new ClickListener(){
+        startButton.addListener(new ClickListener() {
             @Override
-            public void clicked (InputEvent event, float x, float y) {
-                chateauVania.startGame();
-                that.dispose();
+            public void clicked(InputEvent event, float x, float y) {
+                game.startGame();
             }
         });
-        table.add(startButton).expand();
-
+        table.add(startButton).expandY();
         table.row();
 
-        TextButton optButton = new TextButton("SETTINGS", ChateauVania.getUiSkin());
-        optButton.addListener(new ClickListener(){
+        TextButton settingsButton = new TextButton("SETTINGS", ChateauVania.getUiSkin());
+        settingsButton.addListener(new ClickListener() {
             @Override
-            public void clicked (InputEvent event, float x, float y) {
-                chateauVania.setScreen(new SettingsScreen(() -> {
-                    chateauVania.setScreen(that);
-                    Gdx.input.setInputProcessor(stage);
-                }));
+            public void clicked(InputEvent event, float x, float y) {
+                game.setScreen(new SettingsScreen(() -> game.setScreen(MainMenuScreen.this)));
             }
         });
-        table.add(optButton).expand();
-
+        table.add(settingsButton).expandY();
         table.row();
 
-        TextButton quitButton = new TextButton("QUIT", ChateauVania.getUiSkin());
-        quitButton.addListener(new ClickListener(){
+        TextButton exitButton = new TextButton("EXIT", ChateauVania.getUiSkin());
+        exitButton.addListener(new ClickListener() {
             @Override
-            public void clicked (InputEvent event, float x, float y) {
+            public void clicked(InputEvent event, float x, float y) {
                 Gdx.app.exit();
             }
         });
-        table.add(quitButton).expand();
+        table.add(exitButton).expandY();
     }
 
     @Override
     public void show() {
-
+        // Method implementation
     }
 
     @Override
@@ -82,17 +83,17 @@ public class MainMenuScreen implements Screen {
 
     @Override
     public void pause() {
-
+        // Method implementation
     }
 
     @Override
     public void resume() {
-
+        // Method implementation
     }
 
     @Override
     public void hide() {
-
+        // Method implementation
     }
 
     @Override
