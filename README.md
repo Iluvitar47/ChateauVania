@@ -34,8 +34,6 @@ Le dossier assets contient l'ensemble des assets du jeu.
 Le projet a été réalisé et autogénéré avec l'outil gdx-liftoff.
 Il utilise la librairie LibGDX, vous disposez du readme original de celle-ci, dessous.
 
-############################################################################################################
-
 # LibGDX
 
 A [libGDX](https://libgdx.com/) project generated with [gdx-liftoff](https://github.com/libgdx/gdx-liftoff).
