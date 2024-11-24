@@ -28,7 +28,20 @@ public class ChateauVania extends Game {
     public void create() {
         INSTANCE = this;
         uiSkin = new Skin(Gdx.files.internal("UI/uiskin.json"));
-        setScreen(new MainMenuScreen(this));
+
+        // Passer des actions Runnable au constructeur
+        setScreen(new MainMenuScreen(
+            this::startGame,   // Action pour "Start Game"
+            this::openSettings // Action pour "Settings"
+        ));
+    }
+
+    /**
+     * Ouvre les paramètres du jeu.
+     */
+    private void openSettings() {
+        // Implémenter la logique pour afficher l'écran des paramètres
+        System.out.println("Settings screen not implemented yet.");
     }
 
     /**
