@@ -1,8 +1,7 @@
 Retrouvez l'intégralité du contenu des tests en ouvrant dans le navigateur le fichier suivant (chemin absolu à adapter en fonction de votre architecture:
 lwjgl3/build/reports/jacoco/test/html/index.html
 
-
-# CASTLEVANIA
+# CHATEAUVANIA
 
 Bienvenu dans le monde de Castlevania, un jeu de plateforme en 2D. Vous incarnez un personnage qui doit traverser un chateau hanté pour atteindre le boss final. Vous devrez éviter les pièges et les ennemis qui se dresseront sur votre chemin. Vous pourrez ramasser des objets pour vous aider dans votre quête.
 
@@ -22,8 +21,20 @@ Si vous souhaitez consulter plus d'informations sur le fonctionnement de LibGDX,
 Bonne chance et bon jeu !
 
 
+# Lancez le jeu
 
+Pour lancer le jeu, il vous suffit de lance le fichier ChateauVania.jar situé dans le dossier root du projet.
 
+# A propos de l'architecture du projet
+
+Le projet est divisé en plusieurs dossiers :
+Le dossier core contient l'ensemble des classes du jeu.
+Le dossier lwjgl3 contient les classes permettant de lancer le jeu sur un ordinateur.
+Le dossier assets contient l'ensemble des assets du jeu.
+Le projet a été réalisé et autogénéré avec l'outil gdx-liftoff.
+Il utilise la librairie LibGDX, vous disposez du readme original de celle-ci, dessous.
+
+############################################################################################################
 
 # LibGDX
 
