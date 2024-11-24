@@ -1,4 +1,4 @@
-package com.java.jeux.level01;
+package com.java.jeux.level01.character.Ennemies;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.g2d.Animation;
@@ -6,10 +6,14 @@ import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.utils.Array;
+import com.java.jeux.level01.character.Enemy;
+import com.java.jeux.level01.character.Player;
+import com.java.jeux.level01.managers.SpriteResourceManager;
+
 import java.util.HashMap;
 import java.util.Map;
 
-public class Gorgon_1 extends Ennemies {
+public class Gorgon_1 extends Enemy {
     private SpriteResourceManager spriteManager;
     private Pixmap currentPixmap;
 

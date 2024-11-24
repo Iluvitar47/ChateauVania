@@ -1,12 +1,14 @@
-package com.java.jeux.level01;
+package com.java.jeux.level01.character;
 
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.java.jeux.GlobalSettings;
+import com.java.jeux.level01.contracts.DeathCycle;
+import com.java.jeux.level01.contracts.CharacterState;
 
-public abstract class Character implements DeathCycle {
+public abstract class Character implements DeathCycle,CharacterState {
 
     protected Vector2 position;
     protected Vector2 velocity = new Vector2(0, 0);

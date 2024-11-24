@@ -1,15 +1,15 @@
-package com.java.jeux.level01;
+package com.java.jeux.level01.managers;
 
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.math.Vector2;
 
-public class CameraController {
+public class CameraManager {
     private OrthographicCamera camera;
     private float mapWidth;
     private float mapHeight;
     private float targetZoom;
 
-    public CameraController(OrthographicCamera camera, float mapWidth, float mapHeight) {
+    public CameraManager(OrthographicCamera camera, float mapWidth, float mapHeight) {
         this.camera = camera;
         this.mapWidth = mapWidth;
         this.mapHeight = mapHeight;

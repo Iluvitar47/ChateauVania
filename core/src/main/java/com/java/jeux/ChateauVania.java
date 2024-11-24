@@ -2,10 +2,9 @@ package com.java.jeux;
 
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.java.jeux.level01.Level01Screen;
-import com.java.jeux.level01.Player;
+import com.java.jeux.level01.character.Player;
 
 /** {@link com.badlogic.gdx.ApplicationListener} implementation shared by all platforms. */
 public class ChateauVania extends Game {

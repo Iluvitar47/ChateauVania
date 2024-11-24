@@ -1,8 +1,9 @@
-package com.java.jeux.level01;
+package com.java.jeux.level01.managers;
 
 import com.badlogic.gdx.math.Vector2;
+import com.java.jeux.level01.character.Character;
 
-public class Jump {
+public class JumpManager {
     private float maxJumpHeight;
     private float jumpSpeed;
     private float horizontalSpeed;
@@ -11,7 +12,7 @@ public class Jump {
     private float initialYPosition;
     private boolean directionLocked;
 
-    public Jump(float maxJumpHeight, float jumpSpeed, float horizontalSpeed) {
+    public JumpManager(float maxJumpHeight, float jumpSpeed, float horizontalSpeed) {
         this.maxJumpHeight = maxJumpHeight;
         this.jumpSpeed = jumpSpeed;
         this.horizontalSpeed = horizontalSpeed;
@@ -21,7 +22,7 @@ public class Jump {
         this.directionLocked = false;
     }
 
-    public void startJump(Character character) {
+    public void startJump(com.java.jeux.level01.character.Character character) {
         if (!isJumping && character.isOnGround()) {
             isJumping = true;
             initialYPosition = character.getHitBox().y;

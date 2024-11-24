@@ -1,23 +1,26 @@
-package com.java.jeux.level01;
+package com.java.jeux.level01.managers;
 
 import com.badlogic.gdx.math.Rectangle;
+import com.java.jeux.level01.character.Enemy;
+import com.java.jeux.level01.character.Player;
+
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 public class AttackManager {
 
-    private final Set<Ennemies> attackedEnemies = new HashSet<>();
+    private final Set<Enemy> attackedEnemies = new HashSet<>();
     private boolean playerHit = false;
 
-    public void checkPlayerAttacks(Player player, List<Ennemies> enemies) {
+    public void checkPlayerAttacks(Player player, List<Enemy> enemies) {
         if (!player.isAttacking()) {
             attackedEnemies.clear();
             return;
         }
 
         for (Rectangle attackBox : player.getAttackBoxes()) {
-            for (Ennemies enemy : enemies) {
+            for (Enemy enemy : enemies) {
                 if (enemy.isDead() || attackedEnemies.contains(enemy)) {
                     continue;
                 }
@@ -30,10 +33,10 @@ public class AttackManager {
         }
     }
 
-    public void checkEnemyAttacks(Player player, List<Ennemies> enemies) {
+    public void checkEnemyAttacks(Player player, List<Enemy> enemies) {
         if (playerHit) return;
 
-        for (Ennemies enemy : enemies) {
+        for (Enemy enemy : enemies) {
             if (enemy.isDead()) continue;
 
 

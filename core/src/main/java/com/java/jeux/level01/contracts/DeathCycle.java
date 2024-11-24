@@ -1,4 +1,4 @@
-package com.java.jeux.level01;
+package com.java.jeux.level01.contracts;
 
 public interface DeathCycle {
     int getMaxHealth();

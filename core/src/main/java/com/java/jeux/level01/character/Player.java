@@ -1,4 +1,4 @@
-package com.java.jeux.level01;
+package com.java.jeux.level01.character;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
@@ -9,12 +9,16 @@ import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.math.Rectangle;
 import com.java.jeux.ChateauVania;
 import com.java.jeux.GameOverScreen;
+import com.java.jeux.level01.contracts.PlayerActions;
+import com.java.jeux.level01.managers.SpriteResourceManager;
+import com.java.jeux.level01.managers.AttackBoxManager;
+import com.java.jeux.level01.managers.JumpManager;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class Player extends Character {
+public class Player extends Character implements PlayerActions {
     private SpriteBatch batch;
     private Animation<TextureRegion> idleAnimation, walkAnimation, attackAnimation, hurtAnimation, deathAnimation;
     private Animation<TextureRegion> currentAnimation;
@@ -22,7 +26,7 @@ public class Player extends Character {
     private final float speed = 100f;
     private SpriteResourceManager spriteManager;
     private Pixmap currentPixmap;
-    private Jump jump = new Jump(150, 250, 300);
+    private JumpManager jumpManager = new JumpManager(150, 250, 300);
     private int lives = 3;
     private AttackBoxManager attackBoxManager;
     private boolean isKnockedBack = false;
@@ -89,7 +93,7 @@ public class Player extends Character {
         }
 
         Animation<TextureRegion> newAnimation = currentAnimation;
-        jump.updateJump(this, deltaTime);
+        jumpManager.updateJump(this, deltaTime);
 
         if (isDying) {
             if (deathAnimation.isAnimationFinished(elapsedTime)) {
@@ -133,7 +137,7 @@ public class Player extends Character {
         if (!isAttacking) {
             isWalking = false;
 
-            if (!jump.isDirectionLocked()) {
+            if (!jumpManager.isDirectionLocked()) {
                 boolean pressingLeft = Gdx.input.isKeyPressed(Input.Keys.Q) || Gdx.input.isKeyPressed(Input.Keys.A);
                 boolean pressingRight = Gdx.input.isKeyPressed(Input.Keys.D);
 
@@ -156,7 +160,7 @@ public class Player extends Character {
                 elapsedTime = 0;
             }
             if (Gdx.input.isKeyJustPressed(Input.Keys.SPACE)) {
-                jump.startJump(this);
+                jumpManager.startJump(this);
             }
         }
     }
@@ -194,6 +198,16 @@ public class Player extends Character {
 
     public List<Rectangle> getAttackBoxes() {
         return attackBoxManager.generateAttackBoxes(getHitBox(), true, true);
+    }
+
+    @Override
+    public Animation<TextureRegion> getCurrentAnimation() {
+        return null;
+    }
+
+    @Override
+    public void setCurrentAnimation(Animation<TextureRegion> animation) {
+
     }
 
     @Override
@@ -261,15 +275,26 @@ public class Player extends Character {
         }
     }
 
-    private void startKnockBack() {
+    public void startKnockBack() {
         isKnockedBack = true;
         knockBackElapsed = 0f;
     }
 
-    private void startInvincibility() {
+    @Override
+    public boolean isKnockedBack() {
+        return false;
+    }
+
+    public void startInvincibility() {
         isInvincible = true;
         invincibilityElapsed = 0f;
     }
+
+    @Override
+    public boolean isInvincible() {
+        return false;
+    }
+
     private void handleKnockBack(float deltaTime) {
         knockBackElapsed += deltaTime;
         float knockBackDirection = facingRight ? -1 : 1;

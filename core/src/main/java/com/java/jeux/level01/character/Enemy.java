@@ -1,4 +1,4 @@
-package com.java.jeux.level01;
+package com.java.jeux.level01.character;
 
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.Animation;
@@ -6,8 +6,9 @@ import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
+import com.java.jeux.level01.contracts.EnemyBehavior;
 
-public abstract class Ennemies extends Character {
+public abstract class Enemy extends Character implements EnemyBehavior {
     protected Animation<TextureRegion> idleAnimation;
     protected Animation<TextureRegion> deadAnimation;
     protected Animation<TextureRegion> hurtAnimation;
@@ -24,7 +25,7 @@ public abstract class Ennemies extends Character {
 
     protected Player player;
 
-    public Ennemies(float startX, float startY, int MaxHealth, int AttackDamage, Player player) {
+    public Enemy(float startX, float startY, int MaxHealth, int AttackDamage, Player player) {
         super(startX, startY, MaxHealth, AttackDamage);
         this.player = player;
     }
@@ -106,33 +107,60 @@ public abstract class Ennemies extends Character {
 
 
     @Override
-    public void respawn() {
-        super.respawn();
-        deathTimer = 0f;
-        facingRight = true;
-    }
-
-    @Override
-    public Rectangle getHitBox() {
-        return new Rectangle(position.x + hitboxOffsetX, position.y, spriteWidth, spriteHeight);
-    }
-
-    private boolean detectPlayer() {
+    public boolean detectPlayer() {
         Vector2 playerPosition = player.getPosition();
         float distance = position.dst(playerPosition);
         return distance <= detectionRadius;
     }
 
-    private void moveTowardsPlayer(float deltaTime) {
+    @Override
+    public Player getPlayer() {
+        return player;
+    }
+
+    @Override
+    public void moveTowardsPlayer(float deltaTime) {
         Vector2 playerPosition = player.getPosition();
         Vector2 direction = playerPosition.cpy().sub(position).nor();
         position.add(direction.scl(moveSpeed * deltaTime));
         facingRight = direction.x >= 0;
     }
 
+    @Override
+    public Animation<TextureRegion> getIdleAnimation() {
+        return idleAnimation;
+    }
 
-    protected Player getPlayer() {
-        return player;
+    @Override
+    public Animation<TextureRegion> getDeadAnimation() {
+        return deadAnimation;
+    }
+
+    @Override
+    public Animation<TextureRegion> getHurtAnimation() {
+        return hurtAnimation;
+    }
+
+    @Override
+    public Animation<TextureRegion> getWalkAnimation() {
+        return walkAnimation;
+    }
+
+    @Override
+    public float getRepopTime() {
+        return repopTime;
+    }
+
+    @Override
+    public float getDeathTimer() {
+        return deathTimer;
+    }
+
+    @Override
+    public void respawn() {
+        super.respawn();
+        deathTimer = 0f;
+        facingRight = true;
     }
 
 }

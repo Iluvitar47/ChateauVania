@@ -1,4 +1,4 @@
-package com.java.jeux.level01;
+package com.java.jeux.level01.managers;
 
 import com.badlogic.gdx.math.Rectangle;
 import java.util.ArrayList;

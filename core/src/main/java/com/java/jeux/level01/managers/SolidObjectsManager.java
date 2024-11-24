@@ -1,7 +1,8 @@
-package com.java.jeux.level01;
+package com.java.jeux.level01.managers;
 
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
+import com.java.jeux.level01.character.Character;
 
 import java.util.List;
 
@@ -12,7 +13,7 @@ public class SolidObjectsManager {
         this.solidObjects = solidObjects;
     }
 
-    public void applyCollision(Character character) {
+    public void applyCollision(com.java.jeux.level01.character.Character character) {
         boolean collisionDetected = false;
         Rectangle hitBox = character.getHitBox();
         for (Rectangle solid : solidObjects) {

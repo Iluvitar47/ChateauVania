@@ -1,14 +1,16 @@
-package com.java.jeux.level01;
+package com.java.jeux.level01.managers;
 
 import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
+import com.java.jeux.level01.character.Character;
+
 import java.util.List;
 
-public class GravityTest {
+public class GravityManager {
     private float gravity = -500f;
     private List<Rectangle> groundObjects;
 
-    public GravityTest(List<Rectangle> groundObjects) {
+    public GravityManager(List<Rectangle> groundObjects) {
         this.groundObjects = groundObjects;
     }
 

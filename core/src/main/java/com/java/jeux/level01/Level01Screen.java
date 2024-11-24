@@ -1,7 +1,6 @@
 package com.java.jeux.level01;
 
 import com.badlogic.gdx.Gdx;
-import com.badlogic.gdx.Screen;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
@@ -13,6 +12,13 @@ import com.badlogic.gdx.utils.viewport.FitViewport;
 import com.badlogic.gdx.utils.viewport.Viewport;
 import com.java.jeux.AbstractLevel;
 import com.java.jeux.GlobalSettings;
+import com.java.jeux.level01.character.Enemy;
+import com.java.jeux.level01.managers.AttackManager;
+import com.java.jeux.level01.managers.CameraManager;
+import com.java.jeux.level01.managers.GravityManager;
+import com.java.jeux.level01.managers.SolidObjectsManager;
+import com.java.jeux.level01.character.Player;
+import com.java.jeux.level01.character.Ennemies.Gorgon_1;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,11 +26,11 @@ import java.util.List;
 public class Level01Screen extends AbstractLevel {
     private SpriteBatch batch;
     private Player player;
-    private List<Ennemies> enemies;
+    private List<Enemy> enemies;
     private Leve01MapLoader leve01MapLoader;
     private ShapeRenderer shapeRenderer;
-    private GravityTest gravityTest;
-    private CameraController cameraController;
+    private GravityManager gravityManager;
+    private CameraManager cameraManager;
     private OrthographicCamera camera;
     private SolidObjectsManager solidObjectsManager;
     private AttackManager attackManager;
@@ -40,8 +46,8 @@ public class Level01Screen extends AbstractLevel {
         solidObjectsManager = new SolidObjectsManager(solidObjects);
 
         camera = leve01MapLoader.getCamera();
-        cameraController = new CameraController(camera, leve01MapLoader.getMapWidth(), leve01MapLoader.getMapHeight());
-        cameraController.setZoom(0.5f);
+        cameraManager = new CameraManager(camera, leve01MapLoader.getMapWidth(), leve01MapLoader.getMapHeight());
+        cameraManager.setZoom(0.5f);
 
         batch = new SpriteBatch();
         shapeRenderer = new ShapeRenderer();
@@ -81,7 +87,7 @@ public class Level01Screen extends AbstractLevel {
         // gorgon_8.create();
         // enemies.add(gorgon_8);
 
-        gravityTest = new GravityTest(leve01MapLoader.getGroundObjects());
+        gravityManager = new GravityManager(leve01MapLoader.getGroundObjects());
         attackManager = new AttackManager();
     }
 
@@ -93,13 +99,13 @@ public class Level01Screen extends AbstractLevel {
     @Override
     public void renderLevel(float deltaTime) {
         solidObjectsManager.applyCollision(player);
-        gravityTest.applyGravity(player, deltaTime);
-        for (Ennemies enemy : enemies) {
-            gravityTest.applyGravity(enemy, deltaTime);
+        gravityManager.applyGravity(player, deltaTime);
+        for (Enemy enemy : enemies) {
+            gravityManager.applyGravity(enemy, deltaTime);
             solidObjectsManager.applyCollision(enemy);
         }
 
-        cameraController.update(new Vector2(player.getPosition().x + player.getWeightBetweenHitBoxAndSprite() + player.getHitBox().width, player.getPosition().y));
+        cameraManager.update(new Vector2(player.getPosition().x + player.getWeightBetweenHitBoxAndSprite() + player.getHitBox().width, player.getPosition().y));
 
         ScreenUtils.clear(Color.BLACK);
 //        Gdx.gl.glClearColor(0, 0, 0, 1);
@@ -130,7 +136,7 @@ public class Level01Screen extends AbstractLevel {
             shapeRenderer.rect(playerBounds.x, playerBounds.y, playerBounds.width, playerBounds.height);
 
             shapeRenderer.setColor(Color.BLUE);
-            for (Ennemies enemy : enemies) {
+            for (Enemy enemy : enemies) {
                 Rectangle enemyBounds = enemy.getHitBox();
                 if (!enemy.isDead()) {
                     shapeRenderer.rect(enemyBounds.x, enemyBounds.y, enemyBounds.width, enemyBounds.height);
@@ -159,7 +165,7 @@ public class Level01Screen extends AbstractLevel {
 
 
         player.update(deltaTime);
-        for (Ennemies enemy : enemies) {
+        for (Enemy enemy : enemies) {
             enemy.update(deltaTime);
         }
 
@@ -173,7 +179,7 @@ public class Level01Screen extends AbstractLevel {
                 player.die();
             }
 
-            for (Ennemies enemy : enemies) {
+            for (Enemy enemy : enemies) {
                 if (enemy.getHitBox().overlaps(deathZone)) {
                     enemy.die();
                 }
@@ -183,7 +189,7 @@ public class Level01Screen extends AbstractLevel {
         batch.setProjectionMatrix(camera.combined);
         batch.begin();
         player.render(batch);
-        for (Ennemies enemy : enemies) {
+        for (Enemy enemy : enemies) {
             enemy.render(batch);
         }
         batch.end();
@@ -219,7 +225,7 @@ public class Level01Screen extends AbstractLevel {
         batch.dispose();
         shapeRenderer.dispose();
         player.dispose();
-        for (Ennemies enemy : enemies) {
+        for (Enemy enemy : enemies) {
             enemy.dispose();
         }
     }
