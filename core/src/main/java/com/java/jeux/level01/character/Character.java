@@ -28,7 +28,7 @@ public abstract class Character implements DeathCycle, CharacterState {
     protected boolean isColliding;
 
     protected int MaxHealth;
-    protected static int currentHealth;
+    protected int currentHealth;
     protected int AttackDamage;
 
     /**

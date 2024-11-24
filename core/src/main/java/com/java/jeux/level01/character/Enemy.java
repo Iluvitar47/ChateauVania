@@ -39,6 +39,7 @@ public abstract class Enemy extends Character implements EnemyBehavior {
     public Enemy(float startX, float startY, int MaxHealth, int AttackDamage, Player player) {
         super(startX, startY, MaxHealth, AttackDamage);
         this.player = player;
+        currentHealth = MaxHealth;
     }
 
     /**

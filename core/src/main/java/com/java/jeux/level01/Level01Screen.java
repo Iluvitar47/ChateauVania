@@ -65,40 +65,37 @@ public class Level01Screen extends AbstractLevel {
         this.player = player;
 
         enemies = new ArrayList<>();
-        Gorgon_1 gorgon_1 = new Gorgon_1(100, 50, 4, 2, player);
-        gorgon_1.create();
+        Gorgon_1 gorgon_1 = new Gorgon_1(100, 50, 1, 2, player);
         enemies.add(gorgon_1);
 
          Gorgon_1 gorgon_2 = new Gorgon_1(7000, 500, 4, 2, player);
-         gorgon_2.create();
          enemies.add(gorgon_2);
 
          Gorgon_1 gorgon_3 = new Gorgon_1(13000, 500, 4, 2, player);
-         gorgon_3.create();
          enemies.add(gorgon_3);
 
          Gorgon_1 gorgon_4 = new Gorgon_1(14000, 500, 4, 2, player);
-         gorgon_4.create();
          enemies.add(gorgon_4);
 
          Gorgon_2 gorgon_5 = new Gorgon_2(5600, 100, 4, 2, player);
-         gorgon_5.create();
          enemies.add(gorgon_5);
 
          Gorgon_2 gorgon_6 = new Gorgon_2(10500, 500, 4, 2, player);
-         gorgon_6.create();
          enemies.add(gorgon_6);
 
          Gorgon_2 gorgon_7 = new Gorgon_2(17000, 500, 4, 2, player);
-         gorgon_7.create();
          enemies.add(gorgon_7);
 
-         Gorgon_3 gorgon_8 = new Gorgon_3(25500, 500, 15, 3, player);
-         gorgon_8.create();
-         enemies.add(gorgon_8);
+        Gorgon_3 gorgon_8 = new Gorgon_3(25500, 500, 15, 3, player);
+        enemies.add(gorgon_8);
 
         gravityManager = new GravityManager(leve01MapLoader.getGroundObjects());
         attackManager = new AttackManager();
+
+        for (Enemy enemy : enemies) {
+            enemy.create();
+        }
+
     }
 
     /**
@@ -116,6 +113,8 @@ public class Level01Screen extends AbstractLevel {
      */
     @Override
     public void renderLevel(float deltaTime) {
+        System.out.println(enemies.get(0).getHealth());
+
         solidObjectsManager.applyCollision(player);
         gravityManager.applyGravity(player, deltaTime);
         for (Enemy enemy : enemies) {
